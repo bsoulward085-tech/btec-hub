@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BTEC HUB – منصة الخدمات والموارد التعليمية المدعومة بالذكاء الاصطناعي لطلاب BTEC">
+  <meta name="keywords" content="BTEC, HUB, تدقيق واجبات, خدمات تعليمية, ذكاء اصطناعي">
+  <meta property="og:title" content="BTEC HUB">
+  <meta property="og:description" content="منصة الخدمات والموارد التعليمية لطلاب BTEC">
+  <title>BTEC HUB – الصفحة الرئيسية</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* ── Home-specific styles ── */
+    .hero-main-card-title {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .hero-service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .hero-service-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      padding: 0.5rem 0.75rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.2s;
+    }
+    .hero-service-list li:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(108,63,197,0.4);
+      transform: translateX(-4px);
+    }
+    [dir="ltr"] .hero-service-list li:hover { transform: translateX(4px); }
+    .hero-service-list .add-btn {
+      margin-inline-start: auto;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(108,63,197,0.4);
+      border: 1px solid rgba(108,63,197,0.5);
+      color: white;
+      font-size: 0.7rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .hero-service-list .add-btn:hover { background: rgba(108,63,197,0.7); }
+
+    /* Process Steps */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      transition: all 0.3s ease;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .step-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: white;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 15px rgba(108,63,197,0.4);
+    }
+
+    .step-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Specializations preview */
+    .spec-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .spec-preview-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Banner */
+    .info-banner {
+      background: linear-gradient(135deg, rgba(108,63,197,0.15), rgba(14,165,233,0.1));
+      border: 1px solid rgba(108,63,197,0.25);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-banner-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .info-banner-text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .info-banner strong { color: var(--primary-light); }
+  </style>
+</head>
+<body>
+
+<!-- Background Orbs -->
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+
+<!-- ═══════ NAVBAR ═══════ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <!-- Logo -->
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">B</div>
+      <div class="logo-text">
+        <span>BTEC</span> HUB
+        <span class="logo-sub">Educational Platform</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="navbar-nav">
+      <li><a href="index.html" class="nav-link active" data-page="index.html"><i class="fas fa-home"></i> <span data-i18n="navHome">الرئيسية</span></a></li>
+      <li><a href="services.html" class="nav-link" data-page="services.html"><i class="fas fa-briefcase"></i> <span data-i18n="navServices">الخدمات</span></a></li>
+      <li><a href="specializations.html" class="nav-link" data-page="specializations.html"><i class="fas fa-graduation-cap"></i> <span data-i18n="navSpecs">التخصصات</span></a></li>
+      <li><a href="study.html" class="nav-link" data-page="study.html"><i class="fas fa-book-open"></i> <span data-i18n="navStudy">الدراسة</span></a></li>
+      <li><a href="past-assignments.html" class="nav-link" data-page="past-assignments.html"><i class="fas fa-folder-open"></i> <span data-i18n="navAssignments">مهمات سابقة</span></a></li>
+      <li><a href="#btec-ai" class="nav-link"><i class="fas fa-robot"></i> <span data-i18n="navAI">BTEC AI</span></a></li>
+      <li><a href="faq.html" class="nav-link" data-page="faq.html"><i class="fas fa-question-circle"></i> <span data-i18n="navFAQ">الأسئلة</span></a></li>
+      <li><a href="contact.html" class="nav-link" data-page="contact.html"><i class="fas fa-envelope"></i> <span data-i18n="navContact">تواصل</span></a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="navbar-actions">
+      <button class="lang-toggle" onclick="window.BtecMain?.toggleLanguage()" title="Switch Language">
+        🌐 <span id="langText">EN</span>
+      </button>
+      <button class="theme-toggle" onclick="window.BtecMain?.toggleTheme()" title="Toggle Theme">
+        <i id="themeIcon" class="fas fa-sun"></i>
+      </button>
+      <button class="cart-nav-btn" id="cartNavBtn" title="Cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> <span data-i18n="navHome">الرئيسية</span></a></li>
+    <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> <span data-i18n="navServices">الخدمات</span></a></li>
+    <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> <span data-i18n="navSpecs">التخصصات</span></a></li>
+    <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> <span data-i18n="navStudy">الدراسة</span></a></li>
+    <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> <span data-i18n="navAssignments">مهمات سابقة</span></a></li>
+    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> <span data-i18n="navFAQ">الأسئلة الشائعة</span></a></li>
+    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> <span data-i18n="navContact">تواصل معنا</span></a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <button class="lang-toggle" onclick="window.BtecMain?.toggleLanguage()">
+      🌐 <span id="mobileLangText">EN</span>
+    </button>
+    <button class="theme-toggle" onclick="window.BtecMain?.toggleTheme()">
+      <i id="mobileThemeIcon" class="fas fa-sun"></i>
+    </button>
+  </div>
+</div>
+<div class="cart-overlay" id="mobileNavOverlay"></div>
+
+<!-- ═══════ MAIN ═══════ -->
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-particles"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            منصة تعليمية متكاملة
+          </div>
+
+          <h1 class="hero-title">
+            ارتقِ بمستواك
+            <br>
+            مع <span class="brand">BTEC HUB</span>
+          </h1>
+
+          <p class="hero-desc">
+            منصتك المتكاملة لخدمات الدعم الأكاديمي، الموارد التعليمية،
+            ومساعد الذكاء الاصطناعي المخصص لطلاب BTEC.
+          </p>
+
+          <div class="hero-actions">
+            <a href="services.html" class="btn btn-primary btn-lg">
+              <i class="fas fa-rocket"></i>
+              استعرض الخدمات
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">
+              <i class="fab fa-whatsapp"></i>
+              تواصل معنا
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num">+50</span>
+              <span class="hero-stat-label">خدمة متاحة</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">4</span>
+              <span class="hero-stat-label">تخصصات</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">24/7</span>
+              <span class="hero-stat-label">مساعد AI</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">دعم أكاديمي</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Main card -->
+          <div class="hero-card-main">
+            <div class="hero-main-card-title">🎓 خدماتنا الشائعة</div>
+            <ul class="hero-service-list">
+              <li>📝 تدقيق واجب Unit 6 <button class="add-btn">+ سلة</button></li>
+              <li>📊 تقرير Business Plan <button class="add-btn">+ سلة</button></li>
+              <li>🎯 شرح Marketing Unit 2 <button class="add-btn">+ سلة</button></li>
+              <li>💻 IT Project Review <button class="add-btn">+ سلة</button></li>
+            </ul>
+          </div>
+
+          <!-- Floating cards -->
+          <div class="hero-card-floating hero-card-1">
+            <div class="floating-icon" style="background:rgba(37,211,102,0.2);color:#25D366;">💬</div>
+            <div class="floating-text">
+              <span class="label">واتساب</span>
+              <span class="value">رد فوري</span>
+            </div>
+          </div>
+
+          <div class="hero-card-floating hero-card-2">
+            <div class="floating-icon" style="background:rgba(108,63,197,0.2);color:#A78BFA;">🤖</div>
+            <div class="floating-text">
+              <span class="label">BTEC AI</span>
+              <span class="value">متاح 24/7</span>
+            </div>
+          </div>
+
+          <div class="hero-card-floating hero-card-3">
+            <div class="floating-icon" style="background:rgba(245,158,11,0.2);color:#FCD34D;">⭐</div>
+            <div class="floating-text">
+              <span class="label">التقييم</span>
+              <span class="value">5 نجوم</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-star"></i> مزايانا</div>
+        <h2 class="section-title">لماذا تختار BTEC HUB؟</h2>
+        <div class="glow-divider"></div>
+        <p class="section-subtitle">نقدم لك تجربة دعم أكاديمي متكاملة بمعايير عالية</p>
+      </div>
+
+      <div class="features-grid stagger-children">
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap gradient-purple">🤖</div>
+          <h3 class="feature-title">مساعد AI ذكي</h3>
+          <p class="feature-desc">BTEC Assistant يوجهك لاختيار الخدمة المناسبة ويجيب على أسئلتك في أي وقت</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap gradient-blue">📲</div>
+          <h3 class="feature-title">طلب عبر واتساب</h3>
+          <p class="feature-desc">سلة ذكية تُولّد رسالة واتساب جاهزة بكل تفاصيل طلبك بضغطة واحدة</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap gradient-green">✅</div>
+          <h3 class="feature-title">تدقيق احترافي</h3>
+          <p class="feature-desc">مراجعة واجباتك وفق معايير BTEC الرسمية مع ملاحظات بنّاءة وقابلة للتطبيق</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap gradient-amber">📚</div>
+          <h3 class="feature-title">موارد تعليمية</h3>
+          <p class="feature-desc">شروحات ومهمات سابقة مصنّفة حسب التخصص والمستوى والوحدة للمراجعة</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap gradient-purple">🎓</div>
+          <h3 class="feature-title">4 تخصصات</h3>
+          <p class="feature-desc">Business, IT, Health & Social Care, Engineering — غطاء شامل لجميع التخصصات</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap gradient-blue">🔒</div>
+          <h3 class="feature-title">آمن وموثوق</h3>
+          <p class="feature-desc">لا دفع إلكتروني داخل الموقع، كل المعاملات عبر التواصل المباشر وبضمان الجودة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section class="section" style="background: var(--bg-secondary); position:relative; z-index:1;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-list-ol"></i> كيف نعمل</div>
+        <h2 class="section-title">من الطلب إلى التسليم</h2>
+        <div class="glow-divider"></div>
+      </div>
+
+      <div class="process-steps stagger-children">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h4 class="step-title">اختر الخدمة</h4>
+          <p class="step-desc">استعرض خدماتنا وأضف ما تحتاجه للسلة</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h4 class="step-title">أرسل عبر واتساب</h4>
+          <p class="step-desc">اضغط إرسال وستفتح محادثة واتساب جاهزة</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h4 class="step-title">تأكيد السعر</h4>
+          <p class="step-desc">نردّ بالسعر النهائي والتفاصيل الكاملة</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h4 class="step-title">الدفع والتنفيذ</h4>
+          <p class="step-desc">بعد التأكيد نبدأ فوراً في تنفيذ الخدمة</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">5</div>
+          <h4 class="step-title">التسليم</h4>
+          <p class="step-desc">نسلّم العمل عبر القناة المتفق عليها ✅</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPECIALIZATIONS PREVIEW ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-graduation-cap"></i> التخصصات</div>
+        <h2 class="section-title">نغطي كل التخصصات</h2>
+        <div class="glow-divider"></div>
+      </div>
+
+      <div class="spec-preview-grid stagger-children">
+        <a href="specializations.html#business" class="spec-card reveal">
+          <div class="spec-card-cover" style="background: linear-gradient(135deg, rgba(108,63,197,0.4), rgba(14,165,233,0.3));">
+            <span class="spec-emoji">💼</span>
+          </div>
+          <div class="spec-card-body">
+            <h3 class="spec-name">Business</h3>
+            <p class="spec-desc">إدارة الأعمال والتسويق والمحاسبة والموارد البشرية</p>
+            <div class="spec-units">
+              <span class="badge badge-primary">Unit 1</span>
+              <span class="badge badge-primary">Unit 2</span>
+              <span class="badge badge-primary">Unit 3</span>
+              <span class="badge badge-blue">+more</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="specializations.html#it" class="spec-card reveal">
+          <div class="spec-card-cover" style="background: linear-gradient(135deg, rgba(14,165,233,0.4), rgba(16,185,129,0.3));">
+            <span class="spec-emoji">💻</span>
+          </div>
+          <div class="spec-card-body">
+            <h3 class="spec-name">Information Technology</h3>
+            <p class="spec-desc">البرمجة، الشبكات، قواعد البيانات، وأمن المعلومات</p>
+            <div class="spec-units">
+              <span class="badge badge-blue">Unit 1</span>
+              <span class="badge badge-blue">Unit 3</span>
+              <span class="badge badge-blue">Unit 5</span>
+              <span class="badge badge-green">+more</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="specializations.html#health" class="spec-card reveal">
+          <div class="spec-card-cover" style="background: linear-gradient(135deg, rgba(16,185,129,0.4), rgba(245,158,11,0.3));">
+            <span class="spec-emoji">🏥</span>
+          </div>
+          <div class="spec-card-body">
+            <h3 class="spec-name">Health & Social Care</h3>
+            <p class="spec-desc">الرعاية الصحية، الخدمات الاجتماعية، والتمريض</p>
+            <div class="spec-units">
+              <span class="badge badge-green">Unit 1</span>
+              <span class="badge badge-green">Unit 2</span>
+              <span class="badge badge-green">Unit 3</span>
+              <span class="badge badge-amber">+more</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="specializations.html#engineering" class="spec-card reveal">
+          <div class="spec-card-cover" style="background: linear-gradient(135deg, rgba(245,158,11,0.4), rgba(239,68,68,0.3));">
+            <span class="spec-emoji">⚙️</span>
+          </div>
+          <div class="spec-card-body">
+            <h3 class="spec-name">Engineering</h3>
+            <p class="spec-desc">الهندسة الميكانيكية، الكهربائية، والمدنية</p>
+            <div class="spec-units">
+              <span class="badge badge-amber">Unit 1</span>
+              <span class="badge badge-amber">Unit 2</span>
+              <span class="badge badge-amber">Unit 4</span>
+              <span class="badge badge-primary">+more</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center mt-xl">
+        <a href="specializations.html" class="btn btn-secondary">
+          عرض جميع التخصصات <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="section" style="background: var(--bg-secondary); position:relative; z-index:1;">
+    <div class="container">
+      <div class="stats-grid stagger-children">
+        <div class="stat-card reveal">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">طالب استفاد</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">خدمة متاحة</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number">4</span>
+          <span class="stat-label">تخصصات BTEC</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">نسبة الرضا</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">دعم مستمر</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fas fa-star"></i> آراء الطلاب</div>
+        <h2 class="section-title">ماذا يقول طلابنا؟</h2>
+        <div class="glow-divider"></div>
+      </div>
+
+      <div class="testimonials-track stagger-children">
+        <div class="testimonial-card reveal">
+          <div class="stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">خدمة تدقيق الواجب كانت ممتازة جداً. الملاحظات كانت واضحة ومفيدة وساعدتني على تحسين درجتي بشكل ملحوظ!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">أ</div>
+            <div>
+              <div class="author-name">أحمد محمد</div>
+              <div class="author-role">طالب Business – المستوى 3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">BTEC Assistant وجّهني بسرعة لاختيار الخدمة الصحيحة. والفريق رد على واتساب بشكل احترافي جداً!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #0EA5E9, #38BDF8);">س</div>
+            <div>
+              <div class="author-name">سارة العلي</div>
+              <div class="author-role">طالبة IT – المستوى 2</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">المهمات السابقة في قسم الدراسة ساعدتني كثيراً في الفهم والمراجعة. محتوى ممتاز ومنظم بشكل رائع!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #10B981, #34D399);">م</div>
+            <div>
+              <div class="author-name">محمد الزهراني</div>
+              <div class="author-role">طالب Health & Social Care</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="cta-content">
+          <h2>جاهز لتبدأ رحلتك الأكاديمية؟</h2>
+          <p>انضم لمئات الطلاب الذين يثقون في BTEC HUB لدعمهم الأكاديمي</p>
+          <div class="cta-actions">
+            <a href="services.html" class="btn-cta-white">
+              <i class="fas fa-rocket"></i>
+              استعرض الخدمات
+            </a>
+            <a href="https://wa.me/962786003597" target="_blank" class="btn-cta-outline">
+              <i class="fab fa-whatsapp"></i>
+              تواصل مباشرة
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <div class="logo-icon">B</div>
+          <div class="logo-text"><span>BTEC</span> HUB</div>
+        </a>
+        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">تدقيق الواجبات</a></li>
+          <li><a href="services.html">إعداد التقارير</a></li>
+          <li><a href="services.html">الشرح والتوجيه</a></li>
+          <li><a href="services.html">مراجعة المشاريع</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>التخصصات</h4>
+        <ul class="footer-links">
+          <li><a href="specializations.html">Business</a></li>
+          <li><a href="specializations.html">IT</a></li>
+          <li><a href="specializations.html">Health & Social Care</a></li>
+          <li><a href="specializations.html">Engineering</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>المنصة</h4>
+        <ul class="footer-links">
+          <li><a href="study.html">مواد الدراسة</a></li>
+          <li><a href="past-assignments.html">مهمات سابقة</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 BTEC HUB. جميع الحقوق محفوظة.</p>
+      <div class="footer-bottom-links">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">شروط الاستخدام</a>
+        <a href="#">الدعم الأكاديمي</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════ CART SIDEBAR ═══════ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div class="cart-title">
+      <i class="fas fa-shopping-cart"></i>
+      <span data-i18n="navCart">السلة</span>
+    </div>
+    <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none;"></div>
+</aside>
+
+<!-- ═══════ BTEC ASSISTANT ═══════ -->
+<div class="assistant-fab" id="assistantFab">
+  <button class="assistant-fab-btn" id="assistantFab" title="BTEC Assistant">
+    <i class="fas fa-robot"></i>
+  </button>
+  <div class="assistant-tooltip">BTEC Assistant</div>
+</div>
+
+<div class="assistant-window" id="assistantWindow">
+  <div class="assistant-header">
+    <div class="assistant-avatar">🤖</div>
+    <div class="assistant-info">
+      <div class="assistant-name" data-i18n="assistantName">BTEC Assistant</div>
+      <div class="assistant-status">
+        <span class="status-dot"></span>
+        <span data-i18n="assistantStatus">متاح الآن</span>
+      </div>
+    </div>
+    <button class="assistant-minimize" id="assistantMinimize" title="Minimize">
+      <i class="fas fa-minus"></i>
+    </button>
+  </div>
+  <div class="assistant-messages" id="assistantMessages"></div>
+  <div class="quick-replies" id="quickReplies"></div>
+  <div class="assistant-input-area">
+    <input
+      type="text"
+      class="assistant-input"
+      id="assistantInput"
+      data-i18n-placeholder="assistantPlaceholder"
+      placeholder="اكتب سؤالك هنا..."
+    >
+    <button class="assistant-send" id="assistantSend">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════ WHATSAPP FAB ═══════ -->
+<div class="whatsapp-fab">
+  <div class="whatsapp-tooltip" data-i18n="whatsappTooltip">تواصل معنا</div>
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- Scroll Top -->
+<button class="scroll-top" id="scrollTopBtn" title="للأعلى">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/assistant.js"></script>
+</body>
+</html>
+

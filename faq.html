@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTEC HUB – الأسئلة الشائعة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+
+<nav class="navbar navbar-blur" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">B</div>
+      <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="index.html" class="nav-link" data-page="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+      <li><a href="services.html" class="nav-link" data-page="services.html"><i class="fas fa-briefcase"></i> الخدمات</a></li>
+      <li><a href="specializations.html" class="nav-link" data-page="specializations.html"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+      <li><a href="study.html" class="nav-link" data-page="study.html"><i class="fas fa-book-open"></i> الدراسة</a></li>
+      <li><a href="past-assignments.html" class="nav-link" data-page="past-assignments.html"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+      <li><a href="faq.html" class="nav-link active" data-page="faq.html"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+      <li><a href="contact.html" class="nav-link" data-page="contact.html"><i class="fas fa-envelope"></i> تواصل</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="lang-toggle" onclick="window.BtecMain?.toggleLanguage()">🌐 <span id="langText">EN</span></button>
+      <button class="theme-toggle" onclick="window.BtecMain?.toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
+      <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container page-hero-content">
+      <div class="section-badge mb-lg"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</div>
+      <h1>كيف يمكننا مساعدتك؟</h1>
+      <p>تجد هنا إجابات على أكثر الأسئلة شيوعاً حول خدماتنا وكيفية الطلب</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar reveal" style="justify-content:center; gap:1rem; margin-bottom: 3rem;">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="services">عن الخدمات</button>
+        <button class="filter-btn" data-filter="pricing">الأسعار والدفع</button>
+        <button class="filter-btn" data-filter="cart">الطلب والسلة</button>
+        <button class="filter-btn" data-filter="ai">المساعد الذكي (AI)</button>
+      </div>
+
+      <div class="accordion-list mx-auto" style="max-width:800px;">
+        
+        <!-- Services -->
+        <div class="accordion-item reveal" data-category="services">
+          <div class="accordion-header"><div class="accordion-question">هل تقومون بكتابة الواجبات نيابة عن الطلاب؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>لا، نحن لا نكتب الواجبات نيابة عن الطلاب. نحن نقدم خدمات تدقيق وتوجيه ودعم أكاديمي لمساعدتك على فهم المعايير وتحسين أدائك بنفسك لتجنب الغش الأكاديمي.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="services">
+          <div class="accordion-header"><div class="accordion-question">ماذا تشمل خدمة تدقيق الواجبات؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>تشمل مراجعة المحتوى بناءً على معايير BTEC، تحديد نقاط القوة والضعف، وتقديم ملاحظات تفصيلية حول كيفية تحسين التنسيق، التحليل، والمراجع الأكاديمية.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="services">
+          <div class="accordion-header"><div class="accordion-question">هل يمكنني طلب جلسة شرح فردية عبر الإنترنت (Online)؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>نعم، نقدم خدمة جلسات شرح فردية وتوجيه أونلاين عبر منصات مثل Zoom أو Google Meet حسب رغبتك لمساعدتك في أي وحدة تواجه صعوبة فيها.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="services">
+          <div class="accordion-header"><div class="accordion-question">ما هي التخصصات التي تغطونها؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>نغطي حالياً أربع تخصصات رئيسية: Business, Information Technology, Health & Social Care, Engineering بكافة مستوياتها ووحداتها.</p></div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="accordion-item reveal" data-category="pricing">
+          <div class="accordion-header"><div class="accordion-question">لماذا لا يوجد سعر ثابت في الموقع لبعض الخدمات؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>بعض الخدمات مثل التدقيق أو التقارير تختلف تكلفتها حسب حجم العمل، مستوى الصعوبة، والموعد النهائي للتسليم. لذلك يتم تقييم السعر بدقة بعد رؤية تفاصيل طلبك.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="pricing">
+          <div class="accordion-header"><div class="accordion-question">كيف أدفع مقابل الخدمات؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>حالياً لا يوجد دفع إلكتروني مباشر داخل الموقع. يتم الدفع عن طريق الحوالات البنكية أو الدفع الإلكتروني عبر روابط آمنة تُرسل لك عبر واتساب بعد الاتفاق.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="pricing">
+          <div class="accordion-header"><div class="accordion-question">هل أسترد أموالي إذا لم أستفد من الخدمة؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>نحن نضمن جودة العمل، وفي حال كان هناك تقصير من طرفنا في تنفيذ ما تم الاتفاق عليه، نقوم بإجراء التعديلات المطلوبة مجاناً، أو يمكننا استرجاع المبلغ حسب سياسة الاسترجاع الخاصة بنا.</p></div>
+        </div>
+
+        <!-- Cart & Request -->
+        <div class="accordion-item reveal" data-category="cart">
+          <div class="accordion-header"><div class="accordion-question">كيف أتمم الطلب من خلال السلة؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>قم بإضافة الخدمات التي تحتاجها إلى السلة، ثم افتح السلة واضغط على "إرسال عبر واتساب". سيقوم النظام بتوليد رسالة جاهزة بكل خدماتك يمكنك إرسالها لنا بنقرة واحدة.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="cart">
+          <div class="accordion-header"><div class="accordion-question">كم يستغرق الرد بعد إرسال الطلب عبر واتساب؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>عادةً ما نقوم بالرد خلال ساعات العمل الرسمية (في أقل من ساعتين). إذا قمت بإرسال طلب في وقت متأخر، سيتم الرد عليك في صباح اليوم التالي.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="cart">
+          <div class="accordion-header"><div class="accordion-question">هل يعتبر إضافة الخدمة للسلة تسجيلاً نهائياً للطلب؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>لا، السلة هي مجرد وسيلة لتنظيم طلبك. الطلب لا يعتبر مؤكداً ولن يتم البدء فيه إلا بعد التواصل معنا عبر واتساب، تحديد السعر، وإتمام عملية الدفع.</p></div>
+        </div>
+
+        <!-- AI -->
+        <div class="accordion-item reveal" data-category="ai">
+          <div class="accordion-header"><div class="accordion-question">ما هو BTEC Assistant وهل يمكنه حل الواجبات؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>المساعد BTEC Assistant هو أداة لمساعدتك في تصفح الموقع وفهم الخدمات واختيار ما يناسبك. هو مبرمج خصيصاً لرفض حل الواجبات للحفاظ على النزاهة الأكاديمية.</p></div>
+        </div>
+        <div class="accordion-item reveal" data-category="ai">
+          <div class="accordion-header"><div class="accordion-question">هل المساعد متوفر باللغتين؟</div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></div>
+          <div class="accordion-body"><p>نعم، يمكنك التحدث مع المساعد باللغة العربية أو الإنجليزية وسيرد عليك بناءً على لغة واجهة الموقع ولغة السؤال.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo"><div class="logo-icon">B</div><div class="logo-text"><span>BTEC</span> HUB</div></a>
+        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي لطلاب BTEC.</p>
+      </div>
+      <div class="footer-col"><h4>الخدمات</h4><ul class="footer-links"><li><a href="services.html">الخدمات</a></li></ul></div>
+      <div class="footer-col"><h4>التخصصات</h4><ul class="footer-links"><li><a href="specializations.html">التخصصات</a></li></ul></div>
+      <div class="footer-col"><h4>المنصة</h4><ul class="footer-links"><li><a href="faq.html">الأسئلة الشائعة</a></li><li><a href="contact.html">تواصل معنا</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 BTEC HUB. جميع الحقوق محفوظة. <br><span style="font-size: 0.85em; opacity: 0.8; margin-top: 5px; display: inline-block;">تم التطوير بواسطة <strong>ورد البصول</strong></span></p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><div class="cart-title"><i class="fas fa-shopping-cart"></i> السلة</div><button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button></div>
+  <div class="cart-body" id="cartBody"></div>
+</aside>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/assistant.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    window.BtecMain?.initAccordion();
+    
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          if(filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>
+
