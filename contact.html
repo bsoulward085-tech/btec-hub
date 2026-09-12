@@ -26,7 +26,7 @@
       <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
       <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
       <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-      <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> تواصل</a></li>
+      <li><a href="contact.html" class="nav-link  active"><i class="fas fa-envelope"></i> تواصل</a></li>
     </ul>
     <div class="navbar-actions">
       <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
@@ -44,8 +44,12 @@
     <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
     <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
     <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-    <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> تواصل</a></li>
+    <li><a href="contact.html" class="nav-link  active"><i class="fas fa-envelope"></i> تواصل</a></li>
   </ul>
+  <div class="mobile-nav-actions">
+    <button class="lang-toggle" id="mobileLangBtn">&#127760; <span id="mobileLangText">EN</span></button>
+    <button class="theme-toggle" id="mobileThemeBtn"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
+  </div>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
 
@@ -60,34 +64,97 @@
   <section class="section">
     <div class="container">
       <div class="contact-grid">
+
+        <!-- Info Card -->
         <div class="contact-info-card reveal">
-          <h3 class="mb-lg" style="font-size:1.25rem;">معلومات التواصل</h3>
-          <a href="https://wa.me/962786003597" target="_blank" class="contact-method reveal">
-            <div class="contact-method-icon" style="background:rgba(37,211,102,0.15);color:#25D366;"><i class="fab fa-whatsapp"></i></div>
-            <div><span class="contact-method-label">واتساب الدعم الفني</span><span class="contact-method-value">+962 78 600 3597</span></div>
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">معلومات التواصل</h3>
+
+          <a href="https://wa.me/962786003597" target="_blank" class="contact-method">
+            <div class="contact-method-icon" style="background:rgba(37,211,102,.15);color:#25D366;">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <span class="contact-method-label">واتساب الدعم الفني</span>
+              <span class="contact-method-value">+962 78 600 3597</span>
+            </div>
           </a>
-          <div class="contact-method reveal" style="cursor:default;">
-            <div class="contact-method-icon" style="background:rgba(108,63,197,0.15);color:var(--primary-light);"><i class="fas fa-clock"></i></div>
-            <div><span class="contact-method-label">ساعات العمل</span><span class="contact-method-value">9:00 ص - 10:00 م يومياً</span></div>
+
+          <div class="contact-method" style="cursor:default;">
+            <div class="contact-method-icon" style="background:rgba(108,63,197,.15);color:var(--primary-light);">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <span class="contact-method-label">ساعات العمل</span>
+              <span class="contact-method-value">9:00 ص – 10:00 م (يومياً)</span>
+            </div>
+          </div>
+
+          <div class="contact-method" style="cursor:default;">
+            <div class="contact-method-icon" style="background:rgba(14,165,233,.15);color:#0EA5E9;">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div>
+              <span class="contact-method-label">متوسط وقت الرد</span>
+              <span class="contact-method-value">أقل من ساعتين</span>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.25rem;background:rgba(108,63,197,.08);border:1px solid rgba(108,63,197,.2);border-radius:var(--radius-lg);">
+            <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+              &#128161; <strong style="color:var(--primary-light)">نصيحة:</strong>
+              يمكنك إضافة الخدمات التي تحتاجها إلى السلة أولاً من صفحة
+              <a href="services.html" style="color:var(--primary-light);">الخدمات</a>،
+              ثم إرسالها دفعة واحدة عبر واتساب!
+            </p>
           </div>
         </div>
+
+        <!-- Form Card -->
         <div class="contact-form-card reveal">
-          <h3 class="mb-lg" style="font-size:1.25rem;">أرسل استفسارك</h3>
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">أرسل استفسارك</h3>
           <form id="contactForm" onsubmit="event.preventDefault();submitContactForm();">
-            <div class="grid-2">
-              <div class="form-group"><label class="form-label">الاسم</label><input type="text" id="formName" class="form-control" placeholder="اسمك الكريم" required></div>
-              <div class="form-group"><label class="form-label">التخصص</label><select id="formSpec" class="form-control" required><option value="" disabled selected>اختر التخصص...</option><option>Business</option><option>IT</option><option>Health &amp; Social Care</option><option>Engineering</option><option>تخصص آخر</option></select></div>
+            <div class="grid-2" style="gap:1rem;">
+              <div class="form-group">
+                <label class="form-label">الاسم</label>
+                <input type="text" id="cName" class="form-control" placeholder="اسمك الكريم" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">التخصص</label>
+                <select id="cSpec" class="form-control" required>
+                  <option value="" disabled selected>اختر التخصص...</option>
+                  <option>Business</option>
+                  <option>IT</option>
+                  <option>Health &amp; Social Care</option>
+                  <option>Engineering</option>
+                  <option>تخصص آخر</option>
+                </select>
+              </div>
             </div>
-            <div class="form-group"><label class="form-label">نوع الخدمة</label><select id="formService" class="form-control" required><option value="" disabled selected>اختر الخدمة...</option><option>تدقيق واجبات</option><option>إعداد تقارير</option><option>جلسة شرح</option><option>استفسار عام</option></select></div>
-            <div class="form-group"><label class="form-label">الرسالة</label><textarea id="formMessage" class="form-control" placeholder="اكتب تفاصيل طلبك هنا..." required></textarea></div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> إرسال عبر واتساب</button>
+            <div class="form-group">
+              <label class="form-label">نوع الخدمة / الاستفسار</label>
+              <select id="cService" class="form-control" required>
+                <option value="" disabled selected>اختر الخدمة...</option>
+                <option>تدقيق واجبات</option>
+                <option>إعداد تقارير</option>
+                <option>جلسة شرح</option>
+                <option>استفسار عام</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">الرسالة</label>
+              <textarea id="cMsg" class="form-control" rows="5"
+                placeholder="اكتب تفاصيل طلبك أو استفسارك هنا..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;">
+              <i class="fab fa-whatsapp"></i> إرسال عبر واتساب
+            </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 </main>
-
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -96,10 +163,11 @@
           <div class="logo-icon">B</div>
           <div class="logo-text"><span>BTEC</span> HUB</div>
         </a>
-        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي لطلاب BTEC.</p>
+        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
         <div class="footer-social">
           <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -108,6 +176,7 @@
           <li><a href="services.html">تدقيق الواجبات</a></li>
           <li><a href="services.html">إعداد التقارير</a></li>
           <li><a href="services.html">الشرح والتوجيه</a></li>
+          <li><a href="services.html">مراجعة المشاريع</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -123,6 +192,7 @@
         <h4>المنصة</h4>
         <ul class="footer-links">
           <li><a href="study.html">مواد الدراسة</a></li>
+          <li><a href="past-assignments.html">مهمات سابقة</a></li>
           <li><a href="faq.html">الأسئلة الشائعة</a></li>
           <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
@@ -130,30 +200,39 @@
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">
-        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.<br>
-        <span style="font-size:0.85em;opacity:0.8;">تم التطوير بواسطة <strong>ورد البصول</strong></span>
+        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.
+        <br><span style="font-size:0.85em;opacity:0.85;margin-top:4px;display:inline-block;">
+          تم التطوير بواسطة <strong style="color:var(--primary-light);">ورد البصول</strong>
+        </span>
       </p>
+      <div class="footer-bottom-links">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">شروط الاستخدام</a>
+        <a href="#">الدعم الأكاديمي</a>
+      </div>
     </div>
   </div>
 </footer>
 
+<!-- Cart Sidebar -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <div class="cart-title"><i class="fas fa-shopping-cart"></i> السلة</div>
+    <div class="cart-title"><i class="fas fa-shopping-cart"></i> <span>السلة</span></div>
     <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
   </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
+<!-- BTEC AI Assistant -->
 <div class="assistant-fab" id="assistantFab">
   <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
   <div class="assistant-tooltip">BTEC Assistant</div>
 </div>
 <div class="assistant-window" id="assistantWindow">
   <div class="assistant-header">
-    <div class="assistant-avatar">🤖</div>
+    <div class="assistant-avatar">&#129302;</div>
     <div class="assistant-info">
       <div class="assistant-name">BTEC Assistant</div>
       <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
@@ -168,11 +247,17 @@
   </div>
 </div>
 
+<!-- WhatsApp FAB -->
 <div class="whatsapp-fab">
   <div class="whatsapp-tooltip">تواصل معنا</div>
-  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </div>
-<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn" title="للأعلى"><i class="fas fa-chevron-up"></i></button>
+
 <script src="main.js"></script>
 <script src="cart.js"></script>
 <script src="assistant.js"></script>
@@ -180,21 +265,24 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
     document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
+    document.getElementById('mobileLangBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
+    document.getElementById('mobileThemeBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
   });
 </script>
 
-
 <script>
 function submitContactForm() {
-  const name = document.getElementById('formName').value;
-  const spec = document.getElementById('formSpec').value;
-  const service = document.getElementById('formService').value;
-  const msg = document.getElementById('formMessage').value;
+  const name    = document.getElementById('cName').value;
+  const spec    = document.getElementById('cSpec').value;
+  const service = document.getElementById('cService').value;
+  const msg     = document.getElementById('cMsg').value;
   const text = encodeURIComponent(
-    'مرحباً فريق BTEC HUB،\n\n📌 *استفسار جديد*\n\n👤 *الاسم:* ' + name +
-    '\n🎓 *التخصص:* ' + spec +
-    '\n🛠️ *الخدمة:* ' + service +
-    '\n\n💬 *الرسالة:*\n' + msg
+    'مرحباً فريق BTEC HUB 👋\n\n' +
+    '📌 *استفسار جديد*\n\n' +
+    '👤 *الاسم:* ' + name + '\n' +
+    '🎓 *التخصص:* ' + spec + '\n' +
+    '🛠️ *الخدمة:* ' + service + '\n\n' +
+    '💬 *الرسالة:*\n' + msg
   );
   window.open('https://wa.me/962786003597?text=' + text, '_blank');
 }

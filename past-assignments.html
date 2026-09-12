@@ -24,7 +24,7 @@
       <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
       <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
       <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-      <li><a href="past-assignments.html" class="nav-link active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+      <li><a href="past-assignments.html" class="nav-link  active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
       <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
       <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
     </ul>
@@ -42,10 +42,14 @@
     <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
     <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
     <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-    <li><a href="past-assignments.html" class="nav-link active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+    <li><a href="past-assignments.html" class="nav-link  active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
     <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
   </ul>
+  <div class="mobile-nav-actions">
+    <button class="lang-toggle" id="mobileLangBtn">&#127760; <span id="mobileLangText">EN</span></button>
+    <button class="theme-toggle" id="mobileThemeBtn"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
+  </div>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
 
@@ -54,32 +58,154 @@
     <div class="container page-hero-content">
       <div class="section-badge mb-lg"><i class="fas fa-folder-open"></i> المهمات السابقة</div>
       <h1>مهمات نموذجية سابقة</h1>
-      <p>اطلع على طرق الحل والتنسيق المعتمدة لتطوير مستواك</p>
+      <p>اطلع على طرق الحل والتنسيق المعتمدة لتطوير مستواك الأكاديمي</p>
     </div>
   </div>
   <section class="section">
     <div class="container">
-      <div class="info-banner reveal" style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:var(--radius-xl);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;">
-        <span style="font-size:2rem">⚠️</span>
-        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;"><strong style="color:#F59E0B">تحذير أكاديمي:</strong> هذه المهمات مخصصة للاطلاع والمراجعة وفهم طرق الحل فقط. استخدامها كعمل شخصي يعتبر غشاً أكاديمياً (Plagiarism) ويعرضك للحرمان.</p>
+
+      <div class="reveal" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:var(--radius-xl);padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem;">
+        <span style="font-size:1.75rem;">&#9888;&#65039;</span>
+        <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+          <strong style="color:#F59E0B">تحذير أكاديمي:</strong>
+          هذه المهمات مخصصة للاطلاع والمراجعة وفهم طرق الحل فقط.
+          استخدامها كعمل شخصي يعتبر غشاً أكاديمياً (Plagiarism) ويعرضك للحرمان.
+        </p>
       </div>
-      <div class="filter-bar reveal">
+
+      <div class="filter-bar reveal" style="gap:.5rem;flex-wrap:wrap;">
         <button class="filter-btn active" data-filter="all">الكل</button>
         <button class="filter-btn" data-filter="business">Business</button>
         <button class="filter-btn" data-filter="it">IT</button>
         <button class="filter-btn" data-filter="health">Health</button>
         <button class="filter-btn" data-filter="engineering">Engineering</button>
       </div>
+
       <div class="grid-2" id="assignGrid">
-        <div class="assignment-card reveal" data-category="business"><div class="assignment-card-header"><h3 class="assignment-title">Business Plan – Marketing Unit 2</h3><span class="badge badge-primary">2024</span></div><div class="assignment-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Level 3</span><span class="badge badge-blue">Unit 2</span></div><p class="assignment-desc">نموذج لخطة تسويق كاملة تتضمن تحليل SWOT وPESTLE والمزيج التسويقي.</p><div class="assignment-warning"><i class="fas fa-exclamation-triangle warning-icon"></i><span>للاطلاع والمراجعة فقط - يمنع النسخ</span></div><button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">عرض المهمة</button></div>
-        <div class="assignment-card reveal" data-category="it"><div class="assignment-card-header"><h3 class="assignment-title">Network Design Proposal</h3><span class="badge badge-primary">2024</span></div><div class="assignment-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Level 3</span><span class="badge badge-green">Unit 3</span></div><p class="assignment-desc">مقترح تصميم شبكة محلية LAN مع مخطط الشبكة وتبرير اختيار المكونات.</p><div class="assignment-warning"><i class="fas fa-exclamation-triangle warning-icon"></i><span>للاطلاع والمراجعة فقط - يمنع النسخ</span></div><button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">عرض المهمة</button></div>
-        <div class="assignment-card reveal" data-category="health"><div class="assignment-card-header"><h3 class="assignment-title">Lifespan Development Case Study</h3><span class="badge badge-primary">2024</span></div><div class="assignment-tags"><span class="badge badge-green">Health</span><span class="badge badge-amber">Level 2</span><span class="badge badge-amber">Unit 1</span></div><p class="assignment-desc">دراسة حالة عن تأثير العوامل البيئية والوراثية على النمو في مرحلة الطفولة.</p><div class="assignment-warning"><i class="fas fa-exclamation-triangle warning-icon"></i><span>للاطلاع والمراجعة فقط - يمنع النسخ</span></div><button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">عرض المهمة</button></div>
-        <div class="assignment-card reveal" data-category="engineering"><div class="assignment-card-header"><h3 class="assignment-title">CAD Engineering Drawing</h3><span class="badge badge-primary">2023</span></div><div class="assignment-tags"><span class="badge badge-amber">Engineering</span><span class="badge badge-primary">Level 3</span><span class="badge badge-primary">Unit 2</span></div><p class="assignment-desc">نموذج لرسومات هندسية ثنائية وثلاثية الأبعاد باستخدام برامج CAD.</p><div class="assignment-warning"><i class="fas fa-exclamation-triangle warning-icon"></i><span>للاطلاع والمراجعة فقط - يمنع النسخ</span></div><button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">عرض المهمة</button></div>
+        <div class="assignment-card reveal" data-category="business">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Business Plan – Marketing Unit 2</h3>
+            <span class="badge badge-primary">2024</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Level 3</span><span class="badge badge-blue">Unit 2</span></div>
+          <p class="assignment-desc">نموذج لخطة تسويق كاملة تتضمن تحليل SWOT وPESTLE والمزيج التسويقي.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="business">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Financial Analysis Report</h3>
+            <span class="badge badge-primary">2023</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Level 3</span><span class="badge badge-blue">Unit 5</span></div>
+          <p class="assignment-desc">تحليل مالي لشركتين منافستين بناءً على القوائم المالية وحساب النسب المالية.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="it">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Network Design Proposal</h3>
+            <span class="badge badge-primary">2024</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Level 3</span><span class="badge badge-green">Unit 3</span></div>
+          <p class="assignment-desc">مقترح تصميم شبكة محلية LAN مع مخطط الشبكة وتبرير اختيار المكونات.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="it">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Database Implementation SQL</h3>
+            <span class="badge badge-primary">2023</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Level 3</span><span class="badge badge-green">Unit 5</span></div>
+          <p class="assignment-desc">تصميم قاعدة بيانات لمكتبة يتضمن ERD، Normalization، واستعلامات SQL.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="health">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Lifespan Development Case Study</h3>
+            <span class="badge badge-primary">2024</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-green">Health</span><span class="badge badge-amber">Level 2</span><span class="badge badge-amber">Unit 1</span></div>
+          <p class="assignment-desc">دراسة حالة عن تأثير العوامل البيئية والوراثية على النمو في مرحلة الطفولة.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="health">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Health &amp; Safety Report</h3>
+            <span class="badge badge-primary">2023</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-green">Health</span><span class="badge badge-amber">Level 3</span><span class="badge badge-amber">Unit 3</span></div>
+          <p class="assignment-desc">تقرير شامل عن معايير الصحة والسلامة في بيئات الرعاية الصحية.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="engineering">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">CAD Engineering Drawing</h3>
+            <span class="badge badge-primary">2023</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-amber">Engineering</span><span class="badge badge-primary">Level 3</span><span class="badge badge-primary">Unit 2</span></div>
+          <p class="assignment-desc">نموذج لرسومات هندسية ثنائية وثلاثية الأبعاد باستخدام برامج CAD.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
+        <div class="assignment-card reveal" data-category="engineering">
+          <div class="assignment-card-header">
+            <h3 class="assignment-title">Mechanical Principles Report</h3>
+            <span class="badge badge-primary">2024</span>
+          </div>
+          <div class="assignment-tags"><span class="badge badge-amber">Engineering</span><span class="badge badge-primary">Level 3</span><span class="badge badge-primary">Unit 6</span></div>
+          <p class="assignment-desc">تقرير تحليلي يتضمن حسابات القوى والعزوم وتطبيقاتها الهندسية.</p>
+          <div class="assignment-warning">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
+            <i class="fas fa-eye"></i> عرض المهمة
+          </button>
+        </div>
       </div>
     </div>
   </section>
 </main>
-
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -88,10 +214,11 @@
           <div class="logo-icon">B</div>
           <div class="logo-text"><span>BTEC</span> HUB</div>
         </a>
-        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي لطلاب BTEC.</p>
+        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
         <div class="footer-social">
           <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -100,6 +227,7 @@
           <li><a href="services.html">تدقيق الواجبات</a></li>
           <li><a href="services.html">إعداد التقارير</a></li>
           <li><a href="services.html">الشرح والتوجيه</a></li>
+          <li><a href="services.html">مراجعة المشاريع</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -115,6 +243,7 @@
         <h4>المنصة</h4>
         <ul class="footer-links">
           <li><a href="study.html">مواد الدراسة</a></li>
+          <li><a href="past-assignments.html">مهمات سابقة</a></li>
           <li><a href="faq.html">الأسئلة الشائعة</a></li>
           <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
@@ -122,30 +251,39 @@
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">
-        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.<br>
-        <span style="font-size:0.85em;opacity:0.8;">تم التطوير بواسطة <strong>ورد البصول</strong></span>
+        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.
+        <br><span style="font-size:0.85em;opacity:0.85;margin-top:4px;display:inline-block;">
+          تم التطوير بواسطة <strong style="color:var(--primary-light);">ورد البصول</strong>
+        </span>
       </p>
+      <div class="footer-bottom-links">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">شروط الاستخدام</a>
+        <a href="#">الدعم الأكاديمي</a>
+      </div>
     </div>
   </div>
 </footer>
 
+<!-- Cart Sidebar -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <div class="cart-title"><i class="fas fa-shopping-cart"></i> السلة</div>
+    <div class="cart-title"><i class="fas fa-shopping-cart"></i> <span>السلة</span></div>
     <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
   </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
+<!-- BTEC AI Assistant -->
 <div class="assistant-fab" id="assistantFab">
   <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
   <div class="assistant-tooltip">BTEC Assistant</div>
 </div>
 <div class="assistant-window" id="assistantWindow">
   <div class="assistant-header">
-    <div class="assistant-avatar">🤖</div>
+    <div class="assistant-avatar">&#129302;</div>
     <div class="assistant-info">
       <div class="assistant-name">BTEC Assistant</div>
       <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
@@ -160,11 +298,17 @@
   </div>
 </div>
 
+<!-- WhatsApp FAB -->
 <div class="whatsapp-fab">
   <div class="whatsapp-tooltip">تواصل معنا</div>
-  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </div>
-<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn" title="للأعلى"><i class="fas fa-chevron-up"></i></button>
+
 <script src="main.js"></script>
 <script src="cart.js"></script>
 <script src="assistant.js"></script>
@@ -172,7 +316,25 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
     document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
+    document.getElementById('mobileLangBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
+    document.getElementById('mobileThemeBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
   });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.getAttribute('data-filter');
+      document.querySelectorAll('.assignment-card').forEach(card => {
+        card.style.display = (f==='all' || card.getAttribute('data-category')===f) ? '' : 'none';
+      });
+    });
+  });
+});
+</script>
+
 </body>
 </html>

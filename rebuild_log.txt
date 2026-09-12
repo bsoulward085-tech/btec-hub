@@ -1,0 +1,7 @@
+OK: index.html
+OK: services.html
+OK: specializations.html
+OK: study.html
+OK: past-assignments.html
+OK: faq.html
+OK: contact.html
