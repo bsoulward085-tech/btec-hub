@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTEC HUB – مواد الدراسة والشروحات</title>
+  <title>BTEC HUB – مواد الدراسة</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="components.css">
 </head>
 <body>
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
-
 <nav class="navbar navbar-blur" id="navbar">
   <div class="navbar-inner">
     <a href="index.html" class="navbar-logo">
@@ -21,23 +20,22 @@
       <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
     </a>
     <ul class="navbar-nav">
-      <li><a href="index.html" class="nav-link" data-page="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-      <li><a href="services.html" class="nav-link" data-page="services.html"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-      <li><a href="specializations.html" class="nav-link" data-page="specializations.html"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-      <li><a href="study.html" class="nav-link active" data-page="study.html"><i class="fas fa-book-open"></i> الدراسة</a></li>
-      <li><a href="past-assignments.html" class="nav-link" data-page="past-assignments.html"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-      <li><a href="faq.html" class="nav-link" data-page="faq.html"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-      <li><a href="contact.html" class="nav-link" data-page="contact.html"><i class="fas fa-envelope"></i> تواصل</a></li>
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+      <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
+      <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+      <li><a href="study.html" class="nav-link active"><i class="fas fa-book-open"></i> الدراسة</a></li>
+      <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+      <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
     </ul>
     <div class="navbar-actions">
-      <button class="lang-toggle" onclick="window.BtecMain?.toggleLanguage()">🌐 <span id="langText">EN</span></button>
-      <button class="theme-toggle" onclick="window.BtecMain?.toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
+      <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
+      <button class="theme-toggle" id="themeToggleBtn"><i id="themeIcon" class="fas fa-sun"></i></button>
       <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
       <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
-
 <div class="mobile-nav" id="mobileNav">
   <ul class="mobile-nav-links">
     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
@@ -45,8 +43,8 @@
     <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
     <li><a href="study.html" class="nav-link active"><i class="fas fa-book-open"></i> الدراسة</a></li>
     <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
-    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل معنا</a></li>
+    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
   </ul>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
@@ -59,17 +57,8 @@
       <p>شروحات مفصلة، ملخصات، وموارد تعليمية لمختلف تخصصات BTEC</p>
     </div>
   </div>
-
   <section class="section">
     <div class="container">
-      
-      <div class="info-banner reveal" style="background:rgba(14,165,233,0.1); border-color:rgba(14,165,233,0.3);">
-        <span class="info-banner-icon">ℹ️</span>
-        <p class="info-banner-text">
-          <strong>ملاحظة:</strong> هذه المواد مقدمة لأغراض مرجعية وتعليمية لمساعدتك على فهم متطلبات وحدات BTEC بشكل أفضل.
-        </p>
-      </div>
-
       <div class="filter-bar reveal" style="justify-content:space-between;">
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <button class="filter-btn active" data-filter="all">الكل</button>
@@ -80,147 +69,16 @@
         </div>
         <div class="search-box">
           <i class="fas fa-search search-icon"></i>
-          <input type="text" id="studySearch" placeholder="ابحث عن درس أو مادة...">
+          <input type="text" id="studySearch" placeholder="ابحث عن درس...">
         </div>
       </div>
-
       <div class="grid-2" id="studyGrid">
-        <!-- Business 1 -->
-        <div class="study-card reveal" data-category="business">
-          <div class="study-card-icon purple"><i class="fas fa-chart-pie"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">مقدمة في التسويق (Marketing)</h3>
-            <p class="study-card-desc">شرح مفصل لعناصر المزيج التسويقي وكيفية إعداد خطة تسويقية مبدئية.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> Business</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 2</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- Business 2 -->
-        <div class="study-card reveal" data-category="business">
-          <div class="study-card-icon purple"><i class="fas fa-users"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">إدارة الموارد البشرية</h3>
-            <p class="study-card-desc">ملخص لعمليات التوظيف، التدريب، وتقييم الأداء في المؤسسات.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> Business</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 8</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- IT 1 -->
-        <div class="study-card reveal" data-category="it">
-          <div class="study-card-icon blue"><i class="fas fa-network-wired"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">أساسيات شبكات الحاسب</h3>
-            <p class="study-card-desc">شرح لبروتوكولات الشبكات، طبقات OSI، ومكونات الشبكة الأساسية.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> IT</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 3</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- IT 2 -->
-        <div class="study-card reveal" data-category="it">
-          <div class="study-card-icon blue"><i class="fas fa-database"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">تصميم قواعد البيانات</h3>
-            <p class="study-card-desc">شرح عملي لمفاهيم Entity-Relationship Diagram و Normalization.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> IT</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 5</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- Health 1 -->
-        <div class="study-card reveal" data-category="health">
-          <div class="study-card-icon green"><i class="fas fa-child"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">مراحل نمو الإنسان</h3>
-            <p class="study-card-desc">ملخص لمراحل التطور الجسدي، العقلي، والاجتماعي للإنسان.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> Health</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 2</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 1</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- Health 2 -->
-        <div class="study-card reveal" data-category="health">
-          <div class="study-card-icon green"><i class="fas fa-shield-alt"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">الصحة والسلامة المهنية</h3>
-            <p class="study-card-desc">إرشادات الصحة والسلامة في بيئات الرعاية الصحية والاجتماعية.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> Health</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 3</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- Engineering 1 -->
-        <div class="study-card reveal" data-category="engineering">
-          <div class="study-card-icon amber"><i class="fas fa-drafting-compass"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">الرسم الهندسي الأساسي</h3>
-            <p class="study-card-desc">شرح لأساسيات قراءة وكتابة الرسومات الهندسية والأبعاد.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> Engineering</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 2</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
-        <!-- Engineering 2 -->
-        <div class="study-card reveal" data-category="engineering">
-          <div class="study-card-icon amber"><i class="fas fa-cogs"></i></div>
-          <div class="study-card-content">
-            <h3 class="study-card-title">مبادئ الميكانيكا</h3>
-            <p class="study-card-desc">مقدمة في القوى، العزوم، وقوانين الحركة وتطبيقاتها الهندسية.</p>
-            <div class="study-card-meta">
-              <span class="study-meta-item"><i class="fas fa-tag"></i> Engineering</span>
-              <span class="study-meta-item"><i class="fas fa-layer-group"></i> Level 3</span>
-              <span class="study-meta-item"><i class="fas fa-book"></i> Unit 6</span>
-            </div>
-          </div>
-          <div class="study-card-action">
-            <button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...', 'info')">عرض المادة</button>
-          </div>
-        </div>
-
+        <div class="study-card reveal" data-category="business"><div class="study-card-icon purple"><i class="fas fa-chart-pie"></i></div><div class="study-card-content"><h3 class="study-card-title">مقدمة في التسويق</h3><p class="study-card-desc">شرح مفصل لعناصر المزيج التسويقي 4Ps وكيفية إعداد خطة تسويقية.</p><div class="study-card-meta"><span class="study-meta-item"><i class="fas fa-tag"></i> Business</span><span class="study-meta-item"><i class="fas fa-book"></i> Unit 3</span></div></div><div class="study-card-action"><button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...','info')">عرض المادة</button></div></div>
+        <div class="study-card reveal" data-category="business"><div class="study-card-icon purple"><i class="fas fa-users"></i></div><div class="study-card-content"><h3 class="study-card-title">إدارة الموارد البشرية</h3><p class="study-card-desc">ملخص لعمليات التوظيف، التدريب، وتقييم الأداء في المؤسسات.</p><div class="study-card-meta"><span class="study-meta-item"><i class="fas fa-tag"></i> Business</span><span class="study-meta-item"><i class="fas fa-book"></i> Unit 8</span></div></div><div class="study-card-action"><button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...','info')">عرض المادة</button></div></div>
+        <div class="study-card reveal" data-category="it"><div class="study-card-icon blue"><i class="fas fa-network-wired"></i></div><div class="study-card-content"><h3 class="study-card-title">أساسيات شبكات الحاسب</h3><p class="study-card-desc">شرح لبروتوكولات الشبكات، طبقات OSI، ومكونات الشبكة الأساسية.</p><div class="study-card-meta"><span class="study-meta-item"><i class="fas fa-tag"></i> IT</span><span class="study-meta-item"><i class="fas fa-book"></i> Unit 3</span></div></div><div class="study-card-action"><button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...','info')">عرض المادة</button></div></div>
+        <div class="study-card reveal" data-category="it"><div class="study-card-icon blue"><i class="fas fa-database"></i></div><div class="study-card-content"><h3 class="study-card-title">تصميم قواعد البيانات</h3><p class="study-card-desc">شرح عملي لمفاهيم ERD و Normalization واستعلامات SQL.</p><div class="study-card-meta"><span class="study-meta-item"><i class="fas fa-tag"></i> IT</span><span class="study-meta-item"><i class="fas fa-book"></i> Unit 5</span></div></div><div class="study-card-action"><button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...','info')">عرض المادة</button></div></div>
+        <div class="study-card reveal" data-category="health"><div class="study-card-icon green"><i class="fas fa-child"></i></div><div class="study-card-content"><h3 class="study-card-title">مراحل نمو الإنسان</h3><p class="study-card-desc">ملخص لمراحل التطور الجسدي، العقلي، والاجتماعي للإنسان.</p><div class="study-card-meta"><span class="study-meta-item"><i class="fas fa-tag"></i> Health</span><span class="study-meta-item"><i class="fas fa-book"></i> Unit 1</span></div></div><div class="study-card-action"><button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...','info')">عرض المادة</button></div></div>
+        <div class="study-card reveal" data-category="engineering"><div class="study-card-icon amber"><i class="fas fa-drafting-compass"></i></div><div class="study-card-content"><h3 class="study-card-title">الرسم الهندسي الأساسي</h3><p class="study-card-desc">شرح لأساسيات قراءة وكتابة الرسومات الهندسية والأبعاد.</p><div class="study-card-meta"><span class="study-meta-item"><i class="fas fa-tag"></i> Engineering</span><span class="study-meta-item"><i class="fas fa-book"></i> Unit 2</span></div></div><div class="study-card-action"><button class="btn btn-ghost" onclick="window.BtecMain?.showToast('سيتم توفير المادة قريباً...','info')">عرض المادة</button></div></div>
       </div>
     </div>
   </section>
@@ -230,29 +88,74 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo"><div class="logo-icon">B</div><div class="logo-text"><span>BTEC</span> HUB</div></a>
+        <a href="index.html" class="footer-logo">
+          <div class="logo-icon">B</div>
+          <div class="logo-text"><span>BTEC</span> HUB</div>
+        </a>
         <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي لطلاب BTEC.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
-      <div class="footer-col"><h4>الخدمات</h4><ul class="footer-links"><li><a href="services.html">الخدمات</a></li></ul></div>
-      <div class="footer-col"><h4>التخصصات</h4><ul class="footer-links"><li><a href="specializations.html">التخصصات</a></li></ul></div>
-      <div class="footer-col"><h4>المنصة</h4><ul class="footer-links"><li><a href="faq.html">الأسئلة الشائعة</a></li><li><a href="contact.html">تواصل معنا</a></li></ul></div>
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">تدقيق الواجبات</a></li>
+          <li><a href="services.html">إعداد التقارير</a></li>
+          <li><a href="services.html">الشرح والتوجيه</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>التخصصات</h4>
+        <ul class="footer-links">
+          <li><a href="specializations.html#business">Business</a></li>
+          <li><a href="specializations.html#it">IT</a></li>
+          <li><a href="specializations.html#health">Health &amp; Social Care</a></li>
+          <li><a href="specializations.html#engineering">Engineering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>المنصة</h4>
+        <ul class="footer-links">
+          <li><a href="study.html">مواد الدراسة</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 BTEC HUB. جميع الحقوق محفوظة.</p>
+      <p class="footer-copy">
+        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.<br>
+        <span style="font-size:0.85em;opacity:0.8;">تم التطوير بواسطة <strong>ورد البصول</strong></span>
+      </p>
     </div>
   </div>
 </footer>
 
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header"><div class="cart-title"><i class="fas fa-shopping-cart"></i> السلة</div><button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button></div>
+  <div class="cart-header">
+    <div class="cart-title"><i class="fas fa-shopping-cart"></i> السلة</div>
+    <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+  </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
-<div class="assistant-fab" id="assistantFab"><button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button></div>
+<div class="assistant-fab" id="assistantFab">
+  <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
+  <div class="assistant-tooltip">BTEC Assistant</div>
+</div>
 <div class="assistant-window" id="assistantWindow">
-  <div class="assistant-header"><div class="assistant-avatar">🤖</div><div class="assistant-info"><div class="assistant-name">BTEC Assistant</div></div></div>
+  <div class="assistant-header">
+    <div class="assistant-avatar">🤖</div>
+    <div class="assistant-info">
+      <div class="assistant-name">BTEC Assistant</div>
+      <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
+    </div>
+    <button class="assistant-minimize" id="assistantMinimize"><i class="fas fa-minus"></i></button>
+  </div>
   <div class="assistant-messages" id="assistantMessages"></div>
   <div class="quick-replies" id="quickReplies"></div>
   <div class="assistant-input-area">
@@ -261,41 +164,19 @@
   </div>
 </div>
 
-<div class="whatsapp-fab"><a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn"><i class="fab fa-whatsapp"></i></a></div>
+<div class="whatsapp-fab">
+  <div class="whatsapp-tooltip">تواصل معنا</div>
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn"><i class="fab fa-whatsapp"></i></a>
+</div>
 <button class="scroll-top" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
-
-<script src="js/main.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/assistant.js"></script>
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="assistant.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    window.BtecMain?.initFilters('.study-card', '.study-card'); // Use standard class
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-        document.querySelectorAll('.study-card').forEach(card => {
-          if(filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    const searchInput = document.getElementById('studySearch');
-    searchInput?.addEventListener('input', () => {
-      const q = searchInput.value.toLowerCase();
-      document.querySelectorAll('.study-card').forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(q) ? '' : 'none';
-      });
-    });
+    document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
+    document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
   });
 </script>
 </body>
 </html>
-

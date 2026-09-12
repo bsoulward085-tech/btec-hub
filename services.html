@@ -7,14 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="components.css">
 </head>
 <body>
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
-
-<!-- NAVBAR -->
 <nav class="navbar navbar-blur" id="navbar">
   <div class="navbar-inner">
     <a href="index.html" class="navbar-logo">
@@ -22,17 +20,17 @@
       <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
     </a>
     <ul class="navbar-nav">
-      <li><a href="index.html" class="nav-link" data-page="index.html"><i class="fas fa-home"></i> <span data-i18n="navHome">الرئيسية</span></a></li>
-      <li><a href="services.html" class="nav-link active" data-page="services.html"><i class="fas fa-briefcase"></i> <span data-i18n="navServices">الخدمات</span></a></li>
-      <li><a href="specializations.html" class="nav-link" data-page="specializations.html"><i class="fas fa-graduation-cap"></i> <span data-i18n="navSpecs">التخصصات</span></a></li>
-      <li><a href="study.html" class="nav-link" data-page="study.html"><i class="fas fa-book-open"></i> <span data-i18n="navStudy">الدراسة</span></a></li>
-      <li><a href="past-assignments.html" class="nav-link" data-page="past-assignments.html"><i class="fas fa-folder-open"></i> <span data-i18n="navAssignments">مهمات سابقة</span></a></li>
-      <li><a href="faq.html" class="nav-link" data-page="faq.html"><i class="fas fa-question-circle"></i> <span data-i18n="navFAQ">الأسئلة</span></a></li>
-      <li><a href="contact.html" class="nav-link" data-page="contact.html"><i class="fas fa-envelope"></i> <span data-i18n="navContact">تواصل</span></a></li>
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+      <li><a href="services.html" class="nav-link active"><i class="fas fa-briefcase"></i> الخدمات</a></li>
+      <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+      <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
+      <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+      <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
     </ul>
     <div class="navbar-actions">
-      <button class="lang-toggle" onclick="window.BtecMain?.toggleLanguage()">🌐 <span id="langText">EN</span></button>
-      <button class="theme-toggle" onclick="window.BtecMain?.toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
+      <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
+      <button class="theme-toggle" id="themeToggleBtn"><i id="themeIcon" class="fas fa-sun"></i></button>
       <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
       <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     </div>
@@ -45,31 +43,23 @@
     <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
     <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
     <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
-    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل معنا</a></li>
+    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
   </ul>
-  <div class="mobile-nav-actions">
-    <button class="lang-toggle" onclick="window.BtecMain?.toggleLanguage()">🌐 <span id="mobileLangText">EN</span></button>
-    <button class="theme-toggle" onclick="window.BtecMain?.toggleTheme()"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
-  </div>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
 
 <main>
-  <!-- Page Hero -->
   <div class="page-hero">
     <div class="container page-hero-content">
       <div class="section-badge mb-lg"><i class="fas fa-briefcase"></i> خدماتنا</div>
       <h1>خدماتنا الأكاديمية</h1>
-      <p>اختر الخدمة المناسبة لاحتياجك وأضفها للسلة لإرسالها مباشرة عبر واتساب</p>
+      <p>اختر الخدمة المناسبة وأضفها للسلة لإرسالها عبر واتساب</p>
     </div>
   </div>
-
   <section class="section">
     <div class="container">
-
-      <!-- Filter & Search -->
-      <div class="filter-bar reveal" style="justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <div class="filter-bar reveal" style="justify-content:space-between;flex-wrap:wrap;gap:1rem;">
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
           <button class="filter-btn active" data-filter="all">🔥 الكل</button>
           <button class="filter-btn" data-filter="business">💼 Business</button>
@@ -83,456 +73,110 @@
         </div>
       </div>
 
-      <!-- Info Banner -->
-      <div class="info-banner reveal" style="background:linear-gradient(135deg,rgba(108,63,197,.15),rgba(14,165,233,.1));border:1px solid rgba(108,63,197,.25);border-radius:var(--radius-xl);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;backdrop-filter:blur(10px);">
-        <span style="font-size:2rem">ℹ️</span>
-        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;">
-          <strong style="color:var(--primary-light)">تنبيه:</strong> الأسعار النهائية تُحدَّد عبر التواصل المباشر مع الفريق بعد إرسال السلة. أضف الخدمات التي تريدها ثم أرسل طلبك عبر واتساب.
-        </p>
-      </div>
-
-      <!-- Services Grid -->
       <div class="services-grid" id="servicesGrid">
 
-        <!-- ── Business Services ── -->
         <div class="service-card reveal" data-category="business">
-          <div class="service-card-header">
-            <div class="service-icon purple"><i class="fas fa-file-alt"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-primary">Business</span>
-              <span class="badge badge-blue">Unit 6</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">تدقيق واجب Unit 6</h3>
-            <p class="service-desc">مراجعة احترافية لواجب Unit 6 (Business Decision Making) مع ملاحظات تفصيلية قابلة للتطبيق</p>
-            <ul class="service-features">
-              <li>مراجعة وفق معايير BTEC الرسمية</li>
-              <li>ملاحظات واضحة على كل نقطة</li>
-              <li>نقاط القوة والضعف</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-              <span class="price-note">يُحدَّد حسب حجم العمل</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="window.BtecMain && document.getElementById('assistantFab').click()">
-                <i class="fas fa-robot"></i>
-              </button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="biz-unit6-review"
-                data-name="تدقيق واجب Unit 6 – Business"
-                data-price="contact"
-                data-unit="Business – Unit 6"
-                data-icon="📝">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon purple"><i class="fas fa-file-alt"></i></div><div class="service-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Unit 6</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">تدقيق واجب Unit 6</h3><p class="service-desc">مراجعة احترافية لواجب Unit 6 مع ملاحظات تفصيلية وفق معايير BTEC الرسمية.</p><ul class="service-features"><li>مراجعة وفق معايير BTEC</li><li>ملاحظات واضحة على كل نقطة</li><li>نقاط القوة والضعف</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="biz-unit6" data-name="تدقيق واجب Unit 6 – Business" data-price="contact" data-unit="Business – Unit 6" data-icon="📝"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
         <div class="service-card reveal" data-category="business">
-          <div class="service-card-header">
-            <div class="service-icon blue"><i class="fas fa-chart-bar"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-primary">Business</span>
-              <span class="badge badge-blue">Unit 2</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">Business Plan Report</h3>
-            <p class="service-desc">مساعدة في صياغة وتنظيم تقرير خطة العمل لـ Unit 2 وفق المتطلبات الأكاديمية</p>
-            <ul class="service-features">
-              <li>هيكل التقرير الصحيح</li>
-              <li>مراجعة المحتوى والتحليل</li>
-              <li>ملاحظات على التنسيق والعرض</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()">
-                <i class="fas fa-robot"></i>
-              </button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="biz-unit2-business-plan"
-                data-name="Business Plan Report – Unit 2"
-                data-price="contact"
-                data-unit="Business – Unit 2"
-                data-icon="📊">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon blue"><i class="fas fa-chart-bar"></i></div><div class="service-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Unit 2</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">Business Plan Report</h3><p class="service-desc">مساعدة في صياغة وتنظيم تقرير خطة العمل لـ Unit 2 وفق المتطلبات الأكاديمية.</p><ul class="service-features"><li>هيكل التقرير الصحيح</li><li>مراجعة المحتوى والتحليل</li><li>ملاحظات على التنسيق</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="biz-unit2-plan" data-name="Business Plan Report – Unit 2" data-price="contact" data-unit="Business – Unit 2" data-icon="📊"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
         <div class="service-card reveal" data-category="business">
-          <div class="service-card-header">
-            <div class="service-icon green"><i class="fas fa-bullhorn"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-primary">Business</span>
-              <span class="badge badge-blue">Unit 3</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">Marketing Campaign Review</h3>
-            <p class="service-desc">مراجعة مشروع حملة التسويق لـ Unit 3 مع تقييم التحليل واستراتيجية التسويق</p>
-            <ul class="service-features">
-              <li>تقييم استراتيجية التسويق</li>
-              <li>مراجعة المزيج التسويقي 4Ps</li>
-              <li>اقتراحات للتحسين</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="biz-unit3-marketing"
-                data-name="Marketing Campaign Review – Unit 3"
-                data-price="contact"
-                data-unit="Business – Unit 3"
-                data-icon="📣">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal" data-category="business">
-          <div class="service-card-header">
-            <div class="service-icon amber"><i class="fas fa-users"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-primary">Business</span>
-              <span class="badge badge-blue">Unit 4</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">HR Management Assignment</h3>
-            <p class="service-desc">مراجعة واجب إدارة الموارد البشرية لـ Unit 4 وتقديم ملاحظات على التحليل</p>
-            <ul class="service-features">
-              <li>تقييم تحليل HR</li>
-              <li>مراجعة السياسات والإجراءات</li>
-              <li>ملاحظات أكاديمية دقيقة</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="biz-unit4-hr"
-                data-name="HR Management Assignment – Unit 4"
-                data-price="contact"
-                data-unit="Business – Unit 4"
-                data-icon="👥">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── IT Services ── -->
-        <div class="service-card reveal" data-category="it">
-          <div class="service-card-header">
-            <div class="service-icon blue"><i class="fas fa-code"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-blue">IT</span>
-              <span class="badge badge-green">Unit 1</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">IT Systems Review – Unit 1</h3>
-            <p class="service-desc">مراجعة واجب أنظمة تكنولوجيا المعلومات لـ Unit 1 وتقييم الفهم والتحليل</p>
-            <ul class="service-features">
-              <li>مراجعة تحليل الأنظمة</li>
-              <li>تقييم مكونات الحلول التقنية</li>
-              <li>ملاحظات على الصياغة الأكاديمية</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="it-unit1-systems"
-                data-name="IT Systems Review – Unit 1"
-                data-price="contact"
-                data-unit="IT – Unit 1"
-                data-icon="💻">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon green"><i class="fas fa-bullhorn"></i></div><div class="service-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Unit 3</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">Marketing Campaign Review</h3><p class="service-desc">مراجعة مشروع حملة التسويق مع تقييم المزيج التسويقي 4Ps.</p><ul class="service-features"><li>تقييم استراتيجية التسويق</li><li>مراجعة المزيج التسويقي 4Ps</li><li>اقتراحات للتحسين</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="biz-unit3-mkt" data-name="Marketing Campaign Review – Unit 3" data-price="contact" data-unit="Business – Unit 3" data-icon="📣"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
         <div class="service-card reveal" data-category="it">
-          <div class="service-card-header">
-            <div class="service-icon purple"><i class="fas fa-network-wired"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-blue">IT</span>
-              <span class="badge badge-green">Unit 3</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">Networking Project Review</h3>
-            <p class="service-desc">مراجعة مشروع الشبكات لـ Unit 3 مع تقييم التصميم والتوثيق</p>
-            <ul class="service-features">
-              <li>تقييم تصميم الشبكة</li>
-              <li>مراجعة البروتوكولات والأمان</li>
-              <li>ملاحظات على التوثيق</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="it-unit3-networking"
-                data-name="Networking Project Review – Unit 3"
-                data-price="contact"
-                data-unit="IT – Unit 3"
-                data-icon="🌐">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon blue"><i class="fas fa-network-wired"></i></div><div class="service-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Unit 3</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">Networking Project Review</h3><p class="service-desc">مراجعة مشروع الشبكات مع تقييم التصميم والتوثيق.</p><ul class="service-features"><li>تقييم تصميم الشبكة</li><li>مراجعة البروتوكولات والأمان</li><li>ملاحظات على التوثيق</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="it-unit3-net" data-name="Networking Project Review – Unit 3" data-price="contact" data-unit="IT – Unit 3" data-icon="🌐"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
         <div class="service-card reveal" data-category="it">
-          <div class="service-card-header">
-            <div class="service-icon green"><i class="fas fa-database"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-blue">IT</span>
-              <span class="badge badge-green">Unit 5</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">Database Design Review</h3>
-            <p class="service-desc">مراجعة تصميم قواعد البيانات لـ Unit 5 مع تقييم ERD والـ Normalization</p>
-            <ul class="service-features">
-              <li>مراجعة مخطط ERD</li>
-              <li>تقييم التطبيع Normalization</li>
-              <li>ملاحظات على SQL والاستعلامات</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="it-unit5-database"
-                data-name="Database Design Review – Unit 5"
-                data-price="contact"
-                data-unit="IT – Unit 5"
-                data-icon="🗃️">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon green"><i class="fas fa-database"></i></div><div class="service-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Unit 5</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">Database Design Review</h3><p class="service-desc">مراجعة تصميم قواعد البيانات مع تقييم ERD والـ Normalization.</p><ul class="service-features"><li>مراجعة مخطط ERD</li><li>تقييم التطبيع</li><li>ملاحظات على استعلامات SQL</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="it-unit5-db" data-name="Database Design Review – Unit 5" data-price="contact" data-unit="IT – Unit 5" data-icon="🗃️"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
-        <!-- ── Health Services ── -->
         <div class="service-card reveal" data-category="health">
-          <div class="service-card-header">
-            <div class="service-icon green"><i class="fas fa-heartbeat"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-green">Health</span>
-              <span class="badge badge-amber">Unit 1</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">Health & Social Care Unit 1</h3>
-            <p class="service-desc">مراجعة واجب Unit 1 (Human Lifespan Development) مع ملاحظات تفصيلية</p>
-            <ul class="service-features">
-              <li>تقييم تحليل مراحل التطور</li>
-              <li>مراجعة النظريات المستخدمة</li>
-              <li>ملاحظات أكاديمية متخصصة</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="health-unit1"
-                data-name="Health & Social Care – Unit 1"
-                data-price="contact"
-                data-unit="Health & Social Care – Unit 1"
-                data-icon="🏥">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon green"><i class="fas fa-heartbeat"></i></div><div class="service-tags"><span class="badge badge-green">Health</span><span class="badge badge-amber">Unit 1</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">Health &amp; Social Care – Unit 1</h3><p class="service-desc">مراجعة واجب Unit 1 (Human Lifespan Development) مع ملاحظات تفصيلية.</p><ul class="service-features"><li>تقييم تحليل مراحل التطور</li><li>مراجعة النظريات المستخدمة</li><li>ملاحظات أكاديمية متخصصة</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="health-unit1" data-name="Health – Unit 1 Review" data-price="contact" data-unit="Health – Unit 1" data-icon="🏥"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
-        <!-- ── Engineering Services ── -->
         <div class="service-card reveal" data-category="engineering">
-          <div class="service-card-header">
-            <div class="service-icon amber"><i class="fas fa-cogs"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-amber">Engineering</span>
-              <span class="badge badge-primary">Unit 2</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">Engineering Drawing Review</h3>
-            <p class="service-desc">مراجعة رسومات هندسية ومشاريع Engineering لـ Unit 2 مع تقييم متخصص</p>
-            <ul class="service-features">
-              <li>مراجعة المخططات والتصاميم</li>
-              <li>تقييم الحسابات الهندسية</li>
-              <li>ملاحظات على التوثيق</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="eng-unit2-drawing"
-                data-name="Engineering Drawing Review – Unit 2"
-                data-price="contact"
-                data-unit="Engineering – Unit 2"
-                data-icon="⚙️">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── General Services ── -->
-        <div class="service-card reveal" data-category="business">
-          <div class="service-card-header">
-            <div class="service-icon purple"><i class="fas fa-chalkboard-teacher"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-primary">عام</span>
-              <span class="badge badge-green">متاح</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">جلسة شرح فردية</h3>
-            <p class="service-desc">جلسة شرح فردية لأي وحدة أو موضوع تحتاج فهمه بشكل أعمق مع متخصص</p>
-            <ul class="service-features">
-              <li>شرح مخصص لاحتياجك</li>
-              <li>أمثلة عملية وتطبيقات</li>
-              <li>إجابة على جميع أسئلتك</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="tutoring-session"
-                data-name="جلسة شرح فردية"
-                data-price="contact"
-                data-unit="خدمة عامة"
-                data-icon="🎯">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon amber"><i class="fas fa-cogs"></i></div><div class="service-tags"><span class="badge badge-amber">Engineering</span><span class="badge badge-primary">Unit 2</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">Engineering Drawing Review</h3><p class="service-desc">مراجعة رسومات هندسية ومشاريع Engineering مع تقييم متخصص.</p><ul class="service-features"><li>مراجعة المخططات والتصاميم</li><li>تقييم الحسابات الهندسية</li><li>ملاحظات على التوثيق</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="eng-unit2-draw" data-name="Engineering Drawing Review – Unit 2" data-price="contact" data-unit="Engineering – Unit 2" data-icon="⚙️"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
         <div class="service-card reveal" data-category="business">
-          <div class="service-card-header">
-            <div class="service-icon blue"><i class="fas fa-file-signature"></i></div>
-            <div class="service-tags">
-              <span class="badge badge-primary">عام</span>
-              <span class="badge badge-green">متاح</span>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <h3 class="service-name">مراجعة قبل التسليم</h3>
-            <p class="service-desc">فحص شامل للمشروع قبل التسليم النهائي للتأكد من استيفاء جميع متطلبات الوحدة</p>
-            <ul class="service-features">
-              <li>فحص استيفاء المعايير</li>
-              <li>مراجعة التنسيق والمراجع</li>
-              <li>تقرير جاهزية التسليم</li>
-            </ul>
-          </div>
-          <div class="service-card-footer">
-            <div class="service-price">
-              <span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span>
-            </div>
-            <div class="service-card-actions">
-              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('assistantFab').click()"><i class="fas fa-robot"></i></button>
-              <button class="btn btn-sm btn-primary"
-                data-add-to-cart="pre-submission-review"
-                data-name="مراجعة قبل التسليم"
-                data-price="contact"
-                data-unit="خدمة عامة"
-                data-icon="✅">
-                <i class="fas fa-cart-plus"></i> أضف للسلة
-              </button>
-            </div>
-          </div>
+          <div class="service-card-header"><div class="service-icon purple"><i class="fas fa-chalkboard-teacher"></i></div><div class="service-tags"><span class="badge badge-primary">عام</span><span class="badge badge-green">متاح</span></div></div>
+          <div class="service-card-body"><h3 class="service-name">جلسة شرح فردية</h3><p class="service-desc">جلسة شرح فردية لأي وحدة أو موضوع تحتاج فهمه بشكل أعمق.</p><ul class="service-features"><li>شرح مخصص لاحتياجك</li><li>أمثلة عملية وتطبيقات</li><li>إجابة على جميع أسئلتك</li></ul></div>
+          <div class="service-card-footer"><div class="service-price"><span class="price-contact"><i class="fab fa-whatsapp"></i> تواصل للسعر</span></div><div class="service-card-actions"><button class="btn btn-sm btn-primary" data-add-to-cart="tutoring" data-name="جلسة شرح فردية" data-price="contact" data-unit="خدمة عامة" data-icon="🎯"><i class="fas fa-cart-plus"></i> أضف للسلة</button></div></div>
         </div>
 
-      </div><!-- /services-grid -->
-
-      <!-- CTA -->
-      <div class="cta-section reveal" style="margin-top:4rem;">
-        <div class="cta-content">
-          <h2>خدمتك غير موجودة؟</h2>
-          <p>تواصل معنا مباشرة وسنساعدك في تحديد الخدمة المناسبة لاحتياجك</p>
-          <div class="cta-actions">
-            <a href="https://wa.me/962786003597" target="_blank" class="btn-cta-white">
-              <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-            </a>
-          </div>
-        </div>
       </div>
-
     </div>
   </section>
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo"><div class="logo-icon">B</div><div class="logo-text"><span>BTEC</span> HUB</div></a>
+        <a href="index.html" class="footer-logo">
+          <div class="logo-icon">B</div>
+          <div class="logo-text"><span>BTEC</span> HUB</div>
+        </a>
         <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي لطلاب BTEC.</p>
         <div class="footer-social">
-          <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div class="footer-col"><h4>الخدمات</h4><ul class="footer-links"><li><a href="services.html">تدقيق الواجبات</a></li><li><a href="services.html">إعداد التقارير</a></li><li><a href="services.html">الشرح والتوجيه</a></li></ul></div>
-      <div class="footer-col"><h4>التخصصات</h4><ul class="footer-links"><li><a href="specializations.html">Business</a></li><li><a href="specializations.html">IT</a></li><li><a href="specializations.html">Health & Social Care</a></li><li><a href="specializations.html">Engineering</a></li></ul></div>
-      <div class="footer-col"><h4>المنصة</h4><ul class="footer-links"><li><a href="study.html">مواد الدراسة</a></li><li><a href="faq.html">الأسئلة الشائعة</a></li><li><a href="contact.html">تواصل معنا</a></li></ul></div>
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">تدقيق الواجبات</a></li>
+          <li><a href="services.html">إعداد التقارير</a></li>
+          <li><a href="services.html">الشرح والتوجيه</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>التخصصات</h4>
+        <ul class="footer-links">
+          <li><a href="specializations.html#business">Business</a></li>
+          <li><a href="specializations.html#it">IT</a></li>
+          <li><a href="specializations.html#health">Health &amp; Social Care</a></li>
+          <li><a href="specializations.html#engineering">Engineering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>المنصة</h4>
+        <ul class="footer-links">
+          <li><a href="study.html">مواد الدراسة</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 BTEC HUB. جميع الحقوق محفوظة.</p>
-      <div class="footer-bottom-links"><a href="#">الخصوصية</a><a href="#">الشروط</a></div>
+      <p class="footer-copy">
+        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.<br>
+        <span style="font-size:0.85em;opacity:0.8;">تم التطوير بواسطة <strong>ورد البصول</strong></span>
+      </p>
     </div>
   </div>
 </footer>
 
-<!-- Cart -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
@@ -543,9 +187,8 @@
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
-<!-- Assistant -->
 <div class="assistant-fab" id="assistantFab">
-  <button class="assistant-fab-btn" id="assistantFab" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
+  <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
   <div class="assistant-tooltip">BTEC Assistant</div>
 </div>
 <div class="assistant-window" id="assistantWindow">
@@ -565,23 +208,19 @@
   </div>
 </div>
 
-<!-- WhatsApp FAB -->
 <div class="whatsapp-fab">
   <div class="whatsapp-tooltip">تواصل معنا</div>
   <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn"><i class="fab fa-whatsapp"></i></a>
 </div>
-
 <button class="scroll-top" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
-
-<script src="js/main.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/assistant.js"></script>
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="assistant.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    window.BtecMain?.initFilters('.services-grid', '.service-card');
-    window.BtecMain?.initSearch('serviceSearch', '.service-card', ['.service-name', '.service-desc', '.badge']);
+    document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
+    document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
   });
 </script>
 </body>
 </html>
-
