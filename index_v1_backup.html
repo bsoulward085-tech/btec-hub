@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTEC HUB – منصة الخدمات والموارد التعليمية لطلاب BTEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+
+<!-- ── NAVBAR WITH NIMBUS LIQUID GLASS PILL ── -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo" dir="ltr">
+      <div class="logo-icon">B</div>
+      <div class="logo-text" dir="ltr">
+        <span class="wave-brand" id="waveBrand" dir="ltr">
+          <span class="wave-char" style="--i:1">B</span>
+          <span class="wave-char" style="--i:2">T</span>
+          <span class="wave-char" style="--i:3">E</span>
+          <span class="wave-char" style="--i:4">C</span>
+          <span class="wave-space">&nbsp;</span>
+          <span class="wave-char" style="--i:5">H</span>
+          <span class="wave-char" style="--i:6">U</span>
+          <span class="wave-char" style="--i:7">B</span>
+        </span>
+        <span class="logo-sub">منصة الدعم الأكاديمي</span>
+      </div>
+    </a>
+
+    <!-- Nimbus Liquid Glass Floating Pill -->
+    <div class="nimbus-wrapper">
+      <div class="nimbus-nav" id="nimbusNav" data-tone="light">
+        <div class="nimbus-glass"></div>
+        <div class="nimbus-drop" id="nimbusDrop"></div>
+        <a href="index.html" class="nimbus-item active" data-fx="glow">
+          <span class="nv-ico" data-fx="glow"><i class="fas fa-home"></i></span>
+          <span class="nimbus-label">الرئيسية</span>
+        </a>
+        <a href="services.html" class="nimbus-item " data-fx="spin">
+          <span class="nv-ico" data-fx="spin"><i class="fas fa-briefcase"></i></span>
+          <span class="nimbus-label">الخدمات</span>
+        </a>
+        <a href="specializations.html" class="nimbus-item " data-fx="plane">
+          <span class="nv-ico" data-fx="plane"><i class="fas fa-graduation-cap"></i></span>
+          <span class="nimbus-label">التخصصات</span>
+        </a>
+        <a href="study.html" class="nimbus-item " data-fx="drop">
+          <span class="nv-ico" data-fx="drop"><i class="fas fa-book-open"></i></span>
+          <span class="nimbus-label">مواد الدراسة</span>
+        </a>
+        <a href="past-assignments.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-folder-open"></i></span>
+          <span class="nimbus-label">مهمات سابقة</span>
+        </a>
+        <a href="faq.html" class="nimbus-item " data-fx="wave">
+          <span class="nv-ico" data-fx="wave"><i class="fas fa-question-circle"></i></span>
+          <span class="nimbus-label">الأسئلة</span>
+        </a>
+        <a href="contact.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-envelope"></i></span>
+          <span class="nimbus-label">تواصل معنا</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="navbar-actions">
+      <a href="https://wa.me/962786003597" target="_blank" class="btn btn-sm btn-primary">
+        <i class="fab fa-whatsapp"></i> تواصل واتساب
+      </a>
+      <button class="cart-nav-btn" id="cartNavBtn" title="السلة">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MOBILE NAV DRAWER ── -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header" dir="ltr">
+    <div class="logo-text" dir="ltr">
+      <span class="wave-brand" dir="ltr">
+        <span class="wave-char" style="--i:1">B</span>
+        <span class="wave-char" style="--i:2">T</span>
+        <span class="wave-char" style="--i:3">E</span>
+        <span class="wave-char" style="--i:4">C</span>
+        <span class="wave-space">&nbsp;</span>
+        <span class="wave-char" style="--i:5">H</span>
+        <span class="wave-char" style="--i:6">U</span>
+        <span class="wave-char" style="--i:7">B</span>
+      </span>
+    </div>
+    <button class="cart-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="services.html" class="nav-link "><i class="fas fa-briefcase"></i> الخدمات</a></li>
+    <li><a href="specializations.html" class="nav-link "><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+    <li><a href="study.html" class="nav-link "><i class="fas fa-book-open"></i> مواد الدراسة</a></li>
+    <li><a href="past-assignments.html" class="nav-link "><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+    <li><a href="faq.html" class="nav-link "><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+    <li><a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> تواصل معنا</a></li>
+  </ul>
+  <div style="padding: 20px;">
+    <a href="https://wa.me/962786003597" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center;">
+      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+    </a>
+  </div>
+</div>
+<div class="cart-overlay" id="mobileNavOverlay"></div>
+
+
+<main>
+  <!-- ── HERO SECTION (FULL DATA RAIN FLUID DYNAMICS + 3D CARDS + FLOATING WIDGETS) ── -->
+  <section class="hero" id="heroSection">
+    <!-- Full Data Rain Dual-Canvas Fluid Simulation (data-rain.tsx) -->
+    <div class="dr-root" id="dataRainRoot">
+      <canvas id="dataRainBloom" class="dr-bloom"></canvas>
+      <canvas id="dataRainMain" class="dr-main"></canvas>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="section-badge">
+          <span class="live-pulse-dot"></span>
+          <i class="fas fa-star" style="color:var(--primary)"></i> منصة رقم 1 لطلاب <span dir="ltr">BTEC</span> في الأردن والعالم العربي
+        </div>
+        <h1 class="hero-title">
+          ارتقِ بمستواك<br>
+          الأكاديمي مع<br>
+          <span class="wave-brand" dir="ltr">
+            <span class="wave-char" style="--i:1">B</span>
+            <span class="wave-char" style="--i:2">T</span>
+            <span class="wave-char" style="--i:3">E</span>
+            <span class="wave-char" style="--i:4">C</span>
+            <span class="wave-space">&nbsp;</span>
+            <span class="wave-char" style="--i:5">H</span>
+            <span class="wave-char" style="--i:6">U</span>
+            <span class="wave-char" style="--i:7">B</span>
+          </span>
+        </h1>
+        <p class="hero-desc">
+          حلول دراسية متكاملة، إعداد ومراجعة الواجبات وفق معايير Pearson (Pass, Merit, Distinction)، وتدقيق أكاديمي شامل يضمن خلو أبحاثك من الانتحال العلمي (Turnitin).
+        </p>
+        <div class="hero-actions">
+          <a href="services.html" class="btn btn-lg btn-primary">
+            <i class="fas fa-briefcase"></i> استعرض الخدمات
+          </a>
+          <a href="https://wa.me/962786003597" target="_blank" class="btn btn-lg btn-outline">
+            <i class="fab fa-whatsapp"></i> تواصل مباشر واتساب
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num" data-target="98.5%" dir="ltr">98.5%</span>
+            <span class="hero-stat-label">نسبة قبول بتقدير Distinction</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <span class="hero-stat-num" data-target="+1,400" dir="ltr">+1,400</span>
+            <span class="hero-stat-label">واجب وتقرير تم إنجازه</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <span class="hero-stat-num" data-target="100%" dir="ltr">100%</span>
+            <span class="hero-stat-label">أصالة معتمدة Turnitin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Perspective Floating Showcase with 4 Floating Widgets -->
+      <div class="hero-stage" id="heroStage">
+        <div class="hero-glow-aura"></div>
+
+        <!-- Floating Micro-Widget 1: Distinction -->
+        <div class="floating-widget fw-1" title="معايير التفوق">
+          <div class="fw-icon"><i class="fas fa-star"></i></div>
+          <span>تقدير Distinction A*</span>
+        </div>
+
+        <!-- Floating Micro-Widget 2: Turnitin -->
+        <div class="floating-widget fw-2" title="أصالة مضمونة">
+          <div class="fw-icon"><i class="fas fa-shield-alt"></i></div>
+          <span>Turnitin 0% أصالة 100%</span>
+        </div>
+
+        <!-- Floating Micro-Widget 3: Fast Delivery -->
+        <div class="floating-widget fw-3" title="سرعة الإنجاز">
+          <div class="fw-icon"><i class="fas fa-bolt"></i></div>
+          <span>تسليم سريع خلال 48 ساعة</span>
+        </div>
+
+        <!-- Floating Micro-Widget 4: Pearson Certified -->
+        <div class="floating-widget fw-4" title="اعتماد دولي">
+          <div class="fw-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span>معايير بيرسون الرسمية</span>
+        </div>
+
+        <!-- Card 1 (Front) -->
+        <div class="stage-card stage-card-1">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop&q=80" alt="Business Management" class="stage-card-img">
+          <span class="stage-card-tag">Business & Management</span>
+          <div class="stage-card-title">الوحدة 1: Exploring Business</div>
+          <p class="stage-card-desc">تحليل بيئة الأعمال وهياكل المنظمات واستراتيجيات أصحاب المصلحة وفق معايير P/M/D.</p>
+        </div>
+
+        <!-- Card 2 (Middle) -->
+        <div class="stage-card stage-card-2">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80" alt="Information Technology" class="stage-card-img">
+          <span class="stage-card-tag">Computing & IT</span>
+          <div class="stage-card-title">الوحدة 2: Relational Databases</div>
+          <p class="stage-card-desc">تصميم قواعد البيانات العلائقية ERD وتطبيع الجداول Normalization وكتابة استعلامات SQL.</p>
+        </div>
+
+        <!-- Card 3 (Back) -->
+        <div class="stage-card stage-card-3">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Engineering Principles" class="stage-card-img">
+          <span class="stage-card-tag">Engineering & CAD</span>
+          <div class="stage-card-title">الوحدة 3: Engineering Principles</div>
+          <p class="stage-card-desc">الميكانيكا التطبيقية، تحليل الدوائر الكهربائية، ونمذجة ثلاثية الأبعاد CAD متقدمة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INK ORBIT BENTO GRID (LIVE REPORT TICKER + SCRUBBING CHART) ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">لماذا BTEC HUB؟</div>
+        <h2 class="section-title">بيئة أكاديمية مبنية على أعلى معايير الجودة</h2>
+        <p class="section-subtitle">نوفر لك تجربة استثنائية مدعومة بنماذج تفاعلية وإشراف أكاديمي مباشر على مدار الساعة</p>
+      </div>
+
+      <div class="ib-sec">
+        <div class="ib-bento">
+          <div class="ib-card ib-wide">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div>
+                <span class="stage-card-tag">المسار الأكاديمي المباشر</span>
+                <h3 style="margin-top:6px;">متابعة خطوة بخطوة من استلام الـ Brief وحتى التسليم النهائي</h3>
+              </div>
+              <span id="reportCounter" style="background:#FFF7ED;border:1px solid #FFEDD5;color:#EA580C;padding:8px 16px;border-radius:20px;font-weight:800;font-family:var(--font-mono);font-size:0.9rem;" dir="ltr">
+                تقرير #128 جاهز ✓
+              </span>
+            </div>
+            <p style="margin-top:10px; color:var(--text-secondary); line-height:1.7;">نقوم بتحليل معايير Pearson الرسمية للوحدة وتفكيك متطلبات الـ Pass والـ Merit والـ Distinction لضمان صياغة أكاديمية رصينة ومدعومة بأحدث المراجع الدولية.</p>
+            <svg class="ib-diagram" viewBox="0 0 780 70">
+              <path class="ib-flow ib-dash" d="M 40 35 L 740 35"></path>
+              <circle class="ib-pkt" cx="180" cy="35" r="4"></circle>
+              <circle class="ib-node" cx="40" cy="35" r="14"></circle>
+              <text x="40" y="40" text-anchor="middle" font-size="12" fill="#FF7A00" font-weight="bold">1</text>
+              <circle class="ib-node" cx="270" cy="35" r="14"></circle>
+              <text x="270" y="40" text-anchor="middle" font-size="12" fill="#FF7A00" font-weight="bold">2</text>
+              <circle class="ib-node" cx="500" cy="35" r="14"></circle>
+              <text x="500" y="40" text-anchor="middle" font-size="12" fill="#FF7A00" font-weight="bold">3</text>
+              <circle class="ib-node" cx="740" cy="35" r="14"></circle>
+              <text x="740" y="40" text-anchor="middle" font-size="12" fill="#FF7A00" font-weight="bold">4</text>
+            </svg>
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-muted); padding:0 10px;">
+              <span>استلام الـ Brief</span>
+              <span>البحث والتوثيق الأكاديمي</span>
+              <span>فحص الأصالة Turnitin</span>
+              <span>التسليم والملاحظات</span>
+            </div>
+          </div>
+
+          <div class="ib-card" id="chartCard" style="cursor:crosshair;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div>
+                <span class="stage-card-tag">تحليل الدرجات والنتائج</span>
+                <h3 style="margin-top:6px;">معدل تحسن أداء الطلاب</h3>
+              </div>
+              <span id="chartTooltip" style="font-size:0.82rem;font-weight:800;color:#EA580C;background:#FFF7ED;padding:4px 10px;border-radius:12px;border:1px solid #FFEDD5;">
+                مرر الفأرة للتحليل
+              </span>
+            </div>
+            <p style="margin-top:10px; color:var(--text-secondary); line-height:1.68;">متوسط ارتقاء تقييمات الطلاب من درجات Pass العادية إلى درجات Merit و Distinction بعد الاستفادة من مراجعاتنا الأكاديمية.</p>
+            <div style="height:110px; display:flex; align-items:flex-end; gap:16px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,0.05); margin-top:16px;">
+              <div style="flex:1; background:#FFEDD5; height:35%; border-radius:8px 8px 0 0; text-align:center; font-size:0.75rem; color:#EA580C; font-weight:800; padding-top:4px;">قبل</div>
+              <div style="flex:1; background:var(--primary-gradient); height:92%; border-radius:8px 8px 0 0; text-align:center; font-size:0.75rem; color:#FFF; font-weight:800; padding-top:4px; box-shadow:0 4px 12px rgba(255,122,0,0.25);">بعد (+92%)</div>
+            </div>
+          </div>
+
+          <div class="ib-card">
+            <span class="stage-card-tag">حماية أكاديمية</span>
+            <h3 style="margin-top:6px;">فحص Turnitin رسمي معتمد</h3>
+            <p style="margin-top:10px; color:var(--text-secondary); line-height:1.68;">فحص مباشر بدون إيداع في قاعدة البيانات (No Repository) لضمان أن بحثك أصلي 100% ولا يظهر كبحث مكرر عند رفعه لنظام جامعتك أو كليتك.</p>
+            <div style="display:flex; align-items:center; gap:12px; margin-top:auto; padding-top:18px;">
+              <span style="background:#ECFDF5;border:1px solid #A7F3D0;color:#059669;padding:6px 14px;border-radius:20px;font-weight:800;font-size:0.85rem;" dir="ltr"><i class="fas fa-shield-alt"></i> &lt; 5% Turnitin</span>
+              <span style="background:#FFF7ED;border:1px solid #FFEDD5;color:#EA580C;padding:6px 14px;border-radius:20px;font-weight:800;font-size:0.85rem;"><i class="fas fa-check-double"></i> مطابقة هارفارد</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TILTED GRID 3D CYLINDRICAL CAROUSEL (Real Pearson Units Streaming Showcase) ── -->
+  <section class="tilted-grid-hero">
+    <div class="container" style="text-align:center;">
+      <div class="section-badge"><i class="fas fa-layer-group" style="color:var(--primary);"></i> تغطية شاملة ومسارات معتمدة</div>
+      <h2 class="section-title">استكشف مسارات ووحدات Pearson BTEC</h2>
+      <p class="section-subtitle">منظومة تعليمية متكاملة تقدم أبحاثاً وشروحات تفصيلية لكافة التخصصات وفق المعايير البريطانية الدولية</p>
+
+      <div class="tgh-viewport">
+        <div class="tgh-track" id="tghTrack">
+          <!-- Card 1: Business -->
+          <div class="tgh-card-wrap" style="--angle:0;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#business'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Business & Management</span>
+                  <div class="tgh-icon"><i class="fas fa-briefcase"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 1: Exploring Business</div>
+                <p class="tgh-desc">تحليل بيئة الأعمال وهياكل المنظمات واستراتيجيات أصحاب المصلحة وفق معايير P/M/D.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Computing & IT -->
+          <div class="tgh-card-wrap" style="--angle:45;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#it'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Computing & IT</span>
+                  <div class="tgh-icon"><i class="fas fa-database"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 2: Relational Databases</div>
+                <p class="tgh-desc">تصميم قواعد البيانات العلائقية ERD وتطبيع الجداول Normalization وكتابة استعلامات SQL.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Engineering -->
+          <div class="tgh-card-wrap" style="--angle:90;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#engineering'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Engineering</span>
+                  <div class="tgh-icon"><i class="fas fa-cogs"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 3: Engineering Principles</div>
+                <p class="tgh-desc">الميكانيكا التطبيقية، تحليل الدوائر الكهربائية، ونمذجة ثلاثية الأبعاد CAD.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Health & Social Care -->
+          <div class="tgh-card-wrap" style="--angle:135;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#health'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Health & Social Care</span>
+                  <div class="tgh-icon"><i class="fas fa-heartbeat"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 5: Meeting Care Needs</div>
+                <p class="tgh-desc">سياسات الرعاية الصحية، المعايير الأخلاقية، والتقييم السريري الشامل للمرضى.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Marketing -->
+          <div class="tgh-card-wrap" style="--angle:180;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#business'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Marketing & Media</span>
+                  <div class="tgh-icon"><i class="fas fa-bullhorn"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 7: Marketing Campaign</div>
+                <p class="tgh-desc">أبحاث السوق، المزيج التسويقي 7Ps، وتحليل SWOT & PESTLE بمقاييس واقعية.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Cyber Security -->
+          <div class="tgh-card-wrap" style="--angle:225;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#it'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Cyber Security</span>
+                  <div class="tgh-icon"><i class="fas fa-shield-alt"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 11: Cyber Security & Cloud</div>
+                <p class="tgh-desc">تحليل الثغرات، بروتوكولات التشفير، وحماية الشبكات وأنظمة المعلومات السحابية.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Finance -->
+          <div class="tgh-card-wrap" style="--angle:270;">
+            <div class="tgh-card" onclick="window.location.href='specializations.html#business'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Finance & Accounting</span>
+                  <div class="tgh-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <div class="tgh-title">الوحدة 9: Event & Financial Plans</div>
+                <p class="tgh-desc">الميزانيات التقديرية، التدفقات النقدية، وتقييم الجدوى الاقتصادية للمشاريع.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>Pearson Level 3/5</span>
+                <span>استعراض الوحدة ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Turnitin Audit -->
+          <div class="tgh-card-wrap" style="--angle:315;">
+            <div class="tgh-card" onclick="window.location.href='services.html'">
+              <div>
+                <div class="tgh-header">
+                  <span class="stage-card-tag">Academic Quality</span>
+                  <div class="tgh-icon"><i class="fas fa-check-double"></i></div>
+                </div>
+                <div class="tgh-title">الفحص الأكاديمي والتدقيق</div>
+                <p class="tgh-desc">فحص أصالة Turnitin رسمي معتمد بدون حفظ بالملفات مع توثيق هارفارد دقيق.</p>
+              </div>
+              <div class="tgh-footer">
+                <span>أصالة 100% مضمونة</span>
+                <span>استعراض الخدمة ←</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUICK SPECIALIZATIONS OVERVIEW (Gradient Cards from gradient-card.tsx) ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-graduation-cap"></i> التخصصات المتاحة</div>
+        <h2 class="section-title">تغطية شاملة لكافة مسارات Pearson BTEC</h2>
+        <p class="section-subtitle">فريق متخصص لكل مجال أكاديمي يمتلك المعرفة العميقة بمعايير ومتطلبات التقييم الدولية</p>
+      </div>
+
+      <div class="gc-grid">
+        <!-- 1. Orange Gradient Card (Business) -->
+        <div class="gc-card gc-orange" onclick="window.location.href='specializations.html#business'">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80" alt="Business Graphic" class="gc-img">
+          <div class="gc-content">
+            <div class="gc-badge">
+              <span class="gc-dot" style="background-color: #F59E0B;"></span>
+              إدارة الأعمال • Pearson BTEC
+            </div>
+            <h3 class="gc-title">Business & Management</h3>
+            <p class="gc-desc">تغطية شاملة لوحدات Exploring Business, Marketing, Finance, HR مع صياغة هارفارد معتمدة وتحليل SWOT/PESTLE.</p>
+          </div>
+          <a href="specializations.html#business" class="gc-cta">
+            استعراض وحدات إدارة الأعمال
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- 2. Gray Gradient Card (IT) -->
+        <div class="gc-card gc-gray" onclick="window.location.href='specializations.html#it'">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" alt="IT Graphic" class="gc-img">
+          <div class="gc-content">
+            <div class="gc-badge">
+              <span class="gc-dot" style="background-color: #4B5563;"></span>
+              تكنولوجيا المعلومات • Pearson BTEC
+            </div>
+            <h3 class="gc-title">Computing & IT</h3>
+            <p class="gc-desc">قواعد بيانات علائقية ERD، برمجة، أمن سيبراني، وشبكات مع توثيق أكاديمي وحالات فحص كاملة.</p>
+          </div>
+          <a href="specializations.html#it" class="gc-cta">
+            استعراض وحدات تكنولوجيا المعلومات
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- 3. Purple Gradient Card (Health) -->
+        <div class="gc-card gc-purple" onclick="window.location.href='specializations.html#health'">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80" alt="Health Graphic" class="gc-img">
+          <div class="gc-content">
+            <div class="gc-badge">
+              <span class="gc-dot" style="background-color: #8B5CF6;"></span>
+              الرعاية الصحية • Pearson BTEC
+            </div>
+            <h3 class="gc-title">Health & Social Care</h3>
+            <p class="gc-desc">أبحاث علمية في الرعاية الصحية، علم النفس التطبيقي، ودراسات الحالات السريرية الأخلاقية.</p>
+          </div>
+          <a href="specializations.html#health" class="gc-cta">
+            استعراض وحدات الرعاية الصحية
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- 4. Green Gradient Card (Engineering) -->
+        <div class="gc-card gc-green" onclick="window.location.href='specializations.html#engineering'">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80" alt="Engineering Graphic" class="gc-img">
+          <div class="gc-content">
+            <div class="gc-badge">
+              <span class="gc-dot" style="background-color: #10B981;"></span>
+              الهندسة والابتكار • Pearson BTEC
+            </div>
+            <h3 class="gc-title">Engineering & CAD</h3>
+            <p class="gc-desc">مبادئ الهندسة الميكانيكية، الدوائر الكهربائية، ونمذجة ثلاثية الأبعاد 3D CAD وفق المعايير الدولية.</p>
+          </div>
+          <a href="specializations.html#engineering" class="gc-cta">
+            استعراض وحدات الهندسة
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ── HALFTONE WORDMARK FOOTER (CRISP WHITE & LIGHT ORANGE) ── -->
+<footer class="hwf-container">
+  <canvas id="halftoneCanvas" class="hwf-canvas"></canvas>
+  <div class="hwf-content">
+    <div class="hwf-top">
+      <div class="hwf-brand" dir="rtl">
+        <strong style="font-size:1.45rem;color:var(--primary);letter-spacing:-0.02em;" dir="ltr">BTEC HUB</strong>
+        <span style="display:block;margin-top:8px;line-height:1.75;color:var(--text-secondary);font-size:0.92rem;">
+          المنصة التعليمية الأولى المتخصصة في دعم طلاب شهادات Pearson BTEC الدولية بجميع مستوياتها وتخصصاتها الأكاديمية.
+        </span>
+        <div style="margin-top:18px;padding:10px 16px;background:var(--orange-50);border:1px solid #FFEDD5;border-radius:12px;display:inline-block;font-weight:700;color:var(--primary-dark);font-size:0.92rem;">
+          تم التطوير بواسطة: <span style="color:#151311;font-weight:900;">ورد البصول</span>
+        </div>
+      </div>
+      <div class="hwf-col">
+        <h4>الخدمات الأكاديمية</h4>
+        <ul>
+          <li><a href="services.html">إعداد وبناء الواجبات وفق معايير P/M/D</a></li>
+          <li><a href="services.html">التدقيق الأكاديمي وفحص Turnitin</a></li>
+          <li><a href="services.html">جلسات التوجيه والشرح الفردي</a></li>
+          <li><a href="services.html">عروض تقديمية (PowerPoint) احترافية</a></li>
+        </ul>
+      </div>
+      <div class="hwf-col">
+        <h4>التخصصات المعتمدة</h4>
+        <ul>
+          <li><a href="specializations.html#business">Business – إدارة الأعمال</a></li>
+          <li><a href="specializations.html#it">IT – تكنولوجيا المعلومات</a></li>
+          <li><a href="specializations.html#health">Health & Social Care – الرعاية الصحية</a></li>
+          <li><a href="specializations.html#engineering">Engineering – الهندسة</a></li>
+        </ul>
+      </div>
+      <div class="hwf-col">
+        <h4>تواصل مباشر</h4>
+        <ul>
+          <li><a href="https://wa.me/962786003597" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366;margin-left:6px;"></i> <span dir="ltr">+962 78 600 3597</span></a></li>
+          <li><a href="contact.html"><i class="fas fa-paper-plane" style="color:var(--primary);margin-left:6px;"></i> إرسال استفسار سريع</a></li>
+          <li><a href="faq.html"><i class="fas fa-question-circle" style="color:var(--primary);margin-left:6px;"></i> الأسئلة الأكثر تكراراً</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hwf-bottom">
+      <div><span dir="ltr">© 2026 BTEC HUB</span>. جميع الحقوق محفوظة.</div>
+      <button class="hwf-up-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i> للأعلى
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- ── CART SIDEBAR ── -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div class="cart-title"><i class="fas fa-shopping-cart" style="color:var(--primary)"></i> <span>سلة الخدمات</span></div>
+    <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none;"></div>
+</aside>
+
+<!-- ── BTEC AI ASSISTANT ── -->
+<div class="assistant-fab" id="assistantFab">
+  <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
+  <div class="assistant-tooltip">مساعد BTEC الذكي</div>
+</div>
+<div class="assistant-window" id="assistantWindow">
+  <div class="assistant-header">
+    <div class="assistant-avatar">🤖</div>
+    <div class="assistant-info">
+      <div class="assistant-name">BTEC Assistant</div>
+      <div class="assistant-status"><span class="status-dot"></span> متاح الآن لمساعدتك</div>
+    </div>
+    <button class="assistant-minimize" id="assistantMinimize"><i class="fas fa-minus"></i></button>
+  </div>
+  <div class="assistant-messages" id="assistantMessages"></div>
+  <div class="quick-replies" id="quickReplies"></div>
+  <div class="assistant-input-area">
+    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك عن BTEC هنا...">
+    <button class="assistant-send" id="assistantSend"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- ── WHATSAPP FAB ── -->
+<div class="whatsapp-fab">
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- ── SCRIPTS ── -->
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="assistant.js"></script>
+
+<script>
+// Interactive Halftone Canvas (Crisp White & Light Orange)
+(function() {
+  const canvas = document.getElementById('halftoneCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, dots = [], mx = -1000, my = -1000;
+
+  function init() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+    dots = [];
+    const gap = 16;
+    const cols = Math.floor(w / gap);
+    const rows = Math.floor(h / gap);
+
+    const m = document.createElement('canvas');
+    m.width = w; m.height = h;
+    const mctx = m.getContext('2d');
+    mctx.font = '900 ' + Math.min(w * 0.16, 120) + 'px Alexandria, sans-serif';
+    mctx.direction = 'ltr';
+    mctx.fillStyle = '#000';
+    mctx.textAlign = 'center';
+    mctx.textBaseline = 'middle';
+    mctx.fillText('BTEC HUB', w / 2, h * 0.65);
+    const data = mctx.getImageData(0, 0, w, h).data;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = c * gap + gap/2;
+        const y = r * gap + gap/2;
+        const alpha = data[(Math.floor(y) * w + Math.floor(x)) * 4 + 3];
+        if (alpha > 35) {
+          dots.push({
+            hx: x, hy: y, x: x, y: y,
+            vx: 0, vy: 0,
+            r: (alpha / 255) * 4.2
+          });
+        }
+      }
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < dots.length; i++) {
+      const d = dots[i];
+      const dx = d.x - mx;
+      const dy = d.y - my;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 85) {
+        const force = (1 - dist / 85) * 7;
+        d.vx += (dx / dist) * force;
+        d.vy += (dy / dist) * force;
+      }
+      d.vx = (d.vx + (d.hx - d.x) * 0.08) * 0.82;
+      d.vy = (d.vy + (d.hy - d.y) * 0.08) * 0.82;
+      d.x += d.vx;
+      d.y += d.vy;
+
+      const warm = Math.min(1, Math.hypot(d.x - d.hx, d.y - d.hy) / 16);
+      ctx.fillStyle = warm > 0.05 ? '#FFA040' : 'rgba(255, 122, 0, 0.18)';
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  canvas.parentElement.addEventListener('mousemove', (e) => {
+    const r = canvas.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
+  });
+
+  canvas.parentElement.addEventListener('mouseleave', () => {
+    mx = -1000; my = -1000;
+  });
+
+  window.addEventListener('resize', init);
+  init();
+  loop();
+})();
+</script>
+
+
+<!-- Data Rain Fluid Simulation Engine Script -->
+<script src="data-rain-engine.js"></script>
+
+<script>
+// Interactive Scrubbable Chart
+(function() {
+  const chartCard = document.getElementById('chartCard');
+  const tooltip = document.getElementById('chartTooltip');
+  if (!chartCard || !tooltip) return;
+
+  chartCard.addEventListener('mousemove', function(e) {
+    const rect = chartCard.getBoundingClientRect();
+    const pct = Math.max(10, Math.min(100, Math.round(((e.clientX - rect.left) / rect.width) * 100)));
+    tooltip.textContent = 'تحسن التقدير: +' + pct + '%';
+  });
+})();
+
+// Live Reports Counter
+(function() {
+  let count = 128;
+  const el = document.getElementById('reportCounter');
+  if (!el) return;
+  setInterval(() => {
+    count++;
+    el.textContent = 'تقرير #' + count + ' جاهز ✓';
+  }, 4500);
+})();
+</script>
+
+</body>
+</html>

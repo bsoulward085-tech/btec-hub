@@ -1,307 +1,543 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BTEC HUB – الأسئلة الشائعة</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="components.css">
 </head>
 <body>
+
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
-<nav class="navbar navbar-blur" id="navbar">
+
+<!-- ── NAVBAR WITH NIMBUS LIQUID GLASS PILL ── -->
+<nav class="navbar" id="navbar">
   <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">
+    <a href="index.html" class="navbar-logo" dir="ltr">
       <div class="logo-icon">B</div>
-      <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
+      <div class="logo-text" dir="ltr">
+        <span class="wave-brand" id="waveBrand" dir="ltr">
+          <span class="wave-char" style="--i:1">B</span>
+          <span class="wave-char" style="--i:2">T</span>
+          <span class="wave-char" style="--i:3">E</span>
+          <span class="wave-char" style="--i:4">C</span>
+          <span class="wave-space">&nbsp;</span>
+          <span class="wave-char" style="--i:5">H</span>
+          <span class="wave-char" style="--i:6">U</span>
+          <span class="wave-char" style="--i:7">B</span>
+        </span>
+        <span class="logo-sub">منصة الدعم الأكاديمي</span>
+      </div>
     </a>
-    <ul class="navbar-nav">
-      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
-      <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-      <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-      <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-      <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-      <li><a href="faq.html" class="nav-link  active"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
-    </ul>
+
+    <!-- Nimbus Liquid Glass Floating Pill -->
+    <div class="nimbus-wrapper">
+      <div class="nimbus-nav" id="nimbusNav" data-tone="light">
+        <div class="nimbus-glass"></div>
+        <div class="nimbus-drop" id="nimbusDrop"></div>
+        <a href="index.html" class="nimbus-item " data-fx="glow">
+          <span class="nv-ico" data-fx="glow"><i class="fas fa-home"></i></span>
+          <span class="nimbus-label">الرئيسية</span>
+        </a>
+        <a href="services.html" class="nimbus-item " data-fx="spin">
+          <span class="nv-ico" data-fx="spin"><i class="fas fa-briefcase"></i></span>
+          <span class="nimbus-label">الخدمات</span>
+        </a>
+        <a href="specializations.html" class="nimbus-item " data-fx="plane">
+          <span class="nv-ico" data-fx="plane"><i class="fas fa-graduation-cap"></i></span>
+          <span class="nimbus-label">التخصصات</span>
+        </a>
+        <a href="study.html" class="nimbus-item " data-fx="drop">
+          <span class="nv-ico" data-fx="drop"><i class="fas fa-book-open"></i></span>
+          <span class="nimbus-label">مواد الدراسة</span>
+        </a>
+        <a href="past-assignments.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-folder-open"></i></span>
+          <span class="nimbus-label">مهمات سابقة</span>
+        </a>
+        <a href="faq.html" class="nimbus-item active" data-fx="wave">
+          <span class="nv-ico" data-fx="wave"><i class="fas fa-question-circle"></i></span>
+          <span class="nimbus-label">الأسئلة</span>
+        </a>
+        <a href="contact.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-envelope"></i></span>
+          <span class="nimbus-label">تواصل معنا</span>
+        </a>
+      </div>
+    </div>
+
     <div class="navbar-actions">
-      <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
-      <button class="theme-toggle" id="themeToggleBtn"><i id="themeIcon" class="fas fa-sun"></i></button>
-      <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <a href="https://wa.me/962786003597" target="_blank" class="btn btn-sm btn-primary">
+        <i class="fab fa-whatsapp"></i> تواصل واتساب
+      </a>
+      <button class="cart-nav-btn" id="cartNavBtn" title="السلة">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
+
+<!-- ── MOBILE NAV DRAWER ── -->
 <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header" dir="ltr">
+    <div class="logo-text" dir="ltr">
+      <span class="wave-brand" dir="ltr">
+        <span class="wave-char" style="--i:1">B</span>
+        <span class="wave-char" style="--i:2">T</span>
+        <span class="wave-char" style="--i:3">E</span>
+        <span class="wave-char" style="--i:4">C</span>
+        <span class="wave-space">&nbsp;</span>
+        <span class="wave-char" style="--i:5">H</span>
+        <span class="wave-char" style="--i:6">U</span>
+        <span class="wave-char" style="--i:7">B</span>
+      </span>
+    </div>
+    <button class="cart-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
+  </div>
   <ul class="mobile-nav-links">
-    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
-    <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-    <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-    <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-    <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-    <li><a href="faq.html" class="nav-link  active"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
+    <li><a href="index.html" class="nav-link "><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="services.html" class="nav-link "><i class="fas fa-briefcase"></i> الخدمات</a></li>
+    <li><a href="specializations.html" class="nav-link "><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+    <li><a href="study.html" class="nav-link "><i class="fas fa-book-open"></i> مواد الدراسة</a></li>
+    <li><a href="past-assignments.html" class="nav-link "><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+    <li><a href="faq.html" class="nav-link active"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+    <li><a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> تواصل معنا</a></li>
   </ul>
-  <div class="mobile-nav-actions">
-    <button class="lang-toggle" id="mobileLangBtn">&#127760; <span id="mobileLangText">EN</span></button>
-    <button class="theme-toggle" id="mobileThemeBtn"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
+  <div style="padding: 20px;">
+    <a href="https://wa.me/962786003597" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center;">
+      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+    </a>
   </div>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
 
+
 <main>
-  <div class="page-hero">
-    <div class="container page-hero-content">
-      <div class="section-badge mb-lg"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</div>
-      <h1>كيف يمكننا مساعدتك؟</h1>
-      <p>تجد هنا إجابات على أكثر الأسئلة شيوعاً حول خدماتنا وكيفية الطلب</p>
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-badge"><i class="fas fa-question-circle"></i> مركز المساعدة والمعلومات</div>
+      <h1 class="page-hero-title">الأسئلة الأكثر شيوعاً</h1>
+      <p class="page-hero-desc">
+        إجابات شافية ومفصلة حول آلية عملنا الأكاديمية، معايير التقييم الدولي Pearson BTEC، فحص الأصالة Turnitin، وسياسات الضمان والتسليم.
+      </p>
+
+      <!-- ── FILTER BAR ── -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="services">الخدمات والواجبات</button>
+        <button class="filter-btn" data-filter="pearson">معايير بيرسون P/M/D</button>
+        <button class="filter-btn" data-filter="turnitin">فحص Turnitin والأصالة</button>
+        <button class="filter-btn" data-filter="pricing">الأسعار وطرق الدفع</button>
+        <button class="filter-btn" data-filter="support">الضمانات والتعديلات</button>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- ── FAQ ACCORDION LIST ── -->
   <section class="section">
     <div class="container">
+      <div class="faq-list" id="faqList">
 
-      <div class="filter-bar reveal" style="justify-content:center;gap:1rem;margin-bottom:3rem;flex-wrap:wrap;">
-        <button class="filter-btn active" data-filter="all">الكل</button>
-        <button class="filter-btn" data-filter="services">عن الخدمات</button>
-        <button class="filter-btn" data-filter="pricing">الأسعار والدفع</button>
-        <button class="filter-btn" data-filter="cart">الطلب والسلة</button>
-        <button class="filter-btn" data-filter="ai">المساعد الذكي</button>
+        <!-- 1 -->
+        <div class="faq-item" data-category="turnitin">
+          <button class="faq-question">
+            <span>كيف تضمنون خلو الواجب أو البحث من الانتحال العلمي (Plagiarism)؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            يتم إعداد كل واجب وصياغته بشكل فريد تماماً لكل طالب من الصفر بواسطة باحثين متخصصين دون استخدام أي نصوص منسوخة. بعد الانتهاء، نقوم بفحص البحث عبر حساب Turnitin المعلمي الرسمي، ونسلمك تقريراً رسمياً بصيغة PDF يثبت أن نسبة التشابه أقل من 5% وأن البحث سليم 100%.
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="faq-item" data-category="pearson">
+          <button class="faq-question">
+            <span>ما هي معايير بيرسون (Pass, Merit, Distinction) وكيف تضمنون تحقيق الامتياز؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            تعتمد Pearson على معايير تصاعدية: معيار Pass يتطلب الوصف والشرح الأساسي (Describe / Explain)، معيار Merit يتطلب التحليل والمقارنة (Analyze / Compare)، بينما معيار Distinction يتطلب التقييم النقدي وإصدار الأحكام المبررة (Evaluate / Justify). فريقنا يلتزم بتغطية كافة نقاط كراسة التقييم لتأمين أعلى تصنيف.
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="faq-item" data-category="turnitin">
+          <button class="faq-question">
+            <span>هل يتم فحص البحث عبر حساب Turnitin لا يحفظ الملف بالمستودع؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            نعم، تماماً! نستخدم خاصية (No Repository) حصرياً عند فحص أي ورقة بحثية. هذا يعني أن الملف لن يُحفظ في قاعدة بيانات Turnitin العالمية، وعندما تقوم لاحقاً برفع الواجب عبر بوابة كليتك أو جامعتك فلن يظهر أي تشابه أو تكرار مع فحصنا السابق.
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="faq-item" data-category="services">
+          <button class="faq-question">
+            <span>كم يستغرق إعداد الواجب أو التقرير الأكاديمي عادةً؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            يعتمد الوقت على حجم المهمة وعدد كلماتها، لكن في المعتاد يستغرق الواجب الكامل من 3 إلى 5 أيام عمل. كما تتوفر لدينا خدمة التسليم السريع والطارئ (Urgent Service) خلال 24 إلى 48 ساعة فقط للحالات المستعجلة قبل موعد التسليم النهائي.
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="faq-item" data-category="support">
+          <button class="faq-question">
+            <span>ماذا أفعل إذا طلب معلم المادة تعديلات (Feedback) بعد التسليم؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            التعديلات مجانية بالكامل ومشمولة في الخدمة! كل ما عليك هو تزويدنا بملاحظات المحاضر أو تقرير المقيم الداخلي (Internal Verifier)، وسيقوم الفريق الأكاديمي بمراجعة وتعديل النقاط المحددة خلال 24-48 ساعة لضمان استيفاء المعايير المطلوبة.
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="faq-item" data-category="pricing">
+          <button class="faq-question">
+            <span>ما هي طرق الدفع المتاحة لطلاب الأردن والخليج والدول العربية؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            نوفر خيارات دفع مرنة وآمنة تشمل: كليك (CliQ) والمحافظ الإلكترونية (Zain Cash, Orange Money, Umniah Mahfazti) داخل الأردن، بالإضافة إلى التحويل البنكي المباشر، PayPal، والتحويل عبر Western Union لطلاب السعودية والإمارات وقطر والكويت وسلطنة عمان وباقي الدول.
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="faq-item" data-category="services">
+          <button class="faq-question">
+            <span>هل تقدمون خدمات لمستويات HND (Level 4 و Level 5) ومشاريع التخرج؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            نعم، لدينا قسم أكاديمي مخصص لطلاب الدبلوم الوطني العالي (Higher National Diploma - HND) لكلا المستويين Level 4 و Level 5، بما في ذلك إعداد مقترحات الأبحاث (Research Proposals)، تصميم منهجيات البحث وتحليل الاستبيانات، ومشاريع التخرج الكبرى (Final Capstone Projects).
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="faq-item" data-category="support">
+          <button class="faq-question">
+            <span>هل بياناتي ومعلومات دراستي وجامعتي في سرية تامة وأمان؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            الخصوصية والسرية خط أحمر لدينا. لا نطلب أي بيانات شخصية حساسة، ولا يتم مشاركة أي ملفات أو واجبات مع أي طرف ثالث على الإطلاق. تعاملنا يتم بسرية مطلقة ومباشرة عبر واتساب المشفر.
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="faq-item" data-category="services">
+          <button class="faq-question">
+            <span>هل يمكنني طلب جلسة شرح صوتي أو مرئي للواجب قبل التسليم؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            بالتأكيد! نوفر خدمة الشرح التفاعلي الفردي 1-on-1 عبر منصات Zoom أو Google Meet، حيث يمر معك المشرف على كل قسم في التقرير، ويشرح لك الأفكار والمراجع، لتكون على أتم الاستعداد لمناقشة معلم المادة والإجابة على أي سؤال يوجهه إليك بثقة تامة.
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="faq-item" data-category="services">
+          <button class="faq-question">
+            <span>كيف تعمل سلة الخدمات في الموقع وكيف أرسل طلبي؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            يمكنك تصفح صفحة الخدمات والنقر على "أضف للسلة" لأي خدمة ترغب بها. بعد اختيار الخدمات، افتح السلة من أعلى الشاشة وانقر على "إرسال عبر واتساب"، ليقوم النظام تلقائياً بإنشاء رسالة منسقة بكافة طلباتك وتوجيهك مباشرة لمحادثتنا لتأكيد التفاصيل.
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="faq-item" data-category="services">
+          <button class="faq-question">
+            <span>هل تساعدون في واجبات البرمجة وقواعد البيانات لتخصص IT؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            نعم، يضم فريقنا مهندسي برمجيات متخصصين في حل واجبات Python و Java و C# و SQL و PHP وتطوير الويب HTML/CSS/JS. نسلمك كوداً نظيفاً مع تعليقات شارحة ومخططات ERD ولقطات شاشة لاختبار البرمجيات وتوثيق حالات الفحص.
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="faq-item" data-category="services">
+          <button class="faq-question">
+            <span>كيف يمكنني طلب عروض تقديمية (PowerPoint) مع نوتات الإلقاء؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            يمكنك اختيار خدمة "عروض تقديمية احترافية"، حيث نقوم بتصميم الشرائح بطريقة بصرية عصرية مدعومة بالأشكال والمخططات البيانية، مع كتابة نص الإلقاء الكامل في مربع Speaker Notes لكل شريحة حتى تقرأ منه أثناء العرض التقديمي.
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="faq-item" data-category="pricing">
+          <button class="faq-question">
+            <span>ما هي سياسة الأسعار ولماذا تختلف من واجب لآخر؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            أسعارنا تنافسية وتراعي ميزانية الطلاب، وتختلف باختلاف معايير محددة: عدد كلمات التقرير المطلوبة، المستوى الدراسي (Level 3 أو HND)، التخصص الأكاديمي، والموعد النهائي للتسليم. نمنحك تسعيراً دقيقاً وعادلاً فور إرسال الـ Brief عبر واتساب.
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="faq-item" data-category="pearson">
+          <button class="faq-question">
+            <span>هل توفرون الدعم في مرحلة ما قبل التسليم (Pre-submission review)؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            نعم، إذا قمت بكتابة الواجب بنفسك وترغب في التأكد من استيفائه لمعايير بيرسون قبل رفعه، يمكنك إرساله لنا لنقوم بمراجعته تدقيقاً أكاديمياً ولغوياً، والتأكد من مطابقة أدلة التقييم وفحص نسبة التشابه عبر Turnitin لتقديم تقرير تقييم مسبق.
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="faq-item" data-category="support">
+          <button class="faq-question">
+            <span>ما هي خدمة المساعد الذكي BTEC Assistant المتوفرة في الموقع؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            هو مساعد محادثة تفاعلي مدمج في أسفل الموقع، مبرمج للإجابة الفورية على الأسئلة المتكررة حول التخصصات وشروط بيرسون وتوجيهك للخدمة المناسبة بسرعة وسهولة.
+          </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="faq-item" data-category="support">
+          <button class="faq-question">
+            <span>كيف أتواصل مع المشرف الأكاديمي بشكل مباشر؟</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            يمكنك النقر على زر الواتساب في أي صفحة أو مراسلتنا مباشرة على الرقم <strong>+962 78 600 3597</strong>. فريقنا متاح يومياً من الساعة 9:00 صباحاً وحتى منتصف الليل للإجابة على كافة استفساراتك واستلام ملفات الواجبات.
+          </div>
+        </div>
+
       </div>
 
-      <div class="accordion-list" style="max-width:800px;margin:0 auto;">
-        <div class="accordion-item reveal" data-category="services">
-          <div class="accordion-header">
-            <div class="accordion-question">هل تقومون بكتابة الواجبات نيابة عن الطلاب؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>لا، نحن لا نكتب الواجبات نيابة عن الطلاب. نقدم خدمات تدقيق وتوجيه ودعم أكاديمي لمساعدتك على فهم المعايير وتحسين أدائك بنفسك، وذلك للحفاظ على النزاهة الأكاديمية.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="services">
-          <div class="accordion-header">
-            <div class="accordion-question">ماذا تشمل خدمة تدقيق الواجبات؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>تشمل مراجعة المحتوى بناءً على معايير BTEC، تحديد نقاط القوة والضعف، وتقديم ملاحظات تفصيلية حول كيفية تحسين التنسيق والتحليل والمراجع الأكاديمية.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="services">
-          <div class="accordion-header">
-            <div class="accordion-question">هل يمكنني طلب جلسة شرح فردية أونلاين؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>نعم، نقدم جلسات شرح فردية وتوجيه أونلاين عبر Zoom أو Google Meet حسب رغبتك لمساعدتك في أي وحدة تواجه صعوبة فيها.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="services">
-          <div class="accordion-header">
-            <div class="accordion-question">ما هي التخصصات التي تغطونها؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>نغطي حالياً أربع تخصصات رئيسية: Business, Information Technology, Health & Social Care, Engineering بكافة مستوياتها ووحداتها.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="pricing">
-          <div class="accordion-header">
-            <div class="accordion-question">لماذا لا يوجد سعر ثابت لبعض الخدمات؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>بعض الخدمات تختلف تكلفتها حسب حجم العمل، مستوى الصعوبة، والموعد النهائي للتسليم. لذلك يتم تقييم السعر بدقة بعد رؤية تفاصيل طلبك.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="pricing">
-          <div class="accordion-header">
-            <div class="accordion-question">كيف يتم الدفع مقابل الخدمات؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>يتم الدفع عن طريق الحوالات البنكية أو الدفع الإلكتروني عبر روابط آمنة تُرسل لك عبر واتساب بعد الاتفاق على السعر.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="pricing">
-          <div class="accordion-header">
-            <div class="accordion-question">هل يمكنني استرداد المبلغ إذا لم أستفد؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>نضمن جودة العمل. في حال وجود تقصير من طرفنا، نقوم بإجراء التعديلات المطلوبة مجاناً، أو يمكن استرجاع المبلغ وفق سياسة الاسترجاع.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="cart">
-          <div class="accordion-header">
-            <div class="accordion-question">كيف أتمم الطلب من خلال السلة؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>أضف الخدمات التي تحتاجها إلى السلة، افتح السلة، واضغط "إرسال عبر واتساب". سيقوم النظام بتوليد رسالة جاهزة بكل خدماتك ترسلها بنقرة واحدة.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="cart">
-          <div class="accordion-header">
-            <div class="accordion-question">كم يستغرق الرد بعد إرسال الطلب؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>عادةً نرد خلال ساعتين في أوقات العمل (9 ص - 10 م). الطلبات المُرسلة في وقت متأخر يُرد عليها صباح اليوم التالي.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="cart">
-          <div class="accordion-header">
-            <div class="accordion-question">هل إضافة الخدمة للسلة تسجيل نهائي للطلب؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>لا، السلة مجرد وسيلة لتنظيم طلبك. الطلب لا يُؤكد إلا بعد التواصل عبر واتساب وتحديد السعر وإتمام الدفع.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="ai">
-          <div class="accordion-header">
-            <div class="accordion-question">ما هو BTEC Assistant وهل يمكنه حل الواجبات؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>BTEC Assistant أداة لمساعدتك في تصفح الموقع وفهم الخدمات. هو مُبرمج خصيصاً لرفض حل الواجبات للحفاظ على النزاهة الأكاديمية، لكنه يساعدك في الفهم والتوجيه.</p></div>
-        </div>
-        <div class="accordion-item reveal" data-category="ai">
-          <div class="accordion-header">
-            <div class="accordion-question">هل المساعد الذكي يدعم اللغتين العربية والإنجليزية؟</div>
-            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-          </div>
-          <div class="accordion-body"><p>نعم، يمكنك التحدث مع المساعد بالعربية أو الإنجليزية وسيرد بناءً على لغة واجهة الموقع المختارة.</p></div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="cta-section reveal" style="margin-top:4rem;">
-        <div class="cta-content">
-          <h2>لم تجد إجابتك؟</h2>
-          <p>تواصل معنا مباشرة وسنرد عليك في أسرع وقت ممكن</p>
-          <div class="cta-actions">
-            <a href="https://wa.me/962786003597" target="_blank" class="btn-cta-white">
-              <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-            </a>
-            <a href="contact.html" class="btn-cta-outline">
-              <i class="fas fa-envelope"></i> راسلنا
-            </a>
-          </div>
-        </div>
+      <!-- ── CTA CARD AT BOTTOM ── -->
+      <div style="max-width:820px; margin:50px auto 0; background:linear-gradient(135deg, #FFF8F0 0%, #FFFFFF 100%); border:1.5px solid var(--border-strong); border-radius:var(--radius-xl); padding:36px; text-align:center; box-shadow:var(--shadow-sm);">
+        <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:10px;">هل لديك سؤال آخر لم تجد إجابته هنا؟</h3>
+        <p style="font-size:0.95rem; color:var(--text-secondary); margin-bottom:20px;">
+          فريق BTEC HUB الأكاديمي جاهز للتواصل معك ومساعدتك فوراً عبر محادثة واتساب المباشرة.
+        </p>
+        <a href="https://wa.me/962786003597" target="_blank" class="btn btn-lg btn-primary">
+          <i class="fab fa-whatsapp"></i> تواصل مع المشرف عبر واتساب
+        </a>
       </div>
     </div>
   </section>
 </main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
-          <div class="logo-icon">B</div>
-          <div class="logo-text"><span>BTEC</span> HUB</div>
-        </a>
-        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+
+<!-- ── HALFTONE WORDMARK FOOTER (CRISP WHITE & LIGHT ORANGE) ── -->
+<footer class="hwf-container">
+  <canvas id="halftoneCanvas" class="hwf-canvas"></canvas>
+  <div class="hwf-content">
+    <div class="hwf-top">
+      <div class="hwf-brand" dir="rtl">
+        <strong style="font-size:1.45rem;color:var(--primary);letter-spacing:-0.02em;" dir="ltr">BTEC HUB</strong>
+        <span style="display:block;margin-top:8px;line-height:1.75;color:var(--text-secondary);font-size:0.92rem;">
+          المنصة التعليمية الأولى المتخصصة في دعم طلاب شهادات Pearson BTEC الدولية بجميع مستوياتها وتخصصاتها الأكاديمية.
+        </span>
+        <div style="margin-top:18px;padding:10px 16px;background:var(--orange-50);border:1px solid #FFEDD5;border-radius:12px;display:inline-block;font-weight:700;color:var(--primary-dark);font-size:0.92rem;">
+          تم التطوير بواسطة: <span style="color:#151311;font-weight:900;">ورد البصول</span>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>الخدمات</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">تدقيق الواجبات</a></li>
-          <li><a href="services.html">إعداد التقارير</a></li>
-          <li><a href="services.html">الشرح والتوجيه</a></li>
-          <li><a href="services.html">مراجعة المشاريع</a></li>
+      <div class="hwf-col">
+        <h4>الخدمات الأكاديمية</h4>
+        <ul>
+          <li><a href="services.html">إعداد وبناء الواجبات وفق معايير P/M/D</a></li>
+          <li><a href="services.html">التدقيق الأكاديمي وفحص Turnitin</a></li>
+          <li><a href="services.html">جلسات التوجيه والشرح الفردي</a></li>
+          <li><a href="services.html">عروض تقديمية (PowerPoint) احترافية</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>التخصصات</h4>
-        <ul class="footer-links">
-          <li><a href="specializations.html#business">Business</a></li>
-          <li><a href="specializations.html#it">IT</a></li>
-          <li><a href="specializations.html#health">Health &amp; Social Care</a></li>
-          <li><a href="specializations.html#engineering">Engineering</a></li>
+      <div class="hwf-col">
+        <h4>التخصصات المعتمدة</h4>
+        <ul>
+          <li><a href="specializations.html#business">Business – إدارة الأعمال</a></li>
+          <li><a href="specializations.html#it">IT – تكنولوجيا المعلومات</a></li>
+          <li><a href="specializations.html#health">Health & Social Care – الرعاية الصحية</a></li>
+          <li><a href="specializations.html#engineering">Engineering – الهندسة</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>المنصة</h4>
-        <ul class="footer-links">
-          <li><a href="study.html">مواد الدراسة</a></li>
-          <li><a href="past-assignments.html">مهمات سابقة</a></li>
-          <li><a href="faq.html">الأسئلة الشائعة</a></li>
-          <li><a href="contact.html">تواصل معنا</a></li>
+      <div class="hwf-col">
+        <h4>تواصل مباشر</h4>
+        <ul>
+          <li><a href="https://wa.me/962786003597" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366;margin-left:6px;"></i> <span dir="ltr">+962 78 600 3597</span></a></li>
+          <li><a href="contact.html"><i class="fas fa-paper-plane" style="color:var(--primary);margin-left:6px;"></i> إرسال استفسار سريع</a></li>
+          <li><a href="faq.html"><i class="fas fa-question-circle" style="color:var(--primary);margin-left:6px;"></i> الأسئلة الأكثر تكراراً</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.
-        <br><span style="font-size:0.85em;opacity:0.85;margin-top:4px;display:inline-block;">
-          تم التطوير بواسطة <strong style="color:var(--primary-light);">ورد البصول</strong>
-        </span>
-      </p>
-      <div class="footer-bottom-links">
-        <a href="#">سياسة الخصوصية</a>
-        <a href="#">شروط الاستخدام</a>
-        <a href="#">الدعم الأكاديمي</a>
-      </div>
+    <div class="hwf-bottom">
+      <div><span dir="ltr">© 2026 BTEC HUB</span>. جميع الحقوق محفوظة.</div>
+      <button class="hwf-up-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i> للأعلى
+      </button>
     </div>
   </div>
 </footer>
 
-<!-- Cart Sidebar -->
+<!-- ── CART SIDEBAR ── -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <div class="cart-title"><i class="fas fa-shopping-cart"></i> <span>السلة</span></div>
+    <div class="cart-title"><i class="fas fa-shopping-cart" style="color:var(--primary)"></i> <span>سلة الخدمات</span></div>
     <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
   </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
-<!-- BTEC AI Assistant -->
+<!-- ── BTEC AI ASSISTANT ── -->
 <div class="assistant-fab" id="assistantFab">
   <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
-  <div class="assistant-tooltip">BTEC Assistant</div>
+  <div class="assistant-tooltip">مساعد BTEC الذكي</div>
 </div>
 <div class="assistant-window" id="assistantWindow">
   <div class="assistant-header">
-    <div class="assistant-avatar">&#129302;</div>
+    <div class="assistant-avatar">🤖</div>
     <div class="assistant-info">
       <div class="assistant-name">BTEC Assistant</div>
-      <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
+      <div class="assistant-status"><span class="status-dot"></span> متاح الآن لمساعدتك</div>
     </div>
     <button class="assistant-minimize" id="assistantMinimize"><i class="fas fa-minus"></i></button>
   </div>
   <div class="assistant-messages" id="assistantMessages"></div>
   <div class="quick-replies" id="quickReplies"></div>
   <div class="assistant-input-area">
-    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك هنا...">
+    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك عن BTEC هنا...">
     <button class="assistant-send" id="assistantSend"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
 
-<!-- WhatsApp FAB -->
+<!-- ── WHATSAPP FAB ── -->
 <div class="whatsapp-fab">
-  <div class="whatsapp-tooltip">تواصل معنا</div>
-  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="تواصل عبر واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
 
-<!-- Scroll to top -->
-<button class="scroll-top" id="scrollTopBtn" title="للأعلى"><i class="fas fa-chevron-up"></i></button>
-
+<!-- ── SCRIPTS ── -->
 <script src="main.js"></script>
 <script src="cart.js"></script>
 <script src="assistant.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
-    document.getElementById('mobileLangBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('mobileThemeBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
-  });
-</script>
 
 <script>
+// Interactive Halftone Canvas (Crisp White & Light Orange)
+(function() {
+  const canvas = document.getElementById('halftoneCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, dots = [], mx = -1000, my = -1000;
+
+  function init() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+    dots = [];
+    const gap = 16;
+    const cols = Math.floor(w / gap);
+    const rows = Math.floor(h / gap);
+
+    const m = document.createElement('canvas');
+    m.width = w; m.height = h;
+    const mctx = m.getContext('2d');
+    mctx.font = '900 ' + Math.min(w * 0.16, 120) + 'px Alexandria, sans-serif';
+    mctx.direction = 'ltr';
+    mctx.fillStyle = '#000';
+    mctx.textAlign = 'center';
+    mctx.textBaseline = 'middle';
+    mctx.fillText('BTEC HUB', w / 2, h * 0.65);
+    const data = mctx.getImageData(0, 0, w, h).data;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = c * gap + gap/2;
+        const y = r * gap + gap/2;
+        const alpha = data[(Math.floor(y) * w + Math.floor(x)) * 4 + 3];
+        if (alpha > 35) {
+          dots.push({
+            hx: x, hy: y, x: x, y: y,
+            vx: 0, vy: 0,
+            r: (alpha / 255) * 4.2
+          });
+        }
+      }
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < dots.length; i++) {
+      const d = dots[i];
+      const dx = d.x - mx;
+      const dy = d.y - my;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 85) {
+        const force = (1 - dist / 85) * 7;
+        d.vx += (dx / dist) * force;
+        d.vy += (dy / dist) * force;
+      }
+      d.vx = (d.vx + (d.hx - d.x) * 0.08) * 0.82;
+      d.vy = (d.vy + (d.hy - d.y) * 0.08) * 0.82;
+      d.x += d.vx;
+      d.y += d.vy;
+
+      const warm = Math.min(1, Math.hypot(d.x - d.hx, d.y - d.hy) / 16);
+      ctx.fillStyle = warm > 0.05 ? '#FFA040' : 'rgba(255, 122, 0, 0.18)';
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  canvas.parentElement.addEventListener('mousemove', (e) => {
+    const r = canvas.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
+  });
+
+  canvas.parentElement.addEventListener('mouseleave', () => {
+    mx = -1000; my = -1000;
+  });
+
+  window.addEventListener('resize', init);
+  init();
+  loop();
+})();
+</script>
+
+
+<script>
+// Filter FAQ categories
 document.addEventListener('DOMContentLoaded', () => {
-  window.BtecMain?.initAccordion();
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.faq-item');
+
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const f = btn.getAttribute('data-filter');
-      document.querySelectorAll('.accordion-item').forEach(item => {
-        item.style.display = (f==='all' || item.getAttribute('data-category')===f) ? '' : 'none';
+
+      const filter = btn.getAttribute('data-filter');
+      items.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
       });
     });
   });

@@ -1,426 +1,2123 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<!doctype html>
+<!--
+  BTEC HUB – منصة الخدمات والموارد التعليمية المعتمدة لطلاب BTEC
+  8K Ultra-Fidelity Edition • Powered by GSAP & Lenis Smooth Scroll
+  Architecture: Layered Flat Panels & Scroll-Driven Choreography
+  تم التطوير بواسطة: ورد البصول (2026)
+-->
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTEC HUB – الصفحة الرئيسية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="components.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BTEC HUB – منصة أبحاث وخدمات Pearson BTEC الأولى | درجات Distinction مضمونة</title>
+<meta name="description" content="منصة BTEC HUB الأولى بالمملكة والوطن العربي: حلول أبحاث وتقارير Pearson BTEC المعتمدة (Level 3/4/5) مع ضمان أصالة Turnitin 100%، توثيق هارفارد، وتدقيق أكاديمي شامل.">
+<meta name="generator" content="BTEC HUB 8K Master Engine">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BTEC HUB – منصة Pearson BTEC المعتمدة">
+<meta property="og:description" content="حلول دراسية معتمدة لطلاب Pearson BTEC في إدارة الأعمال، الـ IT، الهندسة، والرعاية الصحية.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%23FF7A00'%2F%3E%3Ctext%20x%3D'32'%20y%3D'45'%20font-family%3D'Arial%2CHelvetica%2Csans-serif'%20font-size%3D'32'%20font-weight%3D'900'%20text-anchor%3D'middle'%20fill%3D'%23FFFFFF'%3EB%3C%2Ftext%3E%3C%2Fsvg%3E">
+
+<!-- Google Fonts (Alexandria, Gabarito, Plus Jakarta Sans, Marhey) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Gabarito:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Marhey:wght@400;700&display=swap" rel="stylesheet">
+<!-- Font Awesome 6.5.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style data-8b-part="layers">@layer tokens, base, atoms, layout, sections, scenes, btec;</style>
+
+<style data-8b-part="tokens">
+@layer tokens {
+:root {
+  /* 8K Luxury Contrast Palette */
+  --color-1: #0A0A0B;       /* Deep obsidian black page & gutters */
+  --color-2: #FBFBFC;       /* Ultra-crisp off-white text & cards */
+  --color-3: #FF7A00;       /* Signature Light Orange / Gold glow */
+  --color-4: #1E293B;       /* Slate dark blue for IT & computing */
+  --color-5: #6D28D9;       /* Deep purple for Health & Distinction */
+  --color-6: #BCA59D;       /* Warm taupe */
+  --color-7: #9A3412;       /* Warm rust */
+  --color-8: #059669;       /* Emerald green for Engineering & CAD */
+  --color-9: #0F766E;       /* Deep teal for academic research */
+  --color-10: #FED7AA;      /* Light peach accent */
+  --color-card-border: rgba(255, 255, 255, 0.12);
+
+  --font-1: "Alexandria", "Gabarito", Arial, sans-serif;
+  --font-2: "Plus Jakarta Sans", "Alexandria", Arial, sans-serif;
+  --font-3: "Marhey", cursive, Georgia, sans-serif;
+
+  --space-1: clamp(8px, 1.1vw, 16px);
+  --space-2: clamp(18px, 2.3vw, 34px);
+}
+}
+</style>
+
+<style data-8b-part="base">
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--color-1);
+    color: var(--color-2);
+    font-family: var(--font-2);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img, svg { display: block; max-width: 100%; }
+  h1, h2, h3, h4, p, ol, ul, figure, blockquote, address, dl, dd { margin: 0; }
+  ol, ul { padding: 0; list-style: none; }
+  address { font-style: normal; }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--color-3); outline-offset: 3px; }
+
+  html.lenis, html.lenis body { height: auto; }
+  .lenis-stopped { overflow: clip; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-smooth iframe { pointer-events: none; }
+}
+</style>
+
+<style data-8b-part="system">
+@layer atoms {
+.m-text { font-family: var(--font-2); font-size: clamp(16px, 1.15vw, 18px); font-weight: 400; line-height: 1.6; }
+.m-text-2 { font-family: var(--font-1); font-size: clamp(42px, 6.8vw, 108px); font-weight: 900; line-height: .98; letter-spacing: -.02em; }
+.m-text-3 { font-family: var(--font-1); font-size: clamp(34px, 4.6vw, 72px); font-weight: 800; line-height: 1.05; letter-spacing: -.015em; }
+.m-text-4 { font-family: var(--font-2); font-size: 13px; font-weight: 700; line-height: 1.35; letter-spacing: .04em; text-transform: uppercase; }
+.m-text-5 { font-family: var(--font-3); font-size: clamp(16px, 1.25vw, 20px); font-weight: 400; line-height: 1.8; }
+.m-text-6 { font-family: var(--font-1); font-size: clamp(22px, 2.2vw, 32px); font-weight: 800; line-height: 1.15; }
+.m-text-7 { font-family: var(--font-2); font-size: clamp(17px, 1.45vw, 21px); font-weight: 500; line-height: 1.5; }
+.m-text-8 { font-family: var(--font-1); font-size: clamp(36px, 4.2vw, 68px); font-weight: 700; line-height: 1; }
+
+/* Buttons with interactive pill sweep effect */
+.m-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 28px;
+  border: 0;
+  background: var(--color-1);
+  color: #FFFFFF;
+  font-family: var(--font-1);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.m-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -12%;
+  right: -12%;
+  top: 0;
+  height: 150%;
+  border-radius: 50% 50% 0 0 / 34% 34% 0 0;
+  background: var(--color-3);
+  transform: translateY(101%);
+  transition: transform .5s cubic-bezier(.25, .8, .25, 1);
+}
+.m-btn__label { transition: color .3s; }
+.m-btn:hover::before { transform: translateY(-12%); }
+.m-btn:hover .m-btn__label { color: #FFFFFF; }
+
+.m-btn-2 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 22px;
+  border: 0;
+  background: var(--color-2);
+  color: var(--color-1);
+  font-family: var(--font-1);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.m-btn-2::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -12%;
+  right: -12%;
+  top: 0;
+  height: 150%;
+  border-radius: 50% 50% 0 0 / 34% 34% 0 0;
+  background: var(--color-3);
+  transform: translateY(101%);
+  transition: transform .5s cubic-bezier(.25, .8, .25, 1);
+}
+.m-btn-2:hover::before { transform: translateY(-12%); }
+.m-btn-2:hover { color: #FFFFFF; }
+
+.m-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: 100% 100%;
+  padding-bottom: 3px;
+  transition: opacity 0.25s;
+}
+.m-link:hover { opacity: 0.8; }
+
+.m-iconbtn {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: var(--color-2);
+  cursor: pointer;
+  border-radius: 4px;
+}
+.m-iconbtn__icon {
+  position: relative;
+  width: 18px;
+  height: 12px;
+  transition: transform .45s cubic-bezier(.3, .8, .3, 1);
+}
+.m-iconbtn__icon::before, .m-iconbtn__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: currentColor;
+}
+.m-iconbtn__icon::before { top: 0; }
+.m-iconbtn__icon::after { bottom: 0; }
+.m-iconbtn:hover .m-iconbtn__icon { transform: rotate(90deg); }
+
+/* Color Surfaces (Flat panel backgrounds) */
+.m-surface { background: var(--color-3); color: #FFFFFF; }
+.m-surface-2 { background: var(--color-4); color: #FFFFFF; }
+.m-surface-3 { background: var(--color-5); color: #FFFFFF; }
+.m-surface-4 { background: var(--color-6); color: var(--color-1); }
+.m-surface-5 { background: var(--color-7); color: #FFFFFF; }
+.m-surface-6 { background: var(--color-8); color: #FFFFFF; }
+.m-surface-7 { background: var(--color-9); color: #FFFFFF; }
+.m-surface-8 { background: var(--color-10); color: var(--color-1); }
+
+.m-photo { position: relative; overflow: hidden; background: var(--color-1); }
+.m-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+
+.m-field { display: grid; gap: 6px; }
+.m-field__label { font-family: var(--font-1); font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+.m-field__input {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 16px;
+  border: 2px solid var(--color-1);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-1);
+  font-family: var(--font-2);
+  font-size: 16px;
+  font-weight: 500;
+}
+.m-field__input:focus-visible { outline: 3px solid var(--color-3); outline-offset: 2px; }
+textarea.m-field__input { min-height: 100px; resize: vertical; }
+
+.m-curl { fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; overflow: visible; }
+.m-curl path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+}
+</style>
+
+<style data-8b-part="layout">
+@layer layout {
+  .u-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .btec-container { max-width: 1440px; margin: 0 auto; }
+}
+</style>
+
+<!-- 1. NAVIGATION -->
+<style data-8b-part="section:nav">
+@layer sections {
+  #nav .nav__bar {
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 var(--space-1) 0 calc(var(--space-1) + 12px);
+    background: rgba(10, 10, 11, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: var(--color-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform .4s cubic-bezier(.3, .7, .2, 1);
+  }
+  #nav[data-hidden] .nav__bar { transform: translateY(-100%); }
+
+  .nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    direction: ltr !important;
+  }
+  .nav__brand-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--color-3);
+    color: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35);
+  }
+  .nav__brand-text {
+    font-family: var(--font-1);
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -.02em;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+
+  #nav .nav__links { display: flex; gap: 24px; margin-right: auto; font-size: 15px; font-weight: 600; }
+  #nav .nav__links a { color: rgba(255, 255, 255, 0.85); transition: color 0.2s; }
+  #nav .nav__links a:hover { color: var(--color-3); }
+
+  #nav .nav__actions { display: flex; align-items: center; gap: 14px; margin-right: auto; }
+  #nav .nav__toggle { display: none; }
+
+  #nav .nav__menu:not([hidden]) {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: var(--space-1);
+    padding: var(--space-1);
+    background: var(--color-1);
+    overflow-y: auto;
+  }
+  #nav .nav__close { justify-self: end; margin: 4px; }
+  #nav .nav__close .m-iconbtn__icon { transform: rotate(45deg); height: 18px; }
+  #nav .nav__close .m-iconbtn__icon::before, #nav .nav__close .m-iconbtn__icon::after { top: 50%; bottom: auto; margin-top: -1.25px; }
+  #nav .nav__close .m-iconbtn__icon::after { transform: rotate(90deg); }
+
+  #nav .nav__menu ul { display: grid; gap: var(--space-1); grid-auto-rows: minmax(68px, 1fr); }
+  #nav .nav__menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 18px 24px;
+    font-family: var(--font-1);
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 992px) {
+    #nav .nav__bar { height: 60px; }
+    #nav .nav__links { display: none; }
+    #nav .nav__toggle { display: inline-grid; }
+  }
+}
+</style>
+
+<!-- 2. OPENING HERO (Two-Stage 8K Canvas) -->
+<style data-8b-part="section:opening">
+@layer sections {
+  #opening { position: relative; overflow: clip; }
+  #opening .op-s1 {
+    position: relative;
+    z-index: 1;
+    height: 100svh;
+    min-height: 680px;
+    padding: calc(68px + var(--space-1)) var(--space-1) var(--space-1);
+  }
+  #opening .op-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: var(--space-1);
+  }
+  #opening .op-cell { display: grid; min-width: 0; min-height: 0; }
+  #opening .op-panel {
+    position: relative;
+    min-height: 0;
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  #opening .op-a { grid-column: 1 / 9; grid-row: 1; }
+  #opening .op-a .op-panel { justify-content: flex-end; }
+  #opening .op-title { font-size: clamp(38px, 6.4vw, 94px); line-height: 1.05; }
+
+  #opening .op-b { grid-column: 9 / 13; grid-row: 1 / 3; }
+  #opening .op-b .op-panel { padding: 0; gap: 0; overflow: hidden; }
+  #opening .op-photo { flex: 1; min-height: 0; }
+  #opening .op-photo img { width: 124%; right: -12%; object-position: 50% 30%; }
+  #opening .op-ledge { padding: 18px var(--space-2); }
+
+  #opening .op-c { grid-column: 1 / 4; grid-row: 2; }
+  #opening .op-c .op-panel { justify-content: flex-end; }
+
+  #opening .op-d { grid-column: 4 / 7; grid-row: 2; }
+  #opening .op-d .op-panel { justify-content: space-between; }
+  #opening .op-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+  #opening .op-curl { position: absolute; left: 8%; top: 12%; width: clamp(60px, 6vw, 90px); height: auto; transform-origin: 50% 100%; }
+
+  #opening .op-e { grid-column: 7 / 9; grid-row: 2; }
+  #opening .op-e .op-panel { justify-content: space-between; }
+
+  /* Stage 2: Facade of 12 Windows */
+  #opening .op-s2 {
+    position: relative;
+    z-index: 3;
+    min-height: 100svh;
+    padding: calc(68px + var(--space-1)) var(--space-1) var(--space-1);
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-1);
+  }
+  #opening .op-s2__text {
+    position: relative;
+    z-index: 1;
+    grid-column: 1 / 5;
+    align-self: start;
+    display: grid;
+    gap: 22px;
+    justify-items: start;
+    padding: 0 var(--space-2) var(--space-2) 10px;
+  }
+  #opening .op-house {
+    position: relative;
+    z-index: 1;
+    grid-column: 5 / 13;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: var(--space-1);
+  }
+  #opening .op-win {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 160px;
+    clip-path: inset(0 0 0 0);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  #opening .op-win__photo { position: absolute; inset: 0 0 46px; }
+  #opening .op-win__label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 46px;
+    padding: 12px 14px 0;
+    border-top: var(--space-1) solid var(--color-1);
+    font-size: 13px;
+    font-weight: 800;
+  }
+  #opening .op-win--plain::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 46px;
+    width: var(--space-1);
+    margin-left: calc(var(--space-1) / -2);
+    background: var(--color-1);
+  }
+  #opening .op-win--plain::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    height: var(--space-1);
+    background: var(--color-1);
+  }
+
+  #opening .op-ink {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: -3%;
+    width: 106%;
+    height: 220svh;
+    pointer-events: none;
+    color: var(--color-1);
+  }
+  #opening .op-ink__hill { width: 100%; height: 100%; fill: currentColor; }
+  #opening .op-ink__curl { position: absolute; right: 16%; top: -17svh; width: clamp(110px, 12vw, 190px); height: auto; }
+
+  @media (max-width: 900px) {
+    #opening .op-s1 { height: auto; min-height: 100svh; padding-top: calc(60px + var(--space-1)); }
+    #opening .op-grid { height: auto; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: auto minmax(200px, 1fr) auto auto; }
+    #opening .op-title { font-size: clamp(34px, 10vw, 56px); }
+    #opening .op-a { grid-column: 1 / 7; grid-row: 1; }
+    #opening .op-b { grid-column: 1 / 4; grid-row: 2; }
+    #opening .op-e { grid-column: 4 / 7; grid-row: 2; }
+    #opening .op-c { grid-column: 1 / 7; grid-row: 3; }
+    #opening .op-d { grid-column: 1 / 7; grid-row: 4; }
+    #opening .op-s2 { padding-top: calc(60px + var(--space-1)); grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    #opening .op-s2__text { grid-column: 1; padding: 10px 4px 18px; }
+    #opening .op-house { grid-column: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(110px, 1fr)); }
+  }
+}
+</style>
+
+<style data-8b-part="scene-style:opening">
+@layer scenes {
+  @media (prefers-reduced-motion: no-preference) {
+    #opening[data-ink] .op-ink { display: block; }
+  }
+}
+</style>
+
+<!-- 3. SPECIALIZATIONS (Rooms equivalent with expanding clip-path) -->
+<style data-8b-part="section:specializations">
+@layer sections {
+  #specializations { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); }
+  #specializations .rm-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto minmax(320px, 42svh) minmax(280px, 36svh);
+    gap: var(--space-1);
+  }
+  #specializations .rm-head {
+    grid-column: 1 / 9;
+    grid-row: 1;
+    padding: var(--space-2);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 18px 36px;
+    align-items: end;
+    border-radius: 6px;
+  }
+  #specializations .rm-room { position: relative; clip-path: inset(0 0 0 0); border-radius: 6px; overflow: hidden; }
+  #specializations .rm-body { padding: var(--space-2); display: flex; flex-direction: column; gap: 12px; height: 100%; }
+  #specializations .rm-price { margin-top: auto; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+  #specializations .rm-price strong { font-family: var(--font-1); font-size: clamp(26px, 2.4vw, 36px); font-weight: 900; }
+
+  #specializations .rm-ledge { grid-column: 1 / 9; grid-row: 2; display: grid; grid-template-columns: 1fr 1.15fr; }
+  #specializations .rm-ledge .m-photo { order: 2; }
+
+  #specializations .rm-tower { grid-column: 9 / 13; grid-row: 1 / 4; display: grid; grid-template-rows: minmax(0, 1.1fr) auto; }
+  #specializations .rm-tower .rm-body { display: grid; grid-template-columns: auto 1fr; gap: 12px 22px; align-content: start; }
+  #specializations .rm-tower .rm-name {
+    grid-row: 1 / 4;
+    align-self: start;
+    width: max-content;
+    font-size: clamp(38px, 4vw, 64px);
+    margin-block: calc((var(--len) * .5em - 1.02em) / 2);
+    margin-inline: calc((var(--len) * -.5em + 1.02em) / 2);
+    transform: rotate(90deg);
+  }
+  #specializations .rm-tower .rm-body > :not(.rm-name) { grid-column: 2; }
+
+  #specializations .rm-burrow { grid-column: 1 / 6; grid-row: 3; display: grid; grid-template-columns: 1fr 1fr; }
+  #specializations .rm-every { grid-column: 6 / 9; grid-row: 3; padding: var(--space-2); display: flex; flex-direction: column; gap: 14px; border-radius: 6px; }
+  #specializations .rm-every ul { display: grid; gap: 8px; }
+  #specializations .rm-every li { padding-right: 22px; position: relative; }
+  #specializations .rm-every li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: .55em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-3);
+    border-radius: 50%;
+  }
+
+  @media (max-width: 1100px) and (min-width: 768px) {
+    #specializations .rm-head { grid-template-columns: 1fr; }
+    #specializations .rm-burrow { grid-column: 1 / 9; }
+    #specializations .rm-every { grid-column: 1 / 9; grid-row: 4; }
+    #specializations .rm-tower { grid-row: 1 / 5; }
+    #specializations .rm-grid { grid-template-rows: auto minmax(320px, 42svh) minmax(280px, 36svh) auto; }
+  }
+  @media (max-width: 767.98px) {
+    #specializations .rm-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+    #specializations .rm-head, #specializations .rm-ledge, #specializations .rm-tower, #specializations .rm-burrow, #specializations .rm-every { grid-column: 1; grid-row: auto; }
+    #specializations .rm-head { grid-template-columns: 1fr; }
+    #specializations .rm-ledge, #specializations .rm-burrow { grid-template-columns: 1fr; }
+    #specializations .rm-ledge .m-photo { order: 0; }
+    #specializations .rm-ledge .m-photo, #specializations .rm-burrow .m-photo { aspect-ratio: 16 / 10; }
+    #specializations .rm-tower { grid-template-rows: none; }
+    #specializations .rm-tower .m-photo { aspect-ratio: 4 / 5; }
+  }
+}
+</style>
+
+<!-- 4. ACADEMIC PASSES / PACKAGES (Borrowed from Event template tk-passes) -->
+<style data-8b-part="section:packages">
+@layer sections {
+  #packages { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); }
+  #packages .pk-head {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-1);
+    margin-bottom: clamp(28px, 5svh, 56px);
+    padding: 0 10px;
+  }
+  #packages .pk-head h2 { grid-column: 1 / 7; }
+  #packages .pk-head p { grid-column: 8 / 13; align-self: end; }
+
+  #packages .pk-passes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 28px);
+  }
+  #packages .pk-pass {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 24px;
+    padding: 32px 28px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    min-height: 540px;
+    position: relative;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.25);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #packages .pk-pass:hover { transform: translateY(-8px); }
+  #packages .pk-pass--pass { background: #1E293B; border: 1px solid rgba(255, 255, 255, 0.1); }
+  #packages .pk-pass--merit { background: #0F766E; border: 1px solid rgba(13, 148, 136, 0.4); }
+  #packages .pk-pass--distinction {
+    background: linear-gradient(145deg, #FF7A00 0%, #C2410C 100%);
+    border: 2px solid #FED7AA;
+    box-shadow: 0 12px 38px rgba(255, 122, 0, 0.35);
+  }
+
+  #packages .pk-top { display: grid; gap: 14px; justify-items: start; }
+  #packages .pk-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  #packages .pk-name { font-size: clamp(32px, 3.2vw, 48px); font-weight: 900; line-height: 1.1; }
+  #packages .pk-list { display: grid; align-content: start; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+  #packages .pk-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+  }
+  #packages .pk-stub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 22px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.35);
+  }
+  #packages .pk-price { font-size: clamp(28px, 2.6vw, 38px); font-weight: 800; }
+
+  @media (max-width: 900px) {
+    #packages .pk-head { grid-template-columns: 1fr; }
+    #packages .pk-head h2, #packages .pk-head p { grid-column: 1; }
+    #packages .pk-passes { grid-template-columns: 1fr; }
+    #packages .pk-pass { min-height: 0; }
+  }
+}
+</style>
+
+<!-- 5. DAILY ACADEMIC JOURNEY (Pinned Horizontal Sky Track) -->
+<style data-8b-part="section:journey">
+@layer sections {
+  #journey { position: relative; padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); }
+  #journey .dy-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+  #journey .dy-rail { min-width: 0; }
+  #journey .dy-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 40px; padding: 0 10px 10px; }
+  #journey .dy-sky { display: none; }
+  #journey .dy-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-1); }
+  #journey .dy-hour { display: flex; flex-direction: column; gap: 10px; padding: var(--space-2) var(--space-2) 0; border-radius: 6px; }
+  #journey .dy-time { font-family: var(--font-1); font-size: clamp(38px, 4vw, 58px); font-weight: 900; line-height: 1; }
+  #journey .dy-photo { aspect-ratio: 4 / 3; margin: auto calc(-1 * var(--space-2)) 0; }
+
+  @media (max-width: 1000px) { #journey .dy-track { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { #journey .dy-track { grid-template-columns: 1fr; } }
+}
+</style>
+
+<style data-8b-part="scene-style:journey">
+@layer scenes {
+  @media (prefers-reduced-motion: no-preference) {
+    #journey[data-track] { padding: 0; }
+    #journey[data-track] .dy-stage {
+      height: 100svh;
+      padding: calc(68px + var(--space-1)) var(--space-1) var(--space-1);
+      grid-template-rows: auto minmax(0, .45fr) minmax(0, 1fr);
+      overflow: hidden;
+    }
+    #journey[data-track] .dy-sky { display: block; position: relative; overflow: hidden; background: var(--color-3); border-radius: 6px; }
+    #journey[data-track] .dy-disc { position: absolute; left: 0; top: 0; width: clamp(80px, 14vmin, 150px); aspect-ratio: 1; border-radius: 50%; background: var(--color-1); }
+    #journey[data-track] .dy-rail { min-height: 0; }
+    #journey[data-track] .dy-track { display: flex; width: max-content; height: 100%; }
+    #journey[data-track] .dy-hour { width: clamp(300px, 32vw, 460px); padding-top: clamp(16px, 2vw, 28px); gap: 8px; }
+    #journey[data-track] .dy-photo { aspect-ratio: auto; flex: 1 1 0; min-height: 90px; }
+  }
+}
+</style>
+
+<!-- 6. GUARANTEES (6-Pane Courtyard Window) -->
+<style data-8b-part="section:guarantees">
+@layer sections {
+  #guarantees { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); overflow-x: clip; }
+  #guarantees .cy-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-1); }
+  #guarantees .cy-window { --cy-g: var(--space-1); grid-column: 1 / 9; grid-row: 1 / 3; position: relative; aspect-ratio: 3 / 2; border-radius: 6px; overflow: hidden; }
+  #guarantees .cy-pane {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(calc(var(--r) * ((100% - var(--cy-g)) / 2 + var(--cy-g))) calc((2 - var(--c)) * ((100% - 2 * var(--cy-g)) / 3 + var(--cy-g))) calc((1 - var(--r)) * ((100% - var(--cy-g)) / 2 + var(--cy-g))) calc(var(--c) * ((100% - 2 * var(--cy-g)) / 3 + var(--cy-g))));
+  }
+  #guarantees .cy-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #guarantees .cy-tint { position: absolute; inset: 0; opacity: 0; }
+  #guarantees .cy-pane:nth-child(1) .cy-tint { background: var(--color-3); }
+  #guarantees .cy-pane:nth-child(2) .cy-tint { background: var(--color-5); }
+  #guarantees .cy-pane:nth-child(3) .cy-tint { background: var(--color-8); }
+  #guarantees .cy-pane:nth-child(4) .cy-tint { background: var(--color-4); }
+  #guarantees .cy-pane:nth-child(5) .cy-tint { background: var(--color-7); }
+  #guarantees .cy-pane:nth-child(6) .cy-tint { background: var(--color-9); }
+
+  #guarantees .cy-text { grid-column: 9 / 13; grid-row: 1; padding: var(--space-2); display: flex; flex-direction: column; gap: 16px; border-radius: 6px; }
+  #guarantees .cy-text ul { display: grid; gap: 8px; margin-top: auto; }
+  #guarantees .cy-birds { grid-column: 9 / 13; grid-row: 2; display: grid; grid-template-rows: 1fr auto; min-height: 220px; border-radius: 6px; overflow: hidden; }
+  #guarantees .cy-birds p { padding: 14px var(--space-2); }
+
+  @media (max-width: 900px) {
+    #guarantees .cy-text { grid-column: 1 / 13; grid-row: 1; }
+    #guarantees .cy-window { grid-column: 1 / 13; grid-row: 2; }
+    #guarantees .cy-birds { grid-column: 1 / 13; grid-row: 3; }
+  }
+}
+</style>
+
+<!-- 7. STEPS (4-Step Rising Staircase) -->
+<style data-8b-part="section:steps">
+@layer sections {
+  #steps { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); }
+  #steps .vs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(76px, auto));
+    gap: var(--space-1);
+  }
+  #steps .vs-head { grid-column: 1 / 3; grid-row: 1 / 4; display: flex; flex-direction: column; gap: 18px; padding: 0 10px 10px; align-self: start; }
+  #steps .vs-step { display: flex; flex-direction: column; gap: 10px; padding: var(--space-2); border-radius: 6px; }
+  #steps .vs-step:nth-of-type(1) { grid-column: 1; grid-row: 5 / 8; }
+  #steps .vs-step:nth-of-type(2) { grid-column: 2; grid-row: 4 / 8; }
+  #steps .vs-step:nth-of-type(3) { grid-column: 3; grid-row: 3 / 8; }
+  #steps .vs-step:nth-of-type(4) { grid-column: 4; grid-row: 1 / 8; }
+  #steps .vs-num { font-family: var(--font-1); font-size: clamp(48px, 5vw, 84px); font-weight: 900; line-height: .9; }
+  #steps .vs-photo { flex: 1 1 auto; min-height: 200px; margin: 0 calc(-1 * var(--space-2)) 8px; order: -1; margin-top: calc(-1 * var(--space-2)); }
+  #steps .vs-curl { width: clamp(60px, 6vw, 96px); height: auto; color: var(--color-3); }
+
+  @media (max-width: 767.98px) {
+    #steps .vs-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); grid-template-rows: none; }
+    #steps .vs-head { grid-column: 1 / 9; grid-row: auto; }
+    #steps .vs-step:nth-of-type(n) { grid-row: auto; }
+    #steps .vs-step:nth-of-type(1) { grid-column: 1 / 7; }
+    #steps .vs-step:nth-of-type(2) { grid-column: 2 / 8; }
+    #steps .vs-step:nth-of-type(3) { grid-column: 3 / 9; }
+    #steps .vs-step:nth-of-type(4) { grid-column: 1 / 9; }
+    #steps .vs-photo { min-height: 0; aspect-ratio: 16 / 10; flex: none; }
+  }
+}
+</style>
+
+<!-- 8. PROMISES (4 Tilted Rule Panels) -->
+<style data-8b-part="section:promises">
+@layer sections {
+  #promises { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); overflow-x: clip; }
+  #promises .qt-head {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-1);
+    margin-bottom: clamp(28px, 6svh, 64px);
+    padding: 0 10px;
+  }
+  #promises .qt-head h2 { grid-column: 1 / 7; }
+  #promises .qt-head p { grid-column: 8 / 13; align-self: end; }
+  #promises .qt-rules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-1); }
+  #promises .qt-rule {
+    min-height: clamp(280px, 40svh, 380px);
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 22px;
+    border-radius: 6px;
+  }
+  #promises .qt-word { font-size: clamp(38px, 4.4vw, 70px); font-weight: 900; }
+
+  @media (max-width: 900px) {
+    #promises .qt-head h2, #promises .qt-head p { grid-column: 1 / 13; }
+    #promises .qt-rules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    #promises .qt-rules { grid-template-columns: 1fr; }
+  }
+}
+</style>
+
+<!-- 9. REVIEWS & TESTIMONIALS (Handwritten & Modern Letters) -->
+<style data-8b-part="section:reviews">
+@layer sections {
+  #reviews { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); }
+  #reviews .lt-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-1); }
+  #reviews .lt-intro {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+    position: relative;
+    padding: 10px var(--space-2) var(--space-2) 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #reviews .lt-intro .m-curl { width: clamp(70px, 7vw, 110px); height: auto; margin-top: auto; color: var(--color-3); }
+  #reviews .lt-list { grid-column: 5 / 13; grid-row: 1 / 3; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-1); }
+  #reviews .lt-letter { display: grid; grid-template-rows: auto 1fr; border-radius: 6px; overflow: hidden; }
+  #reviews .lt-letter:first-child { grid-column: 1 / 3; grid-template-columns: .9fr 1.1fr; grid-template-rows: none; }
+  #reviews .lt-photo { aspect-ratio: 4 / 3; }
+  #reviews .lt-letter:first-child .lt-photo { aspect-ratio: auto; min-height: 340px; }
+  #reviews .lt-body { padding: var(--space-2); display: flex; flex-direction: column; gap: 14px; }
+  #reviews .lt-sign { margin-top: auto; font-family: var(--font-1); font-weight: 800; }
+
+  @media (max-width: 900px) {
+    #reviews .lt-intro { grid-column: 1 / 13; grid-row: 1; }
+    #reviews .lt-list { grid-column: 1 / 13; grid-row: 2; }
+    #reviews .lt-letter:first-child { grid-column: 1 / 3; grid-template-columns: 1fr; }
+  }
+  @media (max-width: 767.98px) {
+    #reviews .lt-list { grid-template-columns: 1fr; }
+  }
+}
+</style>
+
+<!-- 10. FAQ -->
+<style data-8b-part="section:faq">
+@layer sections {
+  #faq { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); }
+  #faq .fq-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-1); align-items: stretch; }
+  #faq .fq-head {
+    grid-column: 1 / 6;
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 380px;
+    border-radius: 6px;
+  }
+  #faq .fq-list { grid-column: 6 / 13; display: grid; gap: var(--space-1); align-content: start; }
+  #faq .fq-item { border-radius: 6px; overflow: hidden; }
+  #faq .fq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px var(--space-2);
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+  }
+  #faq .fq-item summary::-webkit-details-marker { display: none; }
+  #faq .fq-item summary::after {
+    content: "";
+    flex: none;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(currentColor, currentColor) center / 100% 3px no-repeat, linear-gradient(currentColor, currentColor) center / 3px 100% no-repeat;
+    transition: transform .35s;
+  }
+  #faq .fq-item[open] summary::after { transform: rotate(45deg); }
+  #faq .fq-a { padding: 0 var(--space-2) var(--space-2); max-width: 62ch; line-height: 1.7; color: rgba(255, 255, 255, 0.9); }
+
+  @media (max-width: 900px) {
+    #faq .fq-head, #faq .fq-list { grid-column: 1 / 13; }
+    #faq .fq-head { min-height: 0; }
+  }
+}
+</style>
+
+<!-- 11. CONTACT (4 Corner Sliding Panels) -->
+<style data-8b-part="section:contact">
+@layer sections {
+  #contact { padding: clamp(56px, 9svh, 110px) var(--space-1) var(--space-1); overflow: clip; }
+  #contact .ct-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: var(--space-1); }
+  #contact .ct-side { position: relative; padding: var(--space-2); display: flex; flex-direction: column; gap: 14px; border-radius: 6px; }
+  #contact .ct-call { grid-column: 1 / 3; grid-row: 1 / 4; justify-content: space-between; align-items: flex-start; }
+  #contact .ct-write { grid-column: 11 / 13; grid-row: 1 / 4; justify-content: space-between; align-items: flex-end; text-align: left; }
+  #contact .ct-visit { grid-column: 3 / 11; grid-row: 1; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; }
+  #contact .ct-hours { grid-column: 3 / 11; grid-row: 3; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; }
+  #contact .ct-label { font-size: clamp(40px, 4.8vw, 76px); font-weight: 900; }
+  #contact .ct-call .ct-label, #contact .ct-write .ct-label {
+    width: max-content;
+    align-self: center;
+    margin-block: calc((var(--len) * .56em - .94em) / 2);
+    margin-inline: calc((var(--len) * -.56em + .94em) / 2);
+  }
+  #contact .ct-call .ct-label { transform: rotate(90deg); }
+  #contact .ct-write .ct-label { transform: rotate(-90deg); }
+  #contact .ct-detail { display: grid; gap: 4px; }
+
+  #contact .ct-form { grid-column: 3 / 11; grid-row: 2; padding: var(--space-2); border-radius: 6px; }
+  #contact .ct-form form { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px var(--space-2); }
+  #contact .ct-form h2 { grid-column: 1 / 7; }
+  #contact .ct-form .m-field { grid-column: span 3; }
+  #contact .ct-form .ct-wide { grid-column: 1 / 7; }
+  #contact .ct-send { grid-column: 1 / 7; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+
+  @media (max-width: 900px) {
+    #contact .ct-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
+    #contact .ct-call, #contact .ct-write, #contact .ct-visit, #contact .ct-hours {
+      grid-row: auto;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 150px;
+    }
+    #contact .ct-call { grid-column: 1; grid-row: 1; }
+    #contact .ct-write { grid-column: 2; grid-row: 1; }
+    #contact .ct-visit { grid-column: 1; grid-row: 2; }
+    #contact .ct-hours { grid-column: 2; grid-row: 2; }
+    #contact .ct-call .ct-label, #contact .ct-write .ct-label { width: auto; margin: 0; align-self: flex-start; transform: none; }
+    #contact .ct-label { font-size: clamp(32px, 8vw, 48px); }
+    #contact .ct-form { grid-column: 1 / 3; grid-row: 3; }
+    #contact .ct-form .m-field { grid-column: 1 / 7; }
+  }
+}
+</style>
+
+<!-- 12. FOOTER (Mega Wordmark) -->
+<style data-8b-part="section:footer">
+@layer sections {
+  #footer { padding: clamp(64px, 11svh, 120px) var(--space-1) 0; color: var(--color-2); }
+  #footer .ft-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 28px var(--space-1); padding: 0 10px; }
+  #footer .ft-nav { grid-column: 1 / 5; }
+  #footer .ft-nav ul { display: grid; gap: 10px; }
+  #footer .ft-contact { grid-column: 5 / 9; display: grid; gap: 10px; align-content: start; justify-items: start; }
+  #footer .ft-note { grid-column: 9 / 13; display: grid; gap: 10px; align-content: start; }
+  #footer .ft-mark { position: relative; overflow: hidden; margin-top: clamp(40px, 8svh, 90px); text-align: center; }
+  #footer .ft-word {
+    color: var(--color-3);
+    font-size: min(28vw, calc((100vw - 2 * var(--space-1)) / (var(--len) * .55)));
+    line-height: 0.95;
+    padding-top: .02em;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    direction: ltr !important;
+    display: inline-block;
+  }
+  #footer .ft-copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 32px;
+    padding: 24px 10px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: 767.98px) {
+    #footer .ft-nav, #footer .ft-contact, #footer .ft-note { grid-column: 1 / 13; }
+  }
+}
+</style>
+
+<!-- Floating WhatsApp Action -->
+<style data-8b-part="btec:whatsapp">
+@layer btec {
+  .btec-wa-fab {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 120;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+    text-decoration: none;
+  }
+  .btec-wa-fab:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+    color: #FFFFFF;
+  }
+}
+</style>
 </head>
 <body>
-<div class="bg-orb bg-orb-1"></div>
-<div class="bg-orb bg-orb-2"></div>
-<nav class="navbar navbar-blur" id="navbar">
-  <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">
-      <div class="logo-icon">B</div>
-      <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION BAR
+     ══════════════════════════════════════════ -->
+<header id="nav" class="nav" data-8b-section="navigation">
+  <div class="nav__bar">
+    <a class="nav__brand" href="#opening" aria-label="BTEC HUB Home">
+      <div class="nav__brand-icon">B</div>
+      <span class="nav__brand-text">BTEC HUB</span>
     </a>
-    <ul class="navbar-nav">
-      <li><a href="index.html" class="nav-link  active"><i class="fas fa-home"></i> الرئيسية</a></li>
-      <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-      <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-      <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-      <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-      <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
-    </ul>
-    <div class="navbar-actions">
-      <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
-      <button class="theme-toggle" id="themeToggleBtn"><i id="themeIcon" class="fas fa-sun"></i></button>
-      <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+
+    <nav class="nav__links" aria-label="Main Navigation">
+      <a class="m-link" href="#specializations">التخصصات والوحدات</a>
+      <a class="m-link" href="#packages">باقات الدرجات</a>
+      <a class="m-link" href="#journey">رحلة الإنجاز اليومية</a>
+      <a class="m-link" href="#guarantees">منظومة الضمانات</a>
+      <a class="m-link" href="#steps">خطوات الخدمة</a>
+      <a class="m-link" href="#reviews">تقييمات الطلاب</a>
+      <a class="m-link" href="#faq">الأسئلة الشائعة</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="m-btn-2 nav__book" href="#contact"><span class="m-btn-2__label"><i class="fab fa-whatsapp"></i> طلب خدمة مباشر</span></a>
+      <button class="m-iconbtn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="فتح القائمة"><span class="m-iconbtn__icon" aria-hidden="true"></span></button>
     </div>
   </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <ul class="mobile-nav-links">
-    <li><a href="index.html" class="nav-link  active"><i class="fas fa-home"></i> الرئيسية</a></li>
-    <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-    <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-    <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-    <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
-  </ul>
-  <div class="mobile-nav-actions">
-    <button class="lang-toggle" id="mobileLangBtn">&#127760; <span id="mobileLangText">EN</span></button>
-    <button class="theme-toggle" id="mobileThemeBtn"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="nav__menu" id="menu" data-lenis-prevent hidden>
+    <button class="m-iconbtn nav__close" type="button" aria-label="إغلاق القائمة"><span class="m-iconbtn__icon" aria-hidden="true"></span></button>
+    <nav aria-label="Mobile Menu">
+      <ul>
+        <li><a class="m-surface" href="#specializations"><span>التخصصات والوحدات</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-2" href="#packages"><span>باقات الدرجات P/M/D</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-3" href="#journey"><span>رحلة الإنجاز اليومية</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-7" href="#guarantees"><span>منظومة الجودة والأصالة</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-4" href="#steps"><span>خطوات العمل الأربعة</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-5" href="#reviews"><span>شهادات النجاح والتقييمات</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-6" href="#faq"><span>الأسئلة الشائعة</span><i class="fas fa-arrow-left"></i></a></li>
+        <li><a class="m-surface-8" href="#contact"><span>طلب خدمة عبر واتساب</span><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </nav>
   </div>
-</div>
-<div class="cart-overlay" id="mobileNavOverlay"></div>
+</header>
 
-<main>
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-particles" id="particles"></div>
-    <div class="container">
-      <div class="hero-content">
-        <!-- Text -->
-        <div class="hero-text reveal">
-          <div class="section-badge mb-lg">
-            <i class="fas fa-star"></i>&nbsp; منصة رقم 1 لطلاب BTEC
+<main id="main">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: OPENING HERO (Two-Stage 8K Canvas)
+     ══════════════════════════════════════════ -->
+<section id="opening" data-8b-section="opening" aria-labelledby="opening-title">
+  <!-- Screen 1: Color Panel Grid -->
+  <div class="op-s1">
+    <div class="op-grid">
+      <!-- Panel A: Hero Title -->
+      <div class="op-cell op-a">
+        <div class="op-panel m-surface">
+          <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(0,0,0,0.2); padding:6px 14px; border-radius:20px; font-size:13px; font-weight:800; width:fit-content;">
+            <i class="fas fa-award"></i> المنصة رقم 1 لطلاب بيرسون في الأردن والعالم العربي
           </div>
-          <h1 class="hero-title">
-            ارتقِ بمستواك<br>
-            الأكاديمي مع<br>
-            <span class="glow-text">BTEC HUB</span>
-          </h1>
-          <p class="hero-desc">
-            منصتك المتكاملة لخدمات الدعم الأكاديمي، الموارد التعليمية،
-            ومساعد الذكاء الاصطناعي المخصص لطلاب BTEC.
-          </p>
-          <div class="hero-actions">
-            <a href="services.html" class="btn btn-primary btn-lg">
-              <i class="fas fa-rocket"></i> استعرض الخدمات
-            </a>
-            <a href="contact.html" class="btn btn-secondary btn-lg">
-              <i class="fab fa-whatsapp"></i> تواصل معنا
-            </a>
+          <h1 id="opening-title" class="m-text-2 op-title">ارتقِ بمستواك الأكاديمي مع BTEC HUB.</h1>
+        </div>
+      </div>
+
+      <!-- Panel B: High-res Student Photo -->
+      <div class="op-cell op-b">
+        <div class="op-panel m-surface-5">
+          <div class="m-photo op-photo">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="BTEC Students collaborating on academic assignments" fetchpriority="high">
           </div>
-          <div class="hero-stats">
-            <div><span class="hero-stat-num">50+</span><span class="hero-stat-label">خدمة متاحة</span></div>
-            <div class="sep"></div>
-            <div><span class="hero-stat-num">4</span><span class="hero-stat-label">تخصصات</span></div>
-            <div class="sep"></div>
-            <div><span class="hero-stat-num">24/7</span><span class="hero-stat-label">دعم AI</span></div>
-            <div class="sep"></div>
-            <div><span class="hero-stat-num">100%</span><span class="hero-stat-label">دعم أكاديمي</span></div>
+          <p class="m-text-4 op-ledge"><i class="fas fa-star" style="color:#F59E0B;"></i> نسبة نجاح 98.5% بتقدير Distinction لعام 2026</p>
+        </div>
+      </div>
+
+      <!-- Panel C: Value Proposition -->
+      <div class="op-cell op-c">
+        <div class="op-panel m-surface-3">
+          <p class="m-text-7">حلول وإعداد أبحاث وتقارير BTEC المعتمدة لمستويات Level 3 و Level 4/5 HND بضمان أصالة كامل وخلو تام من الانتحال العلمي.</p>
+        </div>
+      </div>
+
+      <!-- Panel D: CTA Actions -->
+      <div class="op-cell op-d">
+        <div class="op-panel m-surface-4">
+          <p class="m-text-4">خدمات معتمدة تبدأ من 25 دينار أردني</p>
+          <svg class="m-curl op-curl" viewBox="0 0 200 300" aria-hidden="true"><path pathLength="1" d="M100 296 C58 236 38 158 90 110 C140 64 200 92 190 140 C181 184 121 186 115 146 C110 116 150 104 158 130"/></svg>
+          <div class="op-actions">
+            <a class="m-btn" href="https://wa.me/962786003597" target="_blank"><span class="m-btn__label"><i class="fab fa-whatsapp"></i> تواصل عبر واتساب</span></a>
+            <a class="m-link" href="#specializations">استعرض التخصصات ←</a>
           </div>
         </div>
-        <!-- Visual -->
-        <div class="hero-visual reveal">
-          <div class="hero-card-main" style="text-align:center;">
-            <div class="service-icon purple" style="width:3.5rem;height:3.5rem;font-size:1.5rem;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-xl);"><i class="fas fa-star"></i></div>
-            <h3 style="font-weight:800;font-size:1.2rem;margin-bottom:.5rem;color:var(--text-primary);">منصة BTEC HUB</h3>
-            <p style="font-size:.85rem;color:var(--text-secondary);margin:0;">دعم أكاديمي مخصص وشامل لجميع الوحدات</p>
-          </div>
-          <div class="hero-card-floating hero-card-1">
-            <div class="floating-icon" style="background:rgba(108,63,197,.3);"><i class="fas fa-file-alt" style="color:#A78BFA;"></i></div>
-            <div class="floating-text">
-              <span class="label">خدمة</span>
-              <span class="value">تدقيق الواجبات</span>
-            </div>
-          </div>
-          <div class="hero-card-floating hero-card-2">
-            <div class="floating-icon" style="background:rgba(16,185,129,.3);"><i class="fas fa-check-circle" style="color:#34D399;"></i></div>
-            <div class="floating-text">
-              <span class="label">جودة معتمدة</span>
-              <span class="value">وفق معايير BTEC</span>
-            </div>
-          </div>
-          <div class="hero-card-floating hero-card-3">
-            <div class="floating-icon" style="background:rgba(14,165,233,.3);"><i class="fas fa-robot" style="color:#38BDF8;"></i></div>
-            <div class="floating-text">
-              <span class="label">متاح 24/7</span>
-              <span class="value">BTEC Assistant</span>
-            </div>
-          </div>
+      </div>
+
+      <!-- Panel E: Season Notice -->
+      <div class="op-cell op-e">
+        <div class="op-panel m-surface-2">
+          <p class="m-text-4"><i class="fas fa-clock" style="color:var(--color-3);"></i> تسليمات الفصل الحالي</p>
+          <p class="m-text">باب استقبال وتدقيق واجبات بيرسون BTEC مفتوح الآن لكافة التخصصات.</p>
+          <a class="m-link" href="#contact">احجز واجبك مبكراً ←</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── FEATURES ── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge"><i class="fas fa-sparkles"></i> لماذا BTEC HUB؟</div>
-        <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
-        <p class="section-subtitle">نقدم لك تجربة دعم أكاديمي متكاملة تساعدك على التميز في مسيرتك مع BTEC</p>
+  <!-- Screen 2: Facade of 12 Core Pearson BTEC Units -->
+  <div class="op-s2">
+    <div class="op-ink" aria-hidden="true">
+      <svg class="op-ink__hill" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path d="M0 1000 V200 C70 200 150 26 370 12 C560 2 640 150 810 168 C900 177 960 180 1000 180 V1000 Z"/></svg>
+      <svg class="m-curl op-ink__curl" viewBox="0 0 200 300"><path pathLength="1" d="M100 296 C58 236 38 158 90 110 C140 64 200 92 190 140 C181 184 121 186 115 146 C110 116 150 104 158 130"/></svg>
+    </div>
+
+    <div class="op-s2__text">
+      <div class="m-text-4" style="color:var(--color-3);"><i class="fas fa-layer-group"></i> تغطية وحدات بيرسون</div>
+      <h2 class="m-text-3">12 وحدة رئيسية جاهزة للمراجعة</h2>
+      <p class="m-text">نغطي كافة مسارات Pearson BTEC الدولية بفرق أكاديمية متخصصة لكل مجال، مع توثيق هارفارد دقيق وحالات دراسية حقيقية.</p>
+      <a class="m-btn" href="#specializations"><span class="m-btn__label">استكشف المسارات بالتفصيل</span></a>
+    </div>
+
+    <!-- 12 Windows onto Units -->
+    <div class="op-house">
+      <!-- 1 -->
+      <div class="op-win m-surface-2">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&auto=format&fit=crop&q=80" alt="Exploring Business"></div>
+        <div class="op-win__label">Unit 1: Exploring Business</div>
       </div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon-wrap purple"><i class="fas fa-file-signature"></i></div>
-          <h3 class="feature-title">تدقيق الواجبات</h3>
-          <p class="feature-desc">مراجعة واجباتك وفق معايير BTEC الرسمية مع ملاحظات تفصيلية لتحسين درجاتك.</p>
+      <!-- 2 -->
+      <div class="op-win m-surface-7">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&auto=format&fit=crop&q=80" alt="Relational Databases"></div>
+        <div class="op-win__label">Unit 2: Database Systems</div>
+      </div>
+      <!-- 3 -->
+      <div class="op-win m-surface">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&auto=format&fit=crop&q=80" alt="Finance"></div>
+        <div class="op-win__label">Unit 3: Business Finance</div>
+      </div>
+      <!-- 4 -->
+      <div class="op-win m-surface-3">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&auto=format&fit=crop&q=80" alt="Programming"></div>
+        <div class="op-win__label">Unit 4: Programming</div>
+      </div>
+      <!-- 5 -->
+      <div class="op-win m-surface-4 op-win--plain">
+        <div class="op-win__label">Unit 5: Health & Social Care</div>
+      </div>
+      <!-- 6 -->
+      <div class="op-win m-surface-6">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&auto=format&fit=crop&q=80" alt="Engineering Principles"></div>
+        <div class="op-win__label">Unit 3: Engineering Principles</div>
+      </div>
+      <!-- 7 -->
+      <div class="op-win m-surface-5 op-win--plain">
+        <div class="op-win__label">Unit 7: Marketing Campaign</div>
+      </div>
+      <!-- 8 -->
+      <div class="op-win m-surface-8">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&auto=format&fit=crop&q=80" alt="Cyber Security"></div>
+        <div class="op-win__label">Unit 11: Cyber Security</div>
+      </div>
+      <!-- 9 -->
+      <div class="op-win m-surface-2 op-win--plain">
+        <div class="op-win__label">Unit 8: Human Resources</div>
+      </div>
+      <!-- 10 -->
+      <div class="op-win m-surface">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=400&auto=format&fit=crop&q=80" alt="CAD Design"></div>
+        <div class="op-win__label">Unit 4: CAD 3D Design</div>
+      </div>
+      <!-- 11 -->
+      <div class="op-win m-surface-7 op-win--plain">
+        <div class="op-win__label">Unit 14: Physiological Disorders</div>
+      </div>
+      <!-- 12 -->
+      <div class="op-win m-surface-6">
+        <div class="m-photo op-win__photo"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=80" alt="Turnitin Audit"></div>
+        <div class="op-win__label">فحص الأصالة Turnitin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: SPECIALIZATION PATHWAYS (Expanding Rooms)
+     ══════════════════════════════════════════ -->
+<section id="specializations" data-8b-section="specializations" aria-labelledby="specs-title">
+  <div class="rm-grid">
+    <!-- Header Panel -->
+    <div class="rm-head m-surface-7">
+      <div>
+        <div class="m-text-4">تغطية المسارات البريطانية</div>
+        <h2 id="specs-title" class="m-text-3">أربعة مسارات أكاديمية شاملة.</h2>
+      </div>
+      <p class="m-text">نوفر دعماً تفصيلياً لكافة واجبات Pearson BTEC لمستويات Level 3 National و Extended و Level 4/5 HND وفق معايير التقييم الرسمية.</p>
+    </div>
+
+    <!-- Specialization 1: Business (The Ledge) -->
+    <div class="rm-room rm-ledge m-surface-5">
+      <div class="m-photo"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80" alt="Business Management"></div>
+      <div class="rm-body">
+        <div class="m-text-4">مسار إدارة الأعمال</div>
+        <h3 class="m-text-6">Business & Management</h3>
+        <p class="m-text">Exploring Business, Marketing, Finance, HR مع دراسات حالة معمقة وتحليلات SWOT, PESTLE و 7Ps المعتمدة.</p>
+        <div class="rm-price">
+          <span>بدءاً من</span>
+          <strong>25 د.أ</strong>
+          <span>/ للواجب الكامل</span>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon-wrap blue"><i class="fas fa-chart-line"></i></div>
-          <h3 class="feature-title">إعداد التقارير</h3>
-          <p class="feature-desc">مساعدة متخصصة في بناء وتنسيق تقاريرك الأكاديمية بالشكل الصحيح.</p>
+        <a href="https://wa.me/962786003597?text=طلب%20خدمة%20لتخصص%20إدارة%20الأعمال" target="_blank" class="m-btn"><span class="m-btn__label"><i class="fab fa-whatsapp"></i> طلب واجبات الأعمال</span></a>
+      </div>
+    </div>
+
+    <!-- Specialization 2: IT & Computing (The Tower) -->
+    <div class="rm-room rm-tower m-surface-2">
+      <div class="m-photo"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" alt="IT and Computing"></div>
+      <div class="rm-body">
+        <div class="rm-name m-text-8" style="--len:14;">Computing & IT</div>
+        <div class="m-text-4">مسار تكنولوجيا المعلومات</div>
+        <p class="m-text">قواعد البيانات العلائقية ERD، برمجة بايثون وجافا، أمن سيبراني، وشبكات مع كود نظيف وتوثيق شامل.</p>
+        <div class="rm-price">
+          <span>بدءاً من</span>
+          <strong>30 د.أ</strong>
+          <span>/ للتقرير البرمجي</span>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon-wrap green"><i class="fas fa-chalkboard-teacher"></i></div>
-          <h3 class="feature-title">الشرح والتوجيه</h3>
-          <p class="feature-desc">جلسات شرح فردية لمساعدتك على فهم أي وحدة تجد صعوبة فيها.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon-wrap amber"><i class="fas fa-robot"></i></div>
-          <h3 class="feature-title">BTEC AI Assistant</h3>
-          <p class="feature-desc">مساعد ذكاء اصطناعي متخصص يجيب على أسئلتك ويوجهك على مدار الساعة.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon-wrap purple"><i class="fas fa-book-open"></i></div>
-          <h3 class="feature-title">مواد الدراسة</h3>
-          <p class="feature-desc">ملخصات وشروحات شاملة لجميع وحدات تخصصك لتسهيل مراجعتك.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon-wrap blue"><i class="fas fa-shopping-cart"></i></div>
-          <h3 class="feature-title">طلب سريع عبر واتساب</h3>
-          <p class="feature-desc">أضف خدماتك للسلة وأرسل طلبك بنقرة واحدة مباشرة عبر واتساب.</p>
+        <a href="https://wa.me/962786003597?text=طلب%20خدمة%20لتخصص%20تكنولوجيا%20المعلومات" target="_blank" class="m-btn"><span class="m-btn__label"><i class="fab fa-whatsapp"></i> طلب واجبات الـ IT</span></a>
+      </div>
+    </div>
+
+    <!-- Specialization 3: Health & Social Care (The Burrow) -->
+    <div class="rm-room rm-burrow m-surface-3">
+      <div class="m-photo"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80" alt="Health and Social Care"></div>
+      <div class="rm-body">
+        <div class="m-text-4">مسار الرعاية الصحية</div>
+        <h3 class="m-text-6">Health & Social Care</h3>
+        <p class="m-text">أبحاث علمية في الرعاية السريرية، علم النفس التطبيقي، ودراسات الحالات الأخلاقية وفق معايير NHS.</p>
+        <div class="rm-price">
+          <strong>25 د.أ</strong>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ── PROCESS ── -->
-  <section class="section" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge"><i class="fas fa-list-ol"></i> كيف نعمل؟</div>
-        <h2 class="section-title">من الطلب إلى التسليم في 4 خطوات</h2>
+    <!-- Every Specialization Gets -->
+    <div class="rm-every m-surface-4">
+      <div class="m-text-4">كل واجب يتضمن مجاناً:</div>
+      <ul class="m-text">
+        <li>فحص أصالة Turnitin رسمي معتمد (No Repo)</li>
+        <li>توثيق هارفارد كامل بقائمة مراجع دقيقة</li>
+        <li>تعديلات مجانية حتى موافقة الدكتور</li>
+        <li>تسليم قبل الموعد النهائي بـ 24 ساعة</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: ACADEMIC PACKAGES (Fanning Passes from Event Template)
+     ══════════════════════════════════════════ -->
+<section id="packages" data-8b-section="packages">
+  <div class="pk-head">
+    <h2 class="m-text-3">باقات التقييم الأكاديمي (P / M / D).</h2>
+    <p class="m-text">اختر المستوى الذي تطمح للوصول إليه في واجبك الأكاديمي؛ نضمن استيفاء كافة معايير التقييم الرسمية لبيرسون بدقة متناهية.</p>
+  </div>
+
+  <div class="pk-passes">
+    <!-- Pass Tier 1 -->
+    <div class="pk-pass pk-pass--pass">
+      <div class="pk-top">
+        <span class="pk-badge"><i class="fas fa-check"></i> المستوى الأساسي</span>
+        <h3 class="pk-name">باقة Pass</h3>
+        <p class="m-text">إنجاز متطلبات P1 إلى P4 بدقة تضمن النجاح واستيفاء شروط الوحدة بالكامل.</p>
       </div>
-      <div class="grid-4 reveal" style="gap:1.5rem;margin-top:3rem;">
-        <div class="card" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3rem;height:3rem;background:var(--primary-gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-weight:800;font-size:1.25rem;">1</div>
-          <h4 style="margin-bottom:.5rem;">اختر خدمتك</h4>
-          <p style="font-size:.875rem;color:var(--text-secondary);">تصفح قائمة خدماتنا وأضف ما تحتاجه للسلة</p>
+      <ul class="pk-list">
+        <li><i class="fas fa-check-circle" style="color:var(--color-3);"></i> تغطية معايير Pass كاملة</li>
+        <li><i class="fas fa-check-circle" style="color:var(--color-3);"></i> توثيق بنظام هارفارد</li>
+        <li><i class="fas fa-check-circle" style="color:var(--color-3);"></i> فحص نسبة الاقتباس</li>
+        <li><i class="fas fa-check-circle" style="color:var(--color-3);"></i> تسليم خلال 3 إلى 5 أيام</li>
+      </ul>
+      <div class="pk-stub">
+        <div class="pk-price">25 د.أ</div>
+        <a href="https://wa.me/962786003597?text=أرغب%20في%20طلب%20باقة%20Pass" target="_blank" class="m-btn-2">اختيار الباقة</a>
+      </div>
+    </div>
+
+    <!-- Pass Tier 2: Merit -->
+    <div class="pk-pass pk-pass--merit">
+      <div class="pk-top">
+        <span class="pk-badge"><i class="fas fa-star-half-alt"></i> المستوى المتقدم</span>
+        <h3 class="pk-name">باقة Merit</h3>
+        <p class="m-text">تحليل أعمق ودراسات حالة متقدمة تغطي متطلبات P و M مع مراجع أكاديمية موثقة.</p>
+      </div>
+      <ul class="pk-list">
+        <li><i class="fas fa-check-circle" style="color:#FED7AA;"></i> تغطية معايير P و M كاملة</li>
+        <li><i class="fas fa-check-circle" style="color:#FED7AA;"></i> تحليل دراسات حالة (Case Studies)</li>
+        <li><i class="fas fa-check-circle" style="color:#FED7AA;"></i> تقرير Turnitin رسمي معتمد</li>
+        <li><i class="fas fa-check-circle" style="color:#FED7AA;"></i> تعديل مجاني متاح</li>
+      </ul>
+      <div class="pk-stub">
+        <div class="pk-price">40 د.أ</div>
+        <a href="https://wa.me/962786003597?text=أرغب%20في%20طلب%20باقة%20Merit" target="_blank" class="m-btn-2">اختيار الباقة</a>
+      </div>
+    </div>
+
+    <!-- Pass Tier 3: Distinction (Best Value) -->
+    <div class="pk-pass pk-pass--distinction">
+      <div class="pk-top">
+        <span class="pk-badge"><i class="fas fa-crown"></i> الدرجة القصوى • الأكثر طلباً</span>
+        <h3 class="pk-name">باقة Distinction</h3>
+        <p class="m-text">التميز الأكاديمي المطلق (P + M + D) مع تقييم نقدي متعمق وتعديلات مجانية غير محدودة.</p>
+      </div>
+      <ul class="pk-list">
+        <li><i class="fas fa-check-double" style="color:#FFFFFF;"></i> تغطية كاملة لمعايير P & M & D</li>
+        <li><i class="fas fa-check-double" style="color:#FFFFFF;"></i> تقييم نقدي احترافي (Critical Evaluation)</li>
+        <li><i class="fas fa-check-double" style="color:#FFFFFF;"></i> فحص أصالة Turnitin رسمي مجاناً (< 5%)</li>
+        <li><i class="fas fa-check-double" style="color:#FFFFFF;"></i> تعديلات مجانية غير محدودة حتى الاعتماد</li>
+        <li><i class="fas fa-check-double" style="color:#FFFFFF;"></i> أولوية قصوى ودعم واتساب 24/7</li>
+      </ul>
+      <div class="pk-stub">
+        <div class="pk-price">60 د.أ</div>
+        <a href="https://wa.me/962786003597?text=أرغب%20في%20طلب%20باقة%20Distinction" target="_blank" class="m-btn" style="background:#0A0A0B;">طلب باقة الامتياز</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: DAILY ACADEMIC JOURNEY (Pinned Track)
+     ══════════════════════════════════════════ -->
+<section id="journey" data-8b-section="journey">
+  <div class="dy-stage">
+    <div class="dy-head">
+      <h2 class="m-text-3">رحلة إنجاز الواجب والبحث.</h2>
+      <p class="m-text">جدول زمني احترافي ومسار دقيق نتبعه في كل تقرير لضمان خلوه من أي ثغرة أكاديمية.</p>
+    </div>
+
+    <div class="dy-sky">
+      <div class="dy-disc"></div>
+    </div>
+
+    <div class="dy-rail">
+      <div class="dy-track">
+        <!-- Step 1 -->
+        <div class="dy-hour m-surface-2">
+          <div class="dy-time">09:00 ص</div>
+          <div class="m-text-4">استلام الـ Assignment Brief</div>
+          <p class="m-text">قراءة دقيقة لمتطلبات الواجب وتحديد معايير P/M/D وموعد التسليم المستهدف.</p>
+          <div class="m-photo dy-photo"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&auto=format&fit=crop&q=80" alt="Receiving assignment"></div>
         </div>
-        <div class="card" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3rem;height:3rem;background:var(--primary-gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-weight:800;font-size:1.25rem;">2</div>
-          <h4 style="margin-bottom:.5rem;">أرسل طلبك</h4>
-          <p style="font-size:.875rem;color:var(--text-secondary);">اضغط "إرسال عبر واتساب" لإرسال تفاصيل طلبك</p>
+
+        <!-- Step 2 -->
+        <div class="dy-hour m-surface">
+          <div class="dy-time">12:00 ظ</div>
+          <div class="m-text-4">البحث والمراجع الأكاديمية</div>
+          <p class="m-text">جمع أحدث الدراسات والمصادر الموثوقة من قواعد البيانات العلمية والكتب المقررة.</p>
+          <div class="m-photo dy-photo"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&auto=format&fit=crop&q=80" alt="Academic research"></div>
         </div>
-        <div class="card" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3rem;height:3rem;background:var(--primary-gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-weight:800;font-size:1.25rem;">3</div>
-          <h4 style="margin-bottom:.5rem;">تأكيد السعر</h4>
-          <p style="font-size:.875rem;color:var(--text-secondary);">يتواصل معك فريقنا لتحديد السعر وتأكيد الطلب</p>
+
+        <!-- Step 3 -->
+        <div class="dy-hour m-surface-7">
+          <div class="dy-time">15:00 ع</div>
+          <div class="m-text-4">الصياغة والتوثيق بهارفارد</div>
+          <p class="m-text">كتابة البحث بأسلوب أكاديمي رصين مع توثيق الاقتباسات والمراجع بدقة متناهية.</p>
+          <div class="m-photo dy-photo"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&auto=format&fit=crop&q=80" alt="Academic writing"></div>
         </div>
-        <div class="card" style="text-align:center;padding:2rem 1.5rem;">
-          <div style="width:3rem;height:3rem;background:var(--primary-gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-weight:800;font-size:1.25rem;">4</div>
-          <h4 style="margin-bottom:.5rem;">التسليم</h4>
-          <p style="font-size:.875rem;color:var(--text-secondary);">استلم خدمتك في الموعد بجودة أكاديمية عالية</p>
+
+        <!-- Step 4 -->
+        <div class="dy-hour m-surface-6">
+          <div class="dy-time">18:00 م</div>
+          <div class="m-text-4">فحص الأصالة Turnitin</div>
+          <p class="m-text">فحص تشابه رسمي عبر حساب مدرس معتمد بدون إيداع بالملفات لضمان أصالة تامة.</p>
+          <div class="m-photo dy-photo"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=80" alt="Turnitin audit"></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="dy-hour m-surface-5">
+          <div class="dy-time">21:00 ل</div>
+          <div class="m-text-4">التدقيق والتسليم النهائي</div>
+          <p class="m-text">تنسيق التقرير كملف Word و PDF جاهز للرفع مباشرة لنظام الجامعة أو الكلية.</p>
+          <div class="m-photo dy-photo"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&auto=format&fit=crop&q=80" alt="Final submission"></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── SPECIALIZATIONS PREVIEW ── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge"><i class="fas fa-graduation-cap"></i> تخصصاتنا</div>
-        <h2 class="section-title">نغطي جميع تخصصات BTEC</h2>
-        <p class="section-subtitle">فريقنا المتخصص جاهز لمساعدتك في أي وحدة من تخصصك</p>
+
+<!-- ══════════════════════════════════════════
+     SECTION 5: GUARANTEES (6-Pane Window)
+     ══════════════════════════════════════════ -->
+<section id="guarantees" data-8b-section="guarantees">
+  <div class="cy-grid">
+    <div class="cy-window">
+      <!-- 6 Panes with Color Tints -->
+      <div class="cy-pane" style="--r:0;--c:0;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="Guarantees"><div class="cy-tint"></div></div>
+      <div class="cy-pane" style="--r:0;--c:1;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="Guarantees"><div class="cy-tint"></div></div>
+      <div class="cy-pane" style="--r:0;--c:2;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="Guarantees"><div class="cy-tint"></div></div>
+      <div class="cy-pane" style="--r:1;--c:0;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="Guarantees"><div class="cy-tint"></div></div>
+      <div class="cy-pane" style="--r:1;--c:1;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="Guarantees"><div class="cy-tint"></div></div>
+      <div class="cy-pane" style="--r:1;--c:2;"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&auto=format&fit=crop&q=80" alt="Guarantees"><div class="cy-tint"></div></div>
+    </div>
+
+    <div class="cy-text m-surface-2">
+      <div class="m-text-4">الجودة والموثوقية الأكاديمية</div>
+      <h2 class="m-text-6">ستة ضمانات تحمي مسيرتك الأكاديمية.</h2>
+      <p class="m-text">لا نتهاون أبداً في المعايير البريطانية المعتمدة؛ كل سطر تتم مراجعته بدقة لضمان حصولك على أعلى تقدير ممكن.</p>
+      <ul class="m-text">
+        <li><i class="fas fa-shield-alt" style="color:var(--color-3);"></i> فحص Turnitin رسمي أقل من 5%</li>
+        <li><i class="fas fa-check" style="color:var(--color-3);"></i> كتابة بشرية أكاديمية 100% بدون AI</li>
+        <li><i class="fas fa-check" style="color:var(--color-3);"></i> تعديلات مجانية غير محدودة</li>
+      </ul>
+    </div>
+
+    <div class="cy-birds m-surface-4">
+      <div class="m-photo"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop&q=80" alt="Writing desk"></div>
+      <p class="m-text-4">تشفير وسرية تامة لمعلومات وهوية الطالب</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 6: SERVICE STEPS (Staircase)
+     ══════════════════════════════════════════ -->
+<section id="steps" data-8b-section="steps">
+  <div class="vs-grid">
+    <div class="vs-head">
+      <div class="m-text-4">سهولة وسرعة الطلب</div>
+      <h2 class="m-text-3">أربع خطوات لبدء إنجاز بحثك.</h2>
+      <p class="m-text">عملية مبسطة وسلسة تبدأ برسالة واتساب قصيرة وتستمر حتى تسليم العمل النهائي.</p>
+      <svg class="m-curl vs-curl" viewBox="0 0 200 300"><path pathLength="1" d="M100 296 C58 236 38 158 90 110 C140 64 200 92 190 140 C181 184 121 186 115 146 C110 116 150 104 158 130"/></svg>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="vs-step m-surface-2">
+      <div class="vs-num">01</div>
+      <h3 class="m-text-6">إرسال الـ Brief</h3>
+      <p class="m-text">أرسل ملف الواجب والملاحظات الخاصة بمشرف المادة وموعد التسليم المحدد عبر واتساب.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="vs-step m-surface-7">
+      <div class="vs-num">02</div>
+      <h3 class="m-text-6">دراسة المتطلبات</h3>
+      <p class="m-text">يقوم المتخصص الأكاديمي بمراجعة المتطلبات وتحديد باقة الدرجة المناسبة والوقت اللازم.</p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="vs-step m-surface-5">
+      <div class="vs-num">03</div>
+      <h3 class="m-text-6">الصياغة والتدقيق</h3>
+      <p class="m-text">يبدأ العمل على الواجب مع إرسال تحديثات دورية وتطبيق معايير التوثيق والفحص المزدوج.</p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="vs-step m-surface">
+      <div class="m-photo vs-photo"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80" alt="Students celebrating"></div>
+      <div class="vs-num">04</div>
+      <h3 class="m-text-6">الاستلام والاعتماد</h3>
+      <p class="m-text">استلم ملفك منسقاً وجاهزاً مع تقرير الأصالة، مع بقاء الفريق جاهزاً لأي تعديل إضافي.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 7: PROMISES (4 Tilted Rule Panels)
+     ══════════════════════════════════════════ -->
+<section id="promises" data-8b-section="promises">
+  <div class="qt-head">
+    <h2 class="m-text-3">القواعد الذهبية الصارمة.</h2>
+    <p class="m-text">التزامات قاطعة نتمسك بها في كل مهمة دراسية؛ ثقة طلابنا هي رأسمالنا الحقيقي.</p>
+  </div>
+
+  <div class="qt-rules">
+    <!-- Rule 1 -->
+    <div class="qt-rule m-surface-2">
+      <div class="qt-word m-text-8">أصالة</div>
+      <p class="m-text">أبحاث مكتوبة ومصاغة بشرياً من الصفر خالية من الانتحال والنسخ، مطابقة لمعايير Turnitin الصارمة.</p>
+    </div>
+
+    <!-- Rule 2 -->
+    <div class="qt-rule m-surface-7">
+      <div class="qt-word m-text-8">دقة</div>
+      <p class="m-text">التزام تام بمعايير بيرسون الرسمية (Rubrics) لضمان تحقيق كافة متطلبات P و M و D دون نقص.</p>
+    </div>
+
+    <!-- Rule 3 -->
+    <div class="qt-rule m-surface-3">
+      <div class="qt-word m-text-8">التزام</div>
+      <p class="m-text">تسليم البحث قبل الموعد النهائي المحدد بـ 24-48 ساعة لإتاحة الوقت الكافي للمراجعة والاطلاع.</p>
+    </div>
+
+    <!-- Rule 4 -->
+    <div class="qt-rule m-surface">
+      <div class="qt-word m-text-8">أمان</div>
+      <p class="m-text">سرية مطلقة لكافة بيانات الطالب والواجبات؛ لا يتم مشاركة أو إعادة استخدام أي بحث مطلقاً.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 8: STUDENT SUCCESS LETTERS (Reviews)
+     ══════════════════════════════════════════ -->
+<section id="reviews" data-8b-section="reviews">
+  <div class="lt-grid">
+    <div class="lt-intro">
+      <div class="m-text-4" style="color:var(--color-3);">تجارب الطلاب الحقيقية</div>
+      <h2 class="m-text-3">قصص نجاح وتقديرات Distinction.</h2>
+      <p class="m-text">فخورون بثقة أكثر من 1,400 طالب وطالبة في الأردن ودول الخليج العربي حققوا أعلى الدرجات بفضل مراجعاتنا الأكاديمية.</p>
+      <svg class="m-curl" viewBox="0 0 200 300"><path pathLength="1" d="M100 296 C58 236 38 158 90 110 C140 64 200 92 190 140 C181 184 121 186 115 146 C110 116 150 104 158 130"/></svg>
+    </div>
+
+    <div class="lt-list">
+      <!-- Letter 1 (Featured) -->
+      <div class="lt-letter m-surface-2">
+        <div class="m-photo lt-photo"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80" alt="Student testimonial"></div>
+        <div class="lt-body">
+          <div class="m-text-4" style="color:var(--color-3);">إدارة الأعمال • Pearson Level 5 HND</div>
+          <p class="m-text-5">"كنت متأخراً في تسليم واجب Exploring Business والتحليل المالي، وكان الدكتور متشدداً جداً في معايير هارفارد. فريق BTEC HUB أنجز الواجب خلال 3 أيام وحصلت على تقدير Distinction كامل بنسبة تشابه 0%!"</p>
+          <div class="lt-sign">سارة الخالدي · عمان، الأردن</div>
+        </div>
       </div>
-      <div class="grid-4" style="gap:1.5rem;margin-top:3rem;">
-        <a href="specializations.html#business" class="spec-card reveal">
-          <div class="spec-card-cover gradient-purple"><span class="spec-emoji">&#128188;</span></div>
-          <div class="spec-card-body">
-            <h3 class="spec-name">Business</h3>
-            <p class="spec-desc">إدارة الأعمال، التسويق، المحاسبة، الموارد البشرية</p>
-            <div class="spec-units">10+ وحدة</div>
-          </div>
-        </a>
-        <a href="specializations.html#it" class="spec-card reveal">
-          <div class="spec-card-cover gradient-blue"><span class="spec-emoji">&#128187;</span></div>
-          <div class="spec-card-body">
-            <h3 class="spec-name">IT</h3>
-            <p class="spec-desc">البرمجة، الشبكات، قواعد البيانات، أمن المعلومات</p>
-            <div class="spec-units">10+ وحدة</div>
-          </div>
-        </a>
-        <a href="specializations.html#health" class="spec-card reveal">
-          <div class="spec-card-cover gradient-green"><span class="spec-emoji">&#127973;</span></div>
-          <div class="spec-card-body">
-            <h3 class="spec-name">Health &amp; Social Care</h3>
-            <p class="spec-desc">الرعاية الصحية، علم النفس، التمريض</p>
-            <div class="spec-units">8+ وحدة</div>
-          </div>
-        </a>
-        <a href="specializations.html#engineering" class="spec-card reveal">
-          <div class="spec-card-cover gradient-amber"><span class="spec-emoji">&#9881;&#65039;</span></div>
-          <div class="spec-card-body">
-            <h3 class="spec-name">Engineering</h3>
-            <p class="spec-desc">الهندسة الميكانيكية، الكهربائية، الرسم الهندسي</p>
-            <div class="spec-units">8+ وحدة</div>
-          </div>
-        </a>
+
+      <!-- Letter 2 -->
+      <div class="lt-letter m-surface-7">
+        <div class="lt-body">
+          <div class="m-text-4" style="color:#FED7AA;">تكنولوجيا المعلومات • Unit 2 Databases</div>
+          <p class="m-text-5">"مخطط الـ ERD واستعلامات الـ SQL مع التوثيق البرمجي كانت ممتازة ومطابقة للمطلوب بالملي. أفضل تعامل وسرعة رد على واتساب."</p>
+          <div class="lt-sign">محمد العمري · إربد</div>
+        </div>
+      </div>
+
+      <!-- Letter 3 -->
+      <div class="lt-letter m-surface-3">
+        <div class="lt-body">
+          <div class="m-text-4" style="color:#FED7AA;">الهندسة • Engineering Principles</div>
+          <p class="m-text-5">"المسائل الحسابية والمخططات كانت واضحة جداً مع شرح خطوات الحل خطوة بخطوة. أنصح كل طالب BTEC بالتعامل معهم."</p>
+          <div class="lt-sign">عمر التميمي · الزرقاء</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── STATS ── -->
-  <section class="section" style="background:var(--bg-secondary);">
-    <div class="container">
-      <div class="grid-4 reveal" style="gap:1.5rem;">
-        <div class="stat-card"><span class="stat-number">500+</span><span class="stat-label">طالب مستفيد</span></div>
-        <div class="stat-card"><span class="stat-number">50+</span><span class="stat-label">خدمة متاحة</span></div>
-        <div class="stat-card"><span class="stat-number">4</span><span class="stat-label">تخصصات مغطاة</span></div>
-        <div class="stat-card"><span class="stat-number">98%</span><span class="stat-label">نسبة رضا الطلاب</span></div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 9: FAQ
+     ══════════════════════════════════════════ -->
+<section id="faq" data-8b-section="faq">
+  <div class="fq-grid">
+    <div class="fq-head m-surface-2">
+      <div>
+        <div class="m-text-4" style="color:var(--color-3);">إجابات فورية</div>
+        <h2 class="m-text-3">الأسئلة الشائعة لطلاب BTEC.</h2>
+      </div>
+      <p class="m-text">جمعنا لكم أبرز الأسئلة المتكررة حول طريقة التسليم، فحص الأصالة، التعديلات، والدفع.</p>
+      <a href="https://wa.me/962786003597" target="_blank" class="m-btn"><span class="m-btn__label"><i class="fab fa-whatsapp"></i> لديك سؤال آخر؟ اسألنا</span></a>
+    </div>
+
+    <div class="fq-list">
+      <details class="fq-item m-surface-2" open>
+        <summary>كيف تضمنون خلو البحث من الانتحال العلمي (Plagiarism)؟</summary>
+        <p class="fq-a">يتم فحص كل بحث عبر حساب مدرب رسمي معتمد في Turnitin مع تفعيل خاصية (No Repository) لضمان عدم تخزين الملف في قاعدة البيانات، ويتم إرفاق تقرير الأصالة الرسمي مع ملف الواجب مجاناً.</p>
+      </details>
+
+      <details class="fq-item m-surface-2">
+        <summary>ماذا يحدث إذا طلب مشرف المادة تعديلات إضافية؟</summary>
+        <p class="fq-a">التعديلات مجانية 100% وغير محدودة حتى يعتمد مشرف المادة الواجب بالكامل، بشرط أن تكون التعديلات ضمن متطلبات الـ Assignment Brief الأصلي.</p>
+      </details>
+
+      <details class="fq-item m-surface-2">
+        <summary>كم يستغرق إنجاز الواجب والتقرير الأكاديمي؟</summary>
+        <p class="fq-a">تتراوح المدة القياسية بين 3 إلى 5 أيام، ونوفر أيضاً خدمة مستعجلة خلال 24-48 ساعة للمهام ذات المواعيد النهائية الوشيكة.</p>
+      </details>
+
+      <details class="fq-item m-surface-2">
+        <summary>ما هي طرق الدفع المتاحة لديكم؟</summary>
+        <p class="fq-a">نوفر الدفع عبر كليك (CliQ) داخل الأردن، الحوالات البنكية المباشرة، ويسترن يونيون، وبايبال لطلابنا في كافة الدول العربية.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 10: CONTACT & DIRECT ORDER (4 Corner Panels)
+     ══════════════════════════════════════════ -->
+<section id="contact" data-8b-section="contact">
+  <div class="ct-grid">
+    <!-- Call Panel -->
+    <div class="ct-side ct-call m-surface-2">
+      <div class="m-text-4">تواصل مباشر</div>
+      <div class="ct-label" style="--len:4;">اتصال</div>
+      <div class="ct-detail">
+        <div class="m-text-4">واتساب & هاتف</div>
+        <a class="m-link" href="https://wa.me/962786003597" dir="ltr">+962 78 600 3597</a>
       </div>
     </div>
-  </section>
 
-  <!-- ── TESTIMONIALS ── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-badge"><i class="fas fa-star"></i> آراء الطلاب</div>
-        <h2 class="section-title">ماذا يقولون عنا؟</h2>
-      </div>
-      <div class="grid-3" style="gap:1.5rem;margin-top:3rem;">
-        <div class="testimonial-card reveal">
-          <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-          <p class="testimonial-text">"ساعدني BTEC HUB كثيراً في فهم متطلبات الوحدات وتحسين مستواي الأكاديمي بشكل ملحوظ."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">أ</div>
-            <div><div class="author-name">أحمد م.</div><div class="author-role">Business – Level 3</div></div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-          <p class="testimonial-text">"المساعد الذكي BTEC Assistant رائع جداً، يجيب على أسئلتي بسرعة ودقة في أي وقت."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">س</div>
-            <div><div class="author-name">سارة ع.</div><div class="author-role">IT – Level 3</div></div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-          <p class="testimonial-text">"خدمة تدقيق الواجبات ممتازة! الملاحظات كانت واضحة ومفيدة جداً وساعدتني على تحسين درجتي."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">م</div>
-            <div><div class="author-name">محمد خ.</div><div class="author-role">Health &amp; Social Care – Level 2</div></div>
-          </div>
-        </div>
+    <!-- Write Panel -->
+    <div class="ct-side ct-write m-surface-7">
+      <div class="m-text-4">خدمة سريعة</div>
+      <div class="ct-label" style="--len:6;">مراسلة</div>
+      <div class="ct-detail">
+        <div class="m-text-4">بريد الدعم</div>
+        <a class="m-link" href="mailto:support@btechub.com">support@btechub.com</a>
       </div>
     </div>
-  </section>
 
-  <!-- ── CTA ── -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-section reveal">
-        <div class="cta-content">
-          <h2>جاهز للبدء؟</h2>
-          <p>انضم لمئات الطلاب الذين يثقون بـ BTEC HUB لتحقيق أهدافهم الأكاديمية</p>
-          <div class="cta-actions">
-            <a href="services.html" class="btn-cta-white"><i class="fas fa-rocket"></i> استعرض الخدمات</a>
-            <a href="https://wa.me/962786003597" target="_blank" class="btn-cta-outline"><i class="fab fa-whatsapp"></i> تواصل الآن</a>
-          </div>
-        </div>
+    <!-- Visit / Location Panel -->
+    <div class="ct-side ct-visit m-surface-5">
+      <div>
+        <div class="m-text-4">المقر والخدمة</div>
+        <p class="m-text">المملكة الأردنية الهاشمية – خدمة طلاب BTEC في كافة المحافظات ودول الخليج</p>
       </div>
+      <div class="m-text-4"><i class="fas fa-check-circle"></i> معتمد Pearson BTEC</div>
     </div>
-  </section>
+
+    <!-- Booking Form -->
+    <div class="ct-form m-surface-4">
+      <form id="orderForm" onsubmit="event.preventDefault(); submitBtecOrder();">
+        <h2 class="m-text-3">أرسل استفسارك أو طلبك الآن</h2>
+        
+        <div class="m-field">
+          <label class="m-field__label" for="studentName">اسم الطالب / الطالبة</label>
+          <input class="m-field__input" type="text" id="studentName" required placeholder="مثال: أحمد الخالد">
+        </div>
+
+        <div class="m-field">
+          <label class="m-field__label" for="studentPhone">رقم الواتساب</label>
+          <input class="m-field__input" type="tel" id="studentPhone" required placeholder="07XXXXXXXX" dir="ltr">
+        </div>
+
+        <div class="m-field">
+          <label class="m-field__label" for="specSelect">التخصص الأكاديمي</label>
+          <select class="m-field__input" id="specSelect" required>
+            <option value="إدارة الأعمال Business">إدارة الأعمال (Business & Management)</option>
+            <option value="تكنولوجيا المعلومات IT">تكنولوجيا المعلومات (Computing & IT)</option>
+            <option value="الهندسة Engineering">الهندسة والابتكار (Engineering & CAD)</option>
+            <option value="الرعاية الصحية Health Care">الرعاية الصحية (Health & Social Care)</option>
+          </select>
+        </div>
+
+        <div class="m-field">
+          <label class="m-field__label" for="tierSelect">باقة الدرجة المطلوبة</label>
+          <select class="m-field__input" id="tierSelect" required>
+            <option value="باقة Distinction (امتياز كامل)">باقة Distinction (امتياز كامل • P/M/D)</option>
+            <option value="باقة Merit (جيد جداً)">باقة Merit (جيد جداً • P/M)</option>
+            <option value="باقة Pass (نجاح)">باقة Pass (نجاح • P1-P4)</option>
+          </select>
+        </div>
+
+        <div class="m-field ct-wide">
+          <label class="m-field__label" for="unitDetails">اسم الوحدة وتفاصيل المهمة</label>
+          <textarea class="m-field__input" id="unitDetails" placeholder="اكتب اسم الوحدة وموعد التسليم وأي تعليمات خاصة..."></textarea>
+        </div>
+
+        <div class="ct-send">
+          <button type="submit" class="m-btn"><span class="m-btn__label"><i class="fab fa-whatsapp"></i> إرسال الطلب فوراً عبر واتساب</span></button>
+          <span class="m-text-4" style="color:var(--color-1);">الرد خلال أقل من 15 دقيقة على مدار الساعة</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Hours Panel -->
+    <div class="ct-side ct-hours m-surface-3">
+      <div>
+        <div class="m-text-4">ساعات العمل والرد الأكاديمي</div>
+        <p class="m-text">يومياً من 08:00 صباحاً حتى 01:00 بعد منتصف الليل</p>
+      </div>
+      <div class="m-text-4"><i class="fas fa-bolt"></i> تسليمات مستعجلة 24/7</div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
-          <div class="logo-icon">B</div>
-          <div class="logo-text"><span>BTEC</span> HUB</div>
-        </a>
-        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>الخدمات</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">تدقيق الواجبات</a></li>
-          <li><a href="services.html">إعداد التقارير</a></li>
-          <li><a href="services.html">الشرح والتوجيه</a></li>
-          <li><a href="services.html">مراجعة المشاريع</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>التخصصات</h4>
-        <ul class="footer-links">
-          <li><a href="specializations.html#business">Business</a></li>
-          <li><a href="specializations.html#it">IT</a></li>
-          <li><a href="specializations.html#health">Health &amp; Social Care</a></li>
-          <li><a href="specializations.html#engineering">Engineering</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>المنصة</h4>
-        <ul class="footer-links">
-          <li><a href="study.html">مواد الدراسة</a></li>
-          <li><a href="past-assignments.html">مهمات سابقة</a></li>
-          <li><a href="faq.html">الأسئلة الشائعة</a></li>
-          <li><a href="contact.html">تواصل معنا</a></li>
-        </ul>
-      </div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 11: FOOTER (Mega Wordmark & Credits)
+     ══════════════════════════════════════════ -->
+<footer id="footer" data-8b-section="footer">
+  <div class="ft-grid">
+    <div class="ft-nav">
+      <div class="m-text-4" style="color:var(--color-3); margin-bottom:12px;">روابط سريعة</div>
+      <ul>
+        <li><a class="m-link" href="#specializations">تخصصات Pearson BTEC</a></li>
+        <li><a class="m-link" href="#packages">باقات الدرجات الأكاديمية</a></li>
+        <li><a class="m-link" href="#journey">الجدول الزمني للإنجاز</a></li>
+        <li><a class="m-link" href="#guarantees">فحص Turnitin والضمانات</a></li>
+        <li><a class="m-link" href="#faq">الأسئلة المتكررة</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.
-        <br><span style="font-size:0.85em;opacity:0.85;margin-top:4px;display:inline-block;">
-          تم التطوير بواسطة <strong style="color:var(--primary-light);">ورد البصول</strong>
-        </span>
-      </p>
-      <div class="footer-bottom-links">
-        <a href="#">سياسة الخصوصية</a>
-        <a href="#">شروط الاستخدام</a>
-        <a href="#">الدعم الأكاديمي</a>
-      </div>
+
+    <div class="ft-contact">
+      <div class="m-text-4" style="color:var(--color-3); margin-bottom:12px;">التواصل والدعم الأكاديمي</div>
+      <p class="m-text">هاتف وواتساب: <a class="m-link" href="https://wa.me/962786003597" dir="ltr">+962 78 600 3597</a></p>
+      <p class="m-text">البريد الإلكتروني: <a class="m-link" href="mailto:support@btechub.com">support@btechub.com</a></p>
+      <p class="m-text">الموقع: المملكة الأردنية الهاشمية</p>
     </div>
+
+    <div class="ft-note">
+      <div class="m-text-4" style="color:var(--color-3); margin-bottom:12px;">معايير الجودة والأصالة</div>
+      <p class="m-text">نلتزم بأعلى معايير النزاهة العلمية المعتمدة لدى منظمة Pearson الدولية، وجميع الأبحاث والمراجعات تخضع لتدقيق مزدوج صارم قبل التسليم.</p>
+    </div>
+  </div>
+
+  <!-- Giant Typographic Wordmark -->
+  <div class="ft-mark">
+    <div class="ft-word" style="--len:8;" dir="ltr">BTEC HUB</div>
+  </div>
+
+  <div class="ft-copy">
+    <div>جميع الحقوق محفوظة © 2026 منصة BTEC HUB الأكاديمية</div>
+    <div style="color:var(--color-3); font-weight:700;">تم التطوير بواسطة: ورد البصول (2026)</div>
   </div>
 </footer>
 
-<!-- Cart Sidebar -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<aside class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <div class="cart-title"><i class="fas fa-shopping-cart"></i> <span>السلة</span></div>
-    <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
-  </div>
-  <div class="cart-body" id="cartBody"></div>
-  <div class="cart-footer" id="cartFooter" style="display:none;"></div>
-</aside>
+<!-- Floating WhatsApp FAB -->
+<a href="https://wa.me/962786003597" target="_blank" class="btec-wa-fab" aria-label="تواصل مباشر عبر واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-<!-- BTEC AI Assistant -->
-<div class="assistant-fab" id="assistantFab">
-  <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
-  <div class="assistant-tooltip">BTEC Assistant</div>
-</div>
-<div class="assistant-window" id="assistantWindow">
-  <div class="assistant-header">
-    <div class="assistant-avatar">&#129302;</div>
-    <div class="assistant-info">
-      <div class="assistant-name">BTEC Assistant</div>
-      <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
-    </div>
-    <button class="assistant-minimize" id="assistantMinimize"><i class="fas fa-minus"></i></button>
-  </div>
-  <div class="assistant-messages" id="assistantMessages"></div>
-  <div class="quick-replies" id="quickReplies"></div>
-  <div class="assistant-input-area">
-    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك هنا...">
-    <button class="assistant-send" id="assistantSend"><i class="fas fa-paper-plane"></i></button>
-  </div>
-</div>
+<!-- ══════════════════════════════════════════
+     SCRIPTS: GSAP 3.13.0 + ScrollTrigger + Lenis
+     ══════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
 
-<!-- WhatsApp FAB -->
-<div class="whatsapp-fab">
-  <div class="whatsapp-tooltip">تواصل معنا</div>
-  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</div>
+<!-- Motion Queue & Scheduler Engine -->
+<script data-8b-part="motion-queue">
+(() => {
+  'use strict';
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  const parsed = document.readyState === 'loading'
+    ? new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve, { once: true }))
+    : Promise.resolve();
+  const ready = () => Promise.all([fonts, parsed]).then(() => firsts);
+  const nextTask = () => window.scheduler?.yield?.() ?? new Promise(resolve => setTimeout(resolve));
+  const refresh = () => {
+    if (typeof window.refreshScroll === 'function') return window.refreshScroll();
+    window.ScrollTrigger?.sort();
+    window.ScrollTrigger?.refresh();
+  };
+  const run = (setup, name) => {
+    for (const trigger of window.ScrollTrigger?.getAll() || []) {
+      if (!trigger.end && window.ScrollTrigger.getAll().includes(trigger)) trigger.refresh(0, 1);
+    }
+    const context = window.gsap.context(() => {});
+    let failure = null;
+    try { context.add(() => { try { setup(); } catch (err) { failure = err; } }); }
+    catch (e) { failure = e; }
+    if (!failure) return true;
+    try { context.revert(); } catch (e) { console.error(name, 'revert failed', e); }
+    console.error(name, failure);
+    return false;
+  };
+  let firsts = Promise.resolve(), tail = null, pending = 0, firstCount = 0;
+  window.motionReady = ready();
+  parsed.then(() => { if (firstCount && !tail) firsts.then(refresh); });
 
-<!-- Scroll to top -->
-<button class="scroll-top" id="scrollTopBtn" title="للأعلى"><i class="fas fa-chevron-up"></i></button>
+  window.queueMotion = (setup, { first = false, id } = {}) => {
+    if (!window.gsap || typeof setup !== 'function') return;
+    const name = id || 'motion';
+    if (first) {
+      firstCount++;
+      firsts = firsts.then(() => fonts).then(() => { if (!run(setup, name)) refresh(); });
+    } else {
+      pending++;
+      tail = (tail || ready()).then(nextTask).then(() => run(setup, name)).finally(() => { if (!--pending) refresh(); });
+    }
+    window.motionReady = Promise.all([firsts, tail]);
+  };
+})();
+</script>
 
-<script src="main.js"></script>
-<script src="cart.js"></script>
-<script src="assistant.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
-    document.getElementById('mobileLangBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('mobileThemeBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
+<!-- Smooth Scrolling with Lenis -->
+<script data-8b-part="page-init">
+gsap.registerPlugin(ScrollTrigger);
+function refreshScroll() {
+  ScrollTrigger.sort();
+  ScrollTrigger.refresh();
+}
+
+gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+  const bar = document.querySelector('#nav .nav__bar');
+  const lenis = window.lenis = new Lenis({
+    lerp: 0.09,
+    wheelMultiplier: 0.95,
+    anchors: { offset: -(bar ? bar.offsetHeight : 0) }
   });
+  const tick = time => lenis.raf(time * 1000);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(tick);
+  gsap.ticker.lagSmoothing(0);
+  return () => {
+    gsap.ticker.remove(tick);
+    gsap.ticker.lagSmoothing(500, 33);
+    lenis.destroy();
+    window.lenis = null;
+  };
+});
+
+// Mobile menu toggle
+(function() {
+  const toggle = document.querySelector('.nav__toggle');
+  const close = document.querySelector('.nav__close');
+  const menu = document.getElementById('menu');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', () => {
+    menu.hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
+  if (close) {
+    close.addEventListener('click', () => {
+      menu.hidden = true;
+      document.body.style.overflow = '';
+    });
+  }
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.hidden = true;
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+// WhatsApp Order Form Submission
+function submitBtecOrder() {
+  const name = document.getElementById('studentName')?.value || '';
+  const phone = document.getElementById('studentPhone')?.value || '';
+  const spec = document.getElementById('specSelect')?.value || '';
+  const tier = document.getElementById('tierSelect')?.value || '';
+  const details = document.getElementById('unitDetails')?.value || '';
+
+  const msg = `مرحباً BTEC HUB، أرغب في طلب خدمة:%0A- الاسم: ${encodeURIComponent(name)}%0A- الهاتف: ${encodeURIComponent(phone)}%0A- التخصص: ${encodeURIComponent(spec)}%0A- الباقة: ${encodeURIComponent(tier)}%0A- التفاصيل: ${encodeURIComponent(details)}`;
+  window.open(`https://wa.me/962786003597?text=${msg}`, '_blank');
+}
+</script>
+
+<!-- GSAP Scene 1: Opening Hero -->
+<script data-8b-part="scene:opening">
+queueMotion(() => {
+  const section = document.getElementById('opening');
+  if (!section) return;
+  const first = section.querySelector('.op-s1');
+  const second = section.querySelector('.op-s2');
+  const ink = section.querySelector('.op-ink');
+  const inkCurl = ink ? ink.querySelector('.op-ink__curl path') : null;
+  const cells = ['.op-a', '.op-e', '.op-c', '.op-d', '.op-b'].map(s => section.querySelector(s)).filter(Boolean);
+  const windows = gsap.utils.toArray('.op-win', section);
+
+  gsap.matchMedia().add({
+    wide: '(min-width: 768px) and (prefers-reduced-motion: no-preference)',
+    narrow: '(max-width: 767.98px) and (prefers-reduced-motion: no-preference)'
+  }, context => {
+    const { wide } = context.conditions;
+    section.setAttribute('data-ink', '');
+    const shear = wide
+      ? [[.03, -.16], [-.05, -.3], [.06, .02], [-.01, -.1], [-.06, -.2]]
+      : [[.04, -.12], [-.06, -.22], [.05, .02], [-.02, -.08], [.06, -.18]];
+    const house = section.querySelector('.op-house');
+    const jitter = [.03, 0, .05, .02, .06, .01];
+
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        id: 'opening',
+        trigger: second,
+        start: 'top bottom',
+        end: 'top top',
+        scrub: .5,
+        invalidateOnRefresh: true
+      }
+    });
+
+    if (ink) timeline.fromTo(ink, { y: 0 }, { y: () => -1.02 * first.offsetHeight, duration: 1 }, 0);
+    if (inkCurl) timeline.fromTo(inkCurl, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .42 }, .06);
+
+    cells.forEach((cell, i) => {
+      if (shear[i]) {
+        timeline.fromTo(cell, { x: 0, y: 0 }, {
+          x: () => shear[i][0] * window.innerWidth,
+          y: () => shear[i][1] * window.innerHeight,
+          duration: .85,
+          ease: 'power1.in'
+        }, 0);
+      }
+    });
+
+    if (house) {
+      windows.forEach((win, i) => {
+        const at = Math.min(.84, (house.offsetTop + win.offsetTop) / first.offsetHeight + .05 + jitter[i % jitter.length]);
+        timeline.fromTo(win, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .14, ease: 'power1.out' }, at);
+        const photo = win.querySelector('img');
+        if (photo) timeline.fromTo(photo, { yPercent: 45 }, { yPercent: 0, duration: .2, ease: 'power2.out' }, at + .04);
+      });
+    }
+
+    return () => section.removeAttribute('data-ink');
+  });
+}, { first: true });
+</script>
+
+<!-- GSAP Scene 2: Specializations Expanding Clip-Path -->
+<script data-8b-part="scene:specializations">
+queueMotion(() => {
+  const section = document.getElementById('specializations');
+  if (!section) return;
+  const rooms = gsap.utils.toArray('.rm-room', section);
+  const towerName = section.querySelector('.rm-tower .rm-name');
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const side = () => Math.min(...rooms.map(room => Math.min(room.offsetWidth, room.offsetHeight))) * (window.innerWidth < 768 ? .62 : .9);
+    rooms.forEach((room, i) => {
+      const timeline = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          id: `specializations:${i}`,
+          trigger: room,
+          start: 'top 88%',
+          end: 'bottom 78%',
+          scrub: .5,
+          invalidateOnRefresh: true
+        }
+      });
+      timeline.fromTo(room, {
+        clipPath: () => {
+          const s = side();
+          return `inset(${room.offsetHeight - s}px 0px 0px ${room.offsetWidth - s}px)`;
+        }
+      }, { clipPath: 'inset(0px 0px 0px 0px)', duration: 1, ease: 'power1.inOut' }, 0);
+
+      if (towerName && room.contains(towerName)) {
+        timeline.fromTo(towerName, { rotation: 0 }, { rotation: 90, duration: .7, ease: 'power2.inOut' }, .3);
+      }
+    });
+  });
+});
+</script>
+
+<!-- GSAP Scene 3: Passes Fanning Out (From Event Template) -->
+<script data-8b-part="scene:packages">
+queueMotion(() => {
+  const section = document.getElementById('packages');
+  if (!section) return;
+  const passes = gsap.utils.toArray('.pk-pass', section);
+  if (!passes.length) return;
+
+  gsap.matchMedia().add('(min-width: 900.02px) and (prefers-reduced-motion: no-preference)', () => {
+    const timeline = gsap.timeline({
+      defaults: { ease: 'power2.out' },
+      scrollTrigger: {
+        id: 'packages',
+        trigger: section,
+        start: 'top 80%',
+        end: 'top 35%',
+        scrub: .6,
+        invalidateOnRefresh: true
+      }
+    });
+
+    // Cards start clustered/fanned, then fan out into smooth grid
+    timeline.fromTo(passes[0], { rotation: -6, xPercent: 20, yPercent: 10 }, { rotation: 0, xPercent: 0, yPercent: 0, duration: 1 }, 0);
+    timeline.fromTo(passes[1], { scale: 0.95 }, { scale: 1, duration: 1 }, 0);
+    timeline.fromTo(passes[2], { rotation: 6, xPercent: -20, yPercent: 10 }, { rotation: 0, xPercent: 0, yPercent: 0, duration: 1 }, 0);
+  });
+});
+</script>
+
+<!-- GSAP Scene 4: Daily Academic Journey Pinned Rail -->
+<script data-8b-part="scene:journey">
+queueMotion(() => {
+  const section = document.getElementById('journey');
+  if (!section) return;
+  const stage = section.querySelector('.dy-stage');
+  const rail = section.querySelector('.dy-rail');
+  const track = section.querySelector('.dy-track');
+  const sky = section.querySelector('.dy-sky');
+  const disc = section.querySelector('.dy-disc');
+  if (!stage || !rail || !track || !sky || !disc) return;
+
+  const tokens = getComputedStyle(document.documentElement);
+  const colors = ['--color-3', '--color-5', '--color-8', '--color-7', '--color-4'].map(token => tokens.getPropertyValue(token).trim());
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    section.setAttribute('data-track', '');
+    const travel = () => Math.max(0, track.scrollWidth - rail.clientWidth);
+
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        id: 'journey',
+        trigger: section,
+        start: 'top top',
+        end: () => `+=${Math.max(window.innerHeight, travel() * 1.15)}`,
+        pin: stage,
+        scrub: .6,
+        invalidateOnRefresh: true
+      }
+    });
+
+    timeline.fromTo(track, { x: 0 }, { x: () => travel(), duration: 1 }, 0);
+    colors.slice(1).forEach((color, i) => {
+      timeline.to(sky, { backgroundColor: color, duration: 1 / (colors.length - 1) }, i / (colors.length - 1));
+    });
+
+    timeline.fromTo(disc, { x: () => sky.clientWidth - disc.offsetWidth - sky.clientWidth * .06 }, { x: () => sky.clientWidth * .06, duration: 1 }, 0);
+    timeline.fromTo(disc, { y: () => sky.clientHeight + 4 }, { y: () => sky.clientHeight * .12, duration: .42, ease: 'sine.out' }, .02);
+    timeline.to(disc, { y: () => sky.clientHeight + 4, duration: .4, ease: 'sine.in' }, .58);
+
+    return () => section.removeAttribute('data-track');
+  });
+});
+</script>
+
+<!-- GSAP Scene 5: Guarantees 6-Pane Window -->
+<script data-8b-part="scene:guarantees">
+queueMotion(() => {
+  const section = document.getElementById('guarantees');
+  if (!section) return;
+  const view = section.querySelector('.cy-window');
+  if (!view) return;
+  const panes = gsap.utils.toArray('.cy-pane', view);
+  const tints = gsap.utils.toArray('.cy-tint', view);
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const offsets = [[5, -20], [-4, 16], [3, -11], [-6, 22], [6, 12], [-3, -18]];
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'guarantees', trigger: view, start: 'top 92%', end: 'center 52%', scrub: .6 }
+    });
+
+    panes.forEach((pane, i) => {
+      timeline.fromTo(pane, { xPercent: offsets[i][0], yPercent: offsets[i][1] }, { xPercent: 0, yPercent: 0, duration: 1, ease: 'power2.out' }, 0);
+    });
+    tints.forEach((tint, i) => {
+      timeline.fromTo(tint, { opacity: .94 }, { opacity: 0, duration: .55 }, .3 + i * .03);
+    });
+  });
+});
+</script>
+
+<!-- GSAP Scene 6: Promises Tilted Panels -->
+<script data-8b-part="scene:promises">
+queueMotion(() => {
+  const section = document.getElementById('promises');
+  if (!section) return;
+  const list = section.querySelector('.qt-rules');
+  if (!list) return;
+  const rules = gsap.utils.toArray('.qt-rule', list);
+  const words = rules.map(rule => rule.querySelector('.qt-word'));
+  const loud = getComputedStyle(document.documentElement).getPropertyValue('--color-3').trim();
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const rest = rules.map(rule => getComputedStyle(rule).backgroundColor);
+    const scale = window.innerWidth < 768 ? .45 : 1;
+    const tilt = [[7, -50, -34], [-6, 40, 26], [5, -26, -30], [-8, 56, 36]];
+
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'promises', trigger: list, start: 'top 95%', end: 'center 56%', scrub: .6 }
+    });
+
+    rules.forEach((rule, i) => {
+      timeline.fromTo(rule, { rotation: tilt[i][0] * scale, y: tilt[i][1] * scale, x: tilt[i][2] * scale }, { rotation: 0, y: 0, x: 0, duration: 1, ease: 'power2.out' }, 0);
+      timeline.fromTo(rule, { backgroundColor: loud }, { backgroundColor: rest[i], duration: .6 }, .35);
+    });
+  });
+});
+</script>
+
+<!-- GSAP Scene 7: Contact 4 Corner Panels -->
+<script data-8b-part="scene:contact">
+queueMotion(() => {
+  const section = document.getElementById('contact');
+  if (!section) return;
+  const grid = section.querySelector('.ct-grid');
+  const call = section.querySelector('.ct-call');
+  const write = section.querySelector('.ct-write');
+  const visit = section.querySelector('.ct-visit');
+  const hours = section.querySelector('.ct-hours');
+  if (!grid || !call || !write || !visit || !hours) return;
+
+  gsap.matchMedia().add({
+    wide: '(min-width: 900.02px) and (prefers-reduced-motion: no-preference)',
+    narrow: '(max-width: 900px) and (prefers-reduced-motion: no-preference)'
+  }, context => {
+    const { wide } = context.conditions;
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        id: 'contact',
+        trigger: grid,
+        start: 'top 92%',
+        end: () => wide ? 'top 22%' : 'top 40%',
+        scrub: .6,
+        invalidateOnRefresh: true
+      }
+    });
+
+    timeline.fromTo(call, { xPercent: wide ? 80 : 40 }, { xPercent: 0, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(write, { xPercent: wide ? -80 : -40 }, { xPercent: 0, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(visit, { yPercent: -60 }, { yPercent: 0, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(hours, { yPercent: 60 }, { yPercent: 0, duration: 1, ease: 'power2.out' }, 0);
+
+    if (wide) {
+      timeline.fromTo(call.querySelector('.ct-label'), { rotation: 0 }, { rotation: 90, duration: .6, ease: 'power2.inOut' }, .35)
+        .fromTo(write.querySelector('.ct-label'), { rotation: 0 }, { rotation: -90, duration: .6, ease: 'power2.inOut' }, .35);
+    }
+  });
+});
 </script>
 
 </body>

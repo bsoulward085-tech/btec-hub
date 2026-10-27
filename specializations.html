@@ -1,260 +1,491 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTEC HUB – التخصصات</title>
+  <title>BTEC HUB – التخصصات والوحدات المعتمدة</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="components.css">
 </head>
 <body>
+
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
-<nav class="navbar navbar-blur" id="navbar">
+
+<!-- ── NAVBAR WITH NIMBUS LIQUID GLASS PILL ── -->
+<nav class="navbar" id="navbar">
   <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">
+    <a href="index.html" class="navbar-logo" dir="ltr">
       <div class="logo-icon">B</div>
-      <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
+      <div class="logo-text" dir="ltr">
+        <span class="wave-brand" id="waveBrand" dir="ltr">
+          <span class="wave-char" style="--i:1">B</span>
+          <span class="wave-char" style="--i:2">T</span>
+          <span class="wave-char" style="--i:3">E</span>
+          <span class="wave-char" style="--i:4">C</span>
+          <span class="wave-space">&nbsp;</span>
+          <span class="wave-char" style="--i:5">H</span>
+          <span class="wave-char" style="--i:6">U</span>
+          <span class="wave-char" style="--i:7">B</span>
+        </span>
+        <span class="logo-sub">منصة الدعم الأكاديمي</span>
+      </div>
     </a>
-    <ul class="navbar-nav">
-      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
-      <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-      <li><a href="specializations.html" class="nav-link  active"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-      <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-      <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-      <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
-    </ul>
+
+    <!-- Nimbus Liquid Glass Floating Pill -->
+    <div class="nimbus-wrapper">
+      <div class="nimbus-nav" id="nimbusNav" data-tone="light">
+        <div class="nimbus-glass"></div>
+        <div class="nimbus-drop" id="nimbusDrop"></div>
+        <a href="index.html" class="nimbus-item " data-fx="glow">
+          <span class="nv-ico" data-fx="glow"><i class="fas fa-home"></i></span>
+          <span class="nimbus-label">الرئيسية</span>
+        </a>
+        <a href="services.html" class="nimbus-item " data-fx="spin">
+          <span class="nv-ico" data-fx="spin"><i class="fas fa-briefcase"></i></span>
+          <span class="nimbus-label">الخدمات</span>
+        </a>
+        <a href="specializations.html" class="nimbus-item active" data-fx="plane">
+          <span class="nv-ico" data-fx="plane"><i class="fas fa-graduation-cap"></i></span>
+          <span class="nimbus-label">التخصصات</span>
+        </a>
+        <a href="study.html" class="nimbus-item " data-fx="drop">
+          <span class="nv-ico" data-fx="drop"><i class="fas fa-book-open"></i></span>
+          <span class="nimbus-label">مواد الدراسة</span>
+        </a>
+        <a href="past-assignments.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-folder-open"></i></span>
+          <span class="nimbus-label">مهمات سابقة</span>
+        </a>
+        <a href="faq.html" class="nimbus-item " data-fx="wave">
+          <span class="nv-ico" data-fx="wave"><i class="fas fa-question-circle"></i></span>
+          <span class="nimbus-label">الأسئلة</span>
+        </a>
+        <a href="contact.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-envelope"></i></span>
+          <span class="nimbus-label">تواصل معنا</span>
+        </a>
+      </div>
+    </div>
+
     <div class="navbar-actions">
-      <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
-      <button class="theme-toggle" id="themeToggleBtn"><i id="themeIcon" class="fas fa-sun"></i></button>
-      <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <a href="https://wa.me/962786003597" target="_blank" class="btn btn-sm btn-primary">
+        <i class="fab fa-whatsapp"></i> تواصل واتساب
+      </a>
+      <button class="cart-nav-btn" id="cartNavBtn" title="السلة">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
+
+<!-- ── MOBILE NAV DRAWER ── -->
 <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header" dir="ltr">
+    <div class="logo-text" dir="ltr">
+      <span class="wave-brand" dir="ltr">
+        <span class="wave-char" style="--i:1">B</span>
+        <span class="wave-char" style="--i:2">T</span>
+        <span class="wave-char" style="--i:3">E</span>
+        <span class="wave-char" style="--i:4">C</span>
+        <span class="wave-space">&nbsp;</span>
+        <span class="wave-char" style="--i:5">H</span>
+        <span class="wave-char" style="--i:6">U</span>
+        <span class="wave-char" style="--i:7">B</span>
+      </span>
+    </div>
+    <button class="cart-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
+  </div>
   <ul class="mobile-nav-links">
-    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
-    <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-    <li><a href="specializations.html" class="nav-link  active"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-    <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-    <li><a href="past-assignments.html" class="nav-link"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
+    <li><a href="index.html" class="nav-link "><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="services.html" class="nav-link "><i class="fas fa-briefcase"></i> الخدمات</a></li>
+    <li><a href="specializations.html" class="nav-link active"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+    <li><a href="study.html" class="nav-link "><i class="fas fa-book-open"></i> مواد الدراسة</a></li>
+    <li><a href="past-assignments.html" class="nav-link "><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+    <li><a href="faq.html" class="nav-link "><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+    <li><a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> تواصل معنا</a></li>
   </ul>
-  <div class="mobile-nav-actions">
-    <button class="lang-toggle" id="mobileLangBtn">&#127760; <span id="mobileLangText">EN</span></button>
-    <button class="theme-toggle" id="mobileThemeBtn"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
+  <div style="padding: 20px;">
+    <a href="https://wa.me/962786003597" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center;">
+      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+    </a>
   </div>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
 
+
 <main>
-  <div class="page-hero">
-    <div class="container page-hero-content">
-      <div class="section-badge mb-lg"><i class="fas fa-graduation-cap"></i> التخصصات</div>
-      <h1>تخصصات BTEC</h1>
-      <p>نغطي جميع التخصصات الرئيسية لبرامج BTEC بخدمات متخصصة لكل وحدة</p>
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-badge"><i class="fas fa-graduation-cap"></i> مسارات بيرسون الدولية</div>
+      <h1 class="page-hero-title">التخصصات والوحدات المعتمدة</h1>
+      <p class="page-hero-desc">
+        استكشف تخصصات Pearson BTEC والمستويات الأكاديمية (Level 3 Foundation & Extended / HND Level 4 & 5). نوفر دعماً متخصصاً لكافة الوحدات والتقارير بمساعدة نخبة من المتخصصين في كل مجال.
+      </p>
     </div>
-  </div>
+  </section>
+
+  <!-- ── SPECIALIZATIONS GRID ── -->
   <section class="section">
     <div class="container">
-      <div class="grid-4 reveal" style="margin-bottom:3rem;gap:1.5rem;">
-        <div class="stat-card"><span class="stat-number">4</span><span class="stat-label">تخصصات</span></div>
-        <div class="stat-card"><span class="stat-number">30+</span><span class="stat-label">وحدة مغطاة</span></div>
-        <div class="stat-card"><span class="stat-number">3</span><span class="stat-label">مستويات</span></div>
-        <div class="stat-card"><span class="stat-number">50+</span><span class="stat-label">خدمة متاحة</span></div>
-      </div>
+      <div class="spec-grid">
 
-      <div id="business" class="card reveal" style="overflow:hidden;margin-bottom:2rem;padding:0;">
-        <div style="height:200px;background:linear-gradient(135deg,#4C1D95,#1E40AF);display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;">
-          <span style="filter:drop-shadow(0 8px 20px rgba(0,0,0,.4));position:relative;z-index:1;">💼</span>
-        </div>
-        <div style="padding:2rem;">
-          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Business – إدارة الأعمال</h2>
-          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">تخصص شامل يغطي مجالات إدارة الأعمال والتسويق والتمويل وإدارة الموارد البشرية. من أكثر التخصصات طلباً في سوق العمل.</p>
-          <div style="margin-bottom:1.5rem;"><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 1 – Business Environment</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 2 – Business Resources</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 3 – Introduction to Marketing</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 4 – Business Communication</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 5 – Business Accounting</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 6 – Business Decision Making</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 7 – Business Strategy</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 8 – Human Resources</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 9 – Management Accounting</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 10 – Business Law</span></div>
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-            <a href="services.html" class="btn btn-primary" style="background:var(--primary-gradient);">
-              <i class="fas fa-briefcase"></i> عرض خدمات هذا التخصص
+        <!-- 1. Business Management -->
+        <div class="spec-card" id="business">
+          <div>
+            <div class="spec-card-header">
+              <div class="spec-icon"><i class="fas fa-briefcase"></i></div>
+              <div class="spec-info">
+                <h3>إدارة الأعمال (Business & Management)</h3>
+                <div class="spec-badges">
+                  <span class="spec-tag">Level 3 National</span>
+                  <span class="spec-tag">Level 4 HNC</span>
+                  <span class="spec-tag">Level 5 HND</span>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;">
+              تغطية رائدة لجميع وحدات إدارة الأعمال والمالية والتسويق وإدارة الموارد البشرية، مع تحليل معمق لدراسات الحالة (Case Studies) واستراتيجيات SWOT و PESTLE و Marketing Mix 7Ps.
+            </p>
+            <div style="margin-top:20px;">
+              <h4 style="font-size:0.95rem; font-weight:800; color:var(--primary); margin-bottom:10px;">أبرز الوحدات المدعومة:</h4>
+              <ul class="unit-list">
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 1: Exploring Business</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 2: Marketing Campaign</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 3: Personal & Business Finance</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 4: Managing an Event</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 5: International Business</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 6: Principles of Management</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 7: Business Decision Making</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 8: Human Resources</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%84%D8%AA%D8%AE%D8%B5%D8%B5%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20Business" target="_blank" class="btn btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب خدمة لتخصص الأعمال
             </a>
-            <a href="study.html" class="btn btn-secondary"><i class="fas fa-book-open"></i> مواد الدراسة</a>
+            <a href="services.html" class="btn btn-outline">
+              <i class="fas fa-list"></i> الخدمات
+            </a>
           </div>
         </div>
-      </div>
 
-      <div id="it" class="card reveal" style="overflow:hidden;margin-bottom:2rem;padding:0;">
-        <div style="height:200px;background:linear-gradient(135deg,#0369A1,#065F46);display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;">
-          <span style="filter:drop-shadow(0 8px 20px rgba(0,0,0,.4));position:relative;z-index:1;">💻</span>
-        </div>
-        <div style="padding:2rem;">
-          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Information Technology – تقنية المعلومات</h2>
-          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">تخصص يشمل البرمجة، الشبكات، أمن المعلومات، قواعد البيانات، وتطوير الأنظمة. مثالي للراغبين في دخول قطاع التقنية.</p>
-          <div style="margin-bottom:1.5rem;"><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 1 – IT Systems</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 2 – Technology Systems</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 3 – Computer Networks</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 4 – Web Design</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 5 – Database Design</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 6 – Software Design</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 7 – IT Systems Security</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 8 – Mobile Apps</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 9 – Cloud Computing</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 10 – Programming</span></div>
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-            <a href="services.html" class="btn btn-primary" style="background:linear-gradient(135deg,#0EA5E9,#10B981);">
-              <i class="fas fa-briefcase"></i> عرض خدمات هذا التخصص
+        <!-- 2. Information Technology -->
+        <div class="spec-card" id="it">
+          <div>
+            <div class="spec-card-header">
+              <div class="spec-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="spec-info">
+                <h3>تكنولوجيا المعلومات (IT & Computing)</h3>
+                <div class="spec-badges">
+                  <span class="spec-tag">Level 3 Extended</span>
+                  <span class="spec-tag">Level 4 Computing</span>
+                  <span class="spec-tag">Level 5 Software</span>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;">
+              خبرة شاملة في حل واجبات البرمجة وتصميم قواعد البيانات العلائقية ومشاريع الويب والأمن السيبراني، مع تسليم كود سليم وموثق ومخططات تدفق البيانات.
+            </p>
+            <div style="margin-top:20px;">
+              <h4 style="font-size:0.95rem; font-weight:800; color:var(--primary); margin-bottom:10px;">أبرز الوحدات المدعومة:</h4>
+              <ul class="unit-list">
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 1: Information Tech Systems</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 2: Relational Databases</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 3: Social Media in Business</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 4: Programming (Python/Java)</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 6: Website Development</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 9: IT Project Management</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 11: Cyber Security</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 14: Computer Games Dev</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%84%D8%AA%D8%AE%D8%B5%D8%B5%20%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7%20%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA%20IT" target="_blank" class="btn btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب خدمة لتخصص الـ IT
             </a>
-            <a href="study.html" class="btn btn-secondary"><i class="fas fa-book-open"></i> مواد الدراسة</a>
+            <a href="services.html" class="btn btn-outline">
+              <i class="fas fa-list"></i> الخدمات
+            </a>
           </div>
         </div>
-      </div>
 
-      <div id="health" class="card reveal" style="overflow:hidden;margin-bottom:2rem;padding:0;">
-        <div style="height:200px;background:linear-gradient(135deg,#065F46,#92400E);display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;">
-          <span style="filter:drop-shadow(0 8px 20px rgba(0,0,0,.4));position:relative;z-index:1;">🏥</span>
-        </div>
-        <div style="padding:2rem;">
-          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Health &amp; Social Care – الصحة والرعاية الاجتماعية</h2>
-          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">تخصص يغطي مجالات الرعاية الصحية، التمريض، الخدمات الاجتماعية، وعلم النفس.</p>
-          <div style="margin-bottom:1.5rem;"><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 1 – Human Lifespan Development</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 2 – Values in Health Care</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 3 – Health &amp; Safety</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 4 – Social Influences</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 5 – Anatomy &amp; Physiology</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 6 – Public Health</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 7 – Sociological Perspectives</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 8 – Psychological Perspectives</span></div>
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-            <a href="services.html" class="btn btn-primary" style="background:linear-gradient(135deg,#10B981,#F59E0B);">
-              <i class="fas fa-briefcase"></i> عرض خدمات هذا التخصص
+        <!-- 3. Health & Social Care -->
+        <div class="spec-card" id="health">
+          <div>
+            <div class="spec-card-header">
+              <div class="spec-icon"><i class="fas fa-heartbeat"></i></div>
+              <div class="spec-info">
+                <h3>الرعاية الصحية والاجتماعية (Health & Social Care)</h3>
+                <div class="spec-badges">
+                  <span class="spec-tag">Level 3 National</span>
+                  <span class="spec-tag">Level 4 Healthcare</span>
+                  <span class="spec-tag">Level 5 Practice</span>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;">
+              إعداد تقارير ودراسات حالة متقدمة في علم النفس والرعاية السريرية ومراحل نمو الإنسان والتشريعات الأخلاقية والصحية وفق متطلبات NHS وبيرسون.
+            </p>
+            <div style="margin-top:20px;">
+              <h4 style="font-size:0.95rem; font-weight:800; color:var(--primary); margin-bottom:10px;">أبرز الوحدات المدعومة:</h4>
+              <ul class="unit-list">
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 1: Human Lifespan Dev</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 2: Working in Health Care</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 4: Enquiries into Research</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 5: Individual Care Needs</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 7: Principles of Safe Practice</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 8: Promoting Public Health</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 14: Physiological Disorders</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 19: Nutritional Health</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%84%D8%AA%D8%AE%D8%B5%D8%B5%20%D8%A7%D9%84%D8%B1%D8%B9%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%D8%A9%20Health" target="_blank" class="btn btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب خدمة للرعاية الصحية
             </a>
-            <a href="study.html" class="btn btn-secondary"><i class="fas fa-book-open"></i> مواد الدراسة</a>
+            <a href="services.html" class="btn btn-outline">
+              <i class="fas fa-list"></i> الخدمات
+            </a>
           </div>
         </div>
-      </div>
 
-      <div id="engineering" class="card reveal" style="overflow:hidden;margin-bottom:2rem;padding:0;">
-        <div style="height:200px;background:linear-gradient(135deg,#92400E,#7C3AED);display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;">
-          <span style="filter:drop-shadow(0 8px 20px rgba(0,0,0,.4));position:relative;z-index:1;">⚙️</span>
-        </div>
-        <div style="padding:2rem;">
-          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Engineering – الهندسة</h2>
-          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">تخصص يشمل الهندسة الميكانيكية، الكهربائية، المدنية، وإدارة المشاريع الهندسية.</p>
-          <div style="margin-bottom:1.5rem;"><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 1 – Engineering Principles</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 2 – Engineering Drawing</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 3 – Mathematics</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 4 – Materials &amp; Processes</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 5 – Electrical/Electronic</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 6 – Mechanical Principles</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 7 – Project Management</span><span style="display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:.78rem;font-weight:600;color:var(--text-secondary);margin:.25rem;"><i class="fas fa-circle" style="font-size:.5rem;opacity:.5;"></i>Unit 8 – Quality Control</span></div>
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-            <a href="services.html" class="btn btn-primary" style="background:linear-gradient(135deg,#F59E0B,#EF4444);">
-              <i class="fas fa-briefcase"></i> عرض خدمات هذا التخصص
+        <!-- 4. Engineering -->
+        <div class="spec-card" id="engineering">
+          <div>
+            <div class="spec-card-header">
+              <div class="spec-icon"><i class="fas fa-cogs"></i></div>
+              <div class="spec-info">
+                <h3>الهندسة والتصنيع (Engineering)</h3>
+                <div class="spec-badges">
+                  <span class="spec-tag">Level 3 Engineering</span>
+                  <span class="spec-tag">Level 4 Mechanical</span>
+                  <span class="spec-tag">Level 5 Electrical</span>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.7;">
+              حل مسائل المبادئ الهندسية والفيزيائية والدوائر الإلكترونية وإعداد مخططات CAD والتصميم الميكانيكي مع توثيق كافة العمليات الحسابية والخطوات العلمية.
+            </p>
+            <div style="margin-top:20px;">
+              <h4 style="font-size:0.95rem; font-weight:800; color:var(--primary); margin-bottom:10px;">أبرز الوحدات المدعومة:</h4>
+              <ul class="unit-list">
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 1: Engineering Principles</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 2: Engineering Processes</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 3: Product Design & Mfg</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 10: CAD in Engineering</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 19: Electronic Devices</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 23: Welding Technology</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 35: Further Mathematics</li>
+                <li class="unit-item"><i class="fas fa-check"></i> Unit 41: Machining Processes</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%84%D8%AA%D8%AE%D8%B5%D8%B5%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20Engineering" target="_blank" class="btn btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب خدمة لتخصص الهندسة
             </a>
-            <a href="study.html" class="btn btn-secondary"><i class="fas fa-book-open"></i> مواد الدراسة</a>
+            <a href="services.html" class="btn btn-outline">
+              <i class="fas fa-list"></i> الخدمات
+            </a>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 </main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
-          <div class="logo-icon">B</div>
-          <div class="logo-text"><span>BTEC</span> HUB</div>
-        </a>
-        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+
+<!-- ── HALFTONE WORDMARK FOOTER (CRISP WHITE & LIGHT ORANGE) ── -->
+<footer class="hwf-container">
+  <canvas id="halftoneCanvas" class="hwf-canvas"></canvas>
+  <div class="hwf-content">
+    <div class="hwf-top">
+      <div class="hwf-brand" dir="rtl">
+        <strong style="font-size:1.45rem;color:var(--primary);letter-spacing:-0.02em;" dir="ltr">BTEC HUB</strong>
+        <span style="display:block;margin-top:8px;line-height:1.75;color:var(--text-secondary);font-size:0.92rem;">
+          المنصة التعليمية الأولى المتخصصة في دعم طلاب شهادات Pearson BTEC الدولية بجميع مستوياتها وتخصصاتها الأكاديمية.
+        </span>
+        <div style="margin-top:18px;padding:10px 16px;background:var(--orange-50);border:1px solid #FFEDD5;border-radius:12px;display:inline-block;font-weight:700;color:var(--primary-dark);font-size:0.92rem;">
+          تم التطوير بواسطة: <span style="color:#151311;font-weight:900;">ورد البصول</span>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>الخدمات</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">تدقيق الواجبات</a></li>
-          <li><a href="services.html">إعداد التقارير</a></li>
-          <li><a href="services.html">الشرح والتوجيه</a></li>
-          <li><a href="services.html">مراجعة المشاريع</a></li>
+      <div class="hwf-col">
+        <h4>الخدمات الأكاديمية</h4>
+        <ul>
+          <li><a href="services.html">إعداد وبناء الواجبات وفق معايير P/M/D</a></li>
+          <li><a href="services.html">التدقيق الأكاديمي وفحص Turnitin</a></li>
+          <li><a href="services.html">جلسات التوجيه والشرح الفردي</a></li>
+          <li><a href="services.html">عروض تقديمية (PowerPoint) احترافية</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>التخصصات</h4>
-        <ul class="footer-links">
-          <li><a href="specializations.html#business">Business</a></li>
-          <li><a href="specializations.html#it">IT</a></li>
-          <li><a href="specializations.html#health">Health &amp; Social Care</a></li>
-          <li><a href="specializations.html#engineering">Engineering</a></li>
+      <div class="hwf-col">
+        <h4>التخصصات المعتمدة</h4>
+        <ul>
+          <li><a href="specializations.html#business">Business – إدارة الأعمال</a></li>
+          <li><a href="specializations.html#it">IT – تكنولوجيا المعلومات</a></li>
+          <li><a href="specializations.html#health">Health & Social Care – الرعاية الصحية</a></li>
+          <li><a href="specializations.html#engineering">Engineering – الهندسة</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>المنصة</h4>
-        <ul class="footer-links">
-          <li><a href="study.html">مواد الدراسة</a></li>
-          <li><a href="past-assignments.html">مهمات سابقة</a></li>
-          <li><a href="faq.html">الأسئلة الشائعة</a></li>
-          <li><a href="contact.html">تواصل معنا</a></li>
+      <div class="hwf-col">
+        <h4>تواصل مباشر</h4>
+        <ul>
+          <li><a href="https://wa.me/962786003597" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366;margin-left:6px;"></i> <span dir="ltr">+962 78 600 3597</span></a></li>
+          <li><a href="contact.html"><i class="fas fa-paper-plane" style="color:var(--primary);margin-left:6px;"></i> إرسال استفسار سريع</a></li>
+          <li><a href="faq.html"><i class="fas fa-question-circle" style="color:var(--primary);margin-left:6px;"></i> الأسئلة الأكثر تكراراً</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.
-        <br><span style="font-size:0.85em;opacity:0.85;margin-top:4px;display:inline-block;">
-          تم التطوير بواسطة <strong style="color:var(--primary-light);">ورد البصول</strong>
-        </span>
-      </p>
-      <div class="footer-bottom-links">
-        <a href="#">سياسة الخصوصية</a>
-        <a href="#">شروط الاستخدام</a>
-        <a href="#">الدعم الأكاديمي</a>
-      </div>
+    <div class="hwf-bottom">
+      <div><span dir="ltr">© 2026 BTEC HUB</span>. جميع الحقوق محفوظة.</div>
+      <button class="hwf-up-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i> للأعلى
+      </button>
     </div>
   </div>
 </footer>
 
-<!-- Cart Sidebar -->
+<!-- ── CART SIDEBAR ── -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <div class="cart-title"><i class="fas fa-shopping-cart"></i> <span>السلة</span></div>
+    <div class="cart-title"><i class="fas fa-shopping-cart" style="color:var(--primary)"></i> <span>سلة الخدمات</span></div>
     <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
   </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
-<!-- BTEC AI Assistant -->
+<!-- ── BTEC AI ASSISTANT ── -->
 <div class="assistant-fab" id="assistantFab">
   <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
-  <div class="assistant-tooltip">BTEC Assistant</div>
+  <div class="assistant-tooltip">مساعد BTEC الذكي</div>
 </div>
 <div class="assistant-window" id="assistantWindow">
   <div class="assistant-header">
-    <div class="assistant-avatar">&#129302;</div>
+    <div class="assistant-avatar">🤖</div>
     <div class="assistant-info">
       <div class="assistant-name">BTEC Assistant</div>
-      <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
+      <div class="assistant-status"><span class="status-dot"></span> متاح الآن لمساعدتك</div>
     </div>
     <button class="assistant-minimize" id="assistantMinimize"><i class="fas fa-minus"></i></button>
   </div>
   <div class="assistant-messages" id="assistantMessages"></div>
   <div class="quick-replies" id="quickReplies"></div>
   <div class="assistant-input-area">
-    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك هنا...">
+    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك عن BTEC هنا...">
     <button class="assistant-send" id="assistantSend"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
 
-<!-- WhatsApp FAB -->
+<!-- ── WHATSAPP FAB ── -->
 <div class="whatsapp-fab">
-  <div class="whatsapp-tooltip">تواصل معنا</div>
-  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="تواصل عبر واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
 
-<!-- Scroll to top -->
-<button class="scroll-top" id="scrollTopBtn" title="للأعلى"><i class="fas fa-chevron-up"></i></button>
-
+<!-- ── SCRIPTS ── -->
 <script src="main.js"></script>
 <script src="cart.js"></script>
 <script src="assistant.js"></script>
+
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
-    document.getElementById('mobileLangBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('mobileThemeBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
+// Interactive Halftone Canvas (Crisp White & Light Orange)
+(function() {
+  const canvas = document.getElementById('halftoneCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, dots = [], mx = -1000, my = -1000;
+
+  function init() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+    dots = [];
+    const gap = 16;
+    const cols = Math.floor(w / gap);
+    const rows = Math.floor(h / gap);
+
+    const m = document.createElement('canvas');
+    m.width = w; m.height = h;
+    const mctx = m.getContext('2d');
+    mctx.font = '900 ' + Math.min(w * 0.16, 120) + 'px Alexandria, sans-serif';
+    mctx.direction = 'ltr';
+    mctx.fillStyle = '#000';
+    mctx.textAlign = 'center';
+    mctx.textBaseline = 'middle';
+    mctx.fillText('BTEC HUB', w / 2, h * 0.65);
+    const data = mctx.getImageData(0, 0, w, h).data;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = c * gap + gap/2;
+        const y = r * gap + gap/2;
+        const alpha = data[(Math.floor(y) * w + Math.floor(x)) * 4 + 3];
+        if (alpha > 35) {
+          dots.push({
+            hx: x, hy: y, x: x, y: y,
+            vx: 0, vy: 0,
+            r: (alpha / 255) * 4.2
+          });
+        }
+      }
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < dots.length; i++) {
+      const d = dots[i];
+      const dx = d.x - mx;
+      const dy = d.y - my;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 85) {
+        const force = (1 - dist / 85) * 7;
+        d.vx += (dx / dist) * force;
+        d.vy += (dy / dist) * force;
+      }
+      d.vx = (d.vx + (d.hx - d.x) * 0.08) * 0.82;
+      d.vy = (d.vy + (d.hy - d.y) * 0.08) * 0.82;
+      d.x += d.vx;
+      d.y += d.vy;
+
+      const warm = Math.min(1, Math.hypot(d.x - d.hx, d.y - d.hy) / 16);
+      ctx.fillStyle = warm > 0.05 ? '#FFA040' : 'rgba(255, 122, 0, 0.18)';
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  canvas.parentElement.addEventListener('mousemove', (e) => {
+    const r = canvas.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
   });
+
+  canvas.parentElement.addEventListener('mouseleave', () => {
+    mx = -1000; my = -1000;
+  });
+
+  window.addEventListener('resize', init);
+  init();
+  loop();
+})();
 </script>
+
 
 </body>
 </html>

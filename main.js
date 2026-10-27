@@ -1,335 +1,504 @@
 /* =========================================================
-   BTEC HUB – Main JavaScript
-   Theme, Language, Navigation, Scroll, Animations
+   BTEC HUB – Master JavaScript (Optimized 60-120 FPS)
+   Nimbus Liquid Glass Navbar, High-Performance 3D Tilt,
+   Zero-Lag Wave Text, Smooth Cylindrical Showcase
    ========================================================= */
 
 'use strict';
 
-// ══════════════════════════════════════════
-// CONSTANTS
-// ══════════════════════════════════════════
-const WHATSAPP_NUMBER = '962786003597'; // ← رقم واتساب BTEC HUB
+const WHATSAPP_NUMBER = '962786003597';
 
-const TRANSLATIONS = {
-  ar: {
-    dir: 'rtl',
-    navHome: 'الرئيسية',
-    navServices: 'الخدمات',
-    navSpecs: 'التخصصات',
-    navStudy: 'الدراسة',
-    navAssignments: 'مهمات سابقة',
-    navAI: 'BTEC AI',
-    navFAQ: 'الأسئلة الشائعة',
-    navContact: 'تواصل معنا',
-    navCart: 'السلة',
-    cartEmpty: 'سلتك فارغة',
-    cartEmptyDesc: 'أضف خدمات من صفحة الخدمات',
-    cartItems: 'عناصر',
-    cartTotal: 'الإجمالي',
-    cartNote: '* الأسعار النهائية تُحدَّد عبر التواصل المباشر مع الفريق',
-    cartSend: 'إرسال عبر واتساب 📲',
-    cartClear: 'مسح السلة',
-    addToCart: 'أضف للسلة',
-    added: 'تمت الإضافة ✓',
-    askAssistant: 'اسأل المساعد',
-    contactPrice: 'تواصل للسعر',
-    assistantName: 'BTEC Assistant',
-    assistantStatus: 'متاح الآن',
-    assistantPlaceholder: 'اكتب سؤالك هنا...',
-    whatsappTooltip: 'تواصل معنا',
-    scrollTop: 'للأعلى',
-    toastAdded: '✓ تمت إضافة الخدمة للسلة',
-    toastRemoved: 'تم حذف الخدمة من السلة',
-    toastCleared: 'تم مسح السلة',
-    toastCartEmpty: 'السلة فارغة! أضف خدمات أولاً',
-    themeLight: 'الوضع الفاتح',
-    themeDark: 'الوضع الداكن',
-  },
-  en: {
-    dir: 'ltr',
-    navHome: 'Home',
-    navServices: 'Services',
-    navSpecs: 'Specializations',
-    navStudy: 'Study',
-    navAssignments: 'Past Assignments',
-    navAI: 'BTEC AI',
-    navFAQ: 'FAQ',
-    navContact: 'Contact',
-    navCart: 'Cart',
-    cartEmpty: 'Your cart is empty',
-    cartEmptyDesc: 'Add services from the Services page',
-    cartItems: 'items',
-    cartTotal: 'Total',
-    cartNote: '* Final prices are confirmed by our team directly',
-    cartSend: 'Send via WhatsApp 📲',
-    cartClear: 'Clear Cart',
-    addToCart: 'Add to Cart',
-    added: 'Added ✓',
-    askAssistant: 'Ask Assistant',
-    contactPrice: 'Contact for Price',
-    assistantName: 'BTEC Assistant',
-    assistantStatus: 'Online now',
-    assistantPlaceholder: 'Type your question...',
-    whatsappTooltip: 'Contact us',
-    scrollTop: 'Top',
-    toastAdded: '✓ Service added to cart',
-    toastRemoved: 'Service removed from cart',
-    toastCleared: 'Cart cleared',
-    toastCartEmpty: 'Cart is empty! Add services first',
-    themeLight: 'Light Mode',
-    themeDark: 'Dark Mode',
-  }
-};
-
-// ══════════════════════════════════════════
-// STATE
-// ══════════════════════════════════════════
-let currentLang = localStorage.getItem('btec-lang') || 'ar';
-let currentTheme = localStorage.getItem('btec-theme') || 'dark';
-
-// ══════════════════════════════════════════
-// INIT
-// ══════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  applyTheme(currentTheme);
-  applyLanguage(currentLang);
-  initNavbar();
-  initScrollEffects();
-  initRevealAnimations();
+  initNimbusNavbar();
+  initMobileNav();
+  initWaveBrandSmooth();
+  initHeroStageCardsSmooth();
+  initCountUpStats();
+  init3DTiltCardsSmooth();
+  initTiltedCylinderSmooth();
+  initAccordion();
+  initFilterBars();
   initScrollTop();
-  initParticles();
-  highlightActiveNav();
+  initSearchInputs();
 });
 
 // ══════════════════════════════════════════
-// THEME
+// 1. HERO STAGE 3D CARDS & FLOATING WIDGETS (RAF THROTTLED)
 // ══════════════════════════════════════════
-function applyTheme(theme) {
-  currentTheme = theme;
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('btec-theme', theme);
+function initHeroStageCardsSmooth() {
+  const stage = document.getElementById('heroStage');
+  if (!stage) return;
 
-  const icon = document.getElementById('themeIcon');
-  if (icon) {
-    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-  }
-  const mobileIcon = document.getElementById('mobileThemeIcon');
-  if (mobileIcon) {
-    mobileIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-  }
-}
+  const cards = stage.querySelectorAll('.stage-card');
+  const widgets = stage.querySelectorAll('.floating-widget');
+  if (!cards.length) return;
 
-function toggleTheme() {
-  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-}
+  let currentFront = 0;
+  const classes = ['stage-card-1', 'stage-card-2', 'stage-card-3'];
 
-// ══════════════════════════════════════════
-// LANGUAGE
-// ══════════════════════════════════════════
-function applyLanguage(lang) {
-  currentLang = lang;
-  localStorage.setItem('btec-lang', lang);
-
-  const t = TRANSLATIONS[lang];
-  document.documentElement.lang = lang;
-  document.documentElement.dir = t.dir;
-
-  // Update all [data-i18n] elements
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.textContent = t[key];
-  });
-
-  // Update placeholders
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (t[key] !== undefined) el.placeholder = t[key];
-  });
-
-  // Update lang toggle text
-  const langToggle = document.getElementById('langText');
-  if (langToggle) langToggle.textContent = lang === 'ar' ? 'EN' : 'ع';
-  const mobileLangText = document.getElementById('mobileLangText');
-  if (mobileLangText) mobileLangText.textContent = lang === 'ar' ? 'EN' : 'ع';
-}
-
-function toggleLanguage() {
-  applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
-}
-
-// ══════════════════════════════════════════
-// NAVBAR
-// ══════════════════════════════════════════
-function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const overlay = document.getElementById('mobileNavOverlay');
-
-  // Scroll effect
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 20) {
-      navbar.classList.add('navbar-blur');
-      navbar.style.height = currentScroll > lastScroll && currentScroll > 300
-        ? '0' : '';
-    } else {
-      navbar.classList.remove('navbar-blur');
-    }
-
-    lastScroll = currentScroll;
-  }, { passive: true });
-
-  // Mobile menu
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      menuToggle.innerHTML = isOpen
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
-      if (overlay) overlay.classList.toggle('open', isOpen);
+  function updateStack() {
+    cards.forEach((card, idx) => {
+      classes.forEach(c => card.classList.remove(c));
+      const pos = (idx - currentFront + cards.length) % cards.length;
+      card.classList.add(classes[pos] || 'stage-card-3');
     });
   }
 
-  if (overlay) {
-    overlay.addEventListener('click', closeMobileNav);
-  }
-
-  // Close on link click
-  document.querySelectorAll('.mobile-nav-links .nav-link').forEach(link => {
-    link.addEventListener('click', closeMobileNav);
+  // Click on a card to bring it forward
+  cards.forEach((card, idx) => {
+    card.addEventListener('click', () => {
+      currentFront = idx;
+      updateStack();
+    });
   });
 
-  function closeMobileNav() {
-    mobileNav?.classList.remove('open');
-    if (menuToggle) menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    overlay?.classList.remove('open');
-  }
-}
+  // Automatic gentle rotation every 5.5s
+  let autoTimer = setInterval(() => {
+    currentFront = (currentFront + 1) % cards.length;
+    updateStack();
+  }, 5500);
 
-function highlightActiveNav() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link[data-page]').forEach(link => {
-    const page = link.getAttribute('data-page');
-    if (page === currentPage || (currentPage === '' && page === 'index.html')) {
-      link.classList.add('active');
+  stage.addEventListener('mouseenter', () => clearInterval(autoTimer), { passive: true });
+  stage.addEventListener('mouseleave', () => {
+    autoTimer = setInterval(() => {
+      currentFront = (currentFront + 1) % cards.length;
+      updateStack();
+    }, 5500);
+  }, { passive: true });
+
+  // High-Performance RAF-Throttled Parallax
+  let rafId = 0;
+  let mouseX = 0;
+  let mouseY = 0;
+  let stageRect = null;
+
+  function onStageMove(e) {
+    if (!stageRect) stageRect = stage.getBoundingClientRect();
+    mouseX = ((e.clientX - stageRect.left) / stageRect.width - 0.5) * 2;
+    mouseY = ((e.clientY - stageRect.top) / stageRect.height - 0.5) * 2;
+
+    if (!rafId) {
+      rafId = requestAnimationFrame(renderStageParallax);
     }
-  });
-}
+  }
 
-// ══════════════════════════════════════════
-// SCROLL EFFECTS
-// ══════════════════════════════════════════
-function initScrollEffects() {
-  window.addEventListener('scroll', () => {
-    updateScrollTop();
+  function renderStageParallax() {
+    rafId = 0;
+    for (let i = 0; i < widgets.length; i++) {
+      const depth = (i + 1) * 7;
+      const tx = -mouseX * depth;
+      const ty = -mouseY * depth;
+      widgets[i].style.transform = `translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, 0) scale(1.04)`;
+    }
+  }
+
+  stage.addEventListener('mouseenter', () => {
+    stageRect = stage.getBoundingClientRect();
+  }, { passive: true });
+
+  stage.addEventListener('mousemove', onStageMove, { passive: true });
+
+  stage.addEventListener('mouseleave', () => {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+    stageRect = null;
+    for (let i = 0; i < widgets.length; i++) {
+      widgets[i].style.transform = '';
+    }
   }, { passive: true });
 }
 
 // ══════════════════════════════════════════
-// SCROLL TOP
+// 2. ANIMATED COUNTUP STATS
 // ══════════════════════════════════════════
-function initScrollTop() {
-  const btn = document.getElementById('scrollTopBtn');
-  if (!btn) return;
+function initCountUpStats() {
+  const stats = document.querySelectorAll('.hero-stat-num');
+  if (!stats.length) return;
 
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
+  let animated = false;
+  function trigger() {
+    if (animated) return;
+    animated = true;
 
-function updateScrollTop() {
-  const btn = document.getElementById('scrollTopBtn');
-  if (!btn) return;
-  btn.classList.toggle('visible', window.pageYOffset > 400);
-}
-
-// ══════════════════════════════════════════
-// REVEAL ANIMATIONS (Intersection Observer)
-// ══════════════════════════════════════════
-function initRevealAnimations() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('revealed');
-        }, i * 80);
-        observer.unobserve(entry.target);
+    stats.forEach(el => {
+      const raw = el.getAttribute('data-target') || el.textContent.trim();
+      if (raw.includes('98.5')) {
+        counter(el, 0, 98.5, 1400, '%', 1);
+      } else if (raw.includes('1,400') || raw.includes('1400')) {
+        counter(el, 0, 1400, 1600, '+', 0, true);
+      } else if (raw.includes('100')) {
+        counter(el, 0, 100, 1300, '%', 0);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-// ══════════════════════════════════════════
-// PARTICLES
-// ══════════════════════════════════════════
-function initParticles() {
-  const container = document.querySelector('.hero-particles');
-  if (!container) return;
-
-  const count = window.matchMedia('(max-width: 768px)').matches ? 8 : 15;
-
-  for (let i = 0; i < count; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 6 + 3;
-    const duration = Math.random() * 15 + 10;
-    const delay = Math.random() * 10;
-    const left = Math.random() * 100;
-
-    p.style.cssText = `
-      width: ${size}px;
-      height: ${size}px;
-      left: ${left}%;
-      animation-duration: ${duration}s;
-      animation-delay: ${delay}s;
-    `;
-    container.appendChild(p);
   }
+
+  function counter(el, start, end, duration, affix, decimals, isPrefix = false) {
+    const startTime = performance.now();
+    function tick(now) {
+      const progress = Math.min(1, (now - startTime) / duration);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = start + (end - start) * ease;
+      const numStr = decimals > 0 ? current.toFixed(decimals) : Math.floor(current).toLocaleString();
+      el.textContent = isPrefix ? (affix + numStr) : (numStr + affix);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  setTimeout(trigger, 150);
 }
 
 // ══════════════════════════════════════════
-// ACCORDION
+// 3. NIMBUS LIQUID GLASS NAVBAR (Spring Physics)
+// ══════════════════════════════════════════
+function initNimbusNavbar() {
+  const nav = document.getElementById('nimbusNav');
+  const drop = document.getElementById('nimbusDrop');
+  if (!nav || !drop) return;
+
+  const items = nav.querySelectorAll('.nimbus-item');
+  let activeItem = nav.querySelector('.nimbus-item.active') || items[0];
+
+  function positionDrop(target) {
+    if (!target) {
+      drop.style.opacity = '0';
+      return;
+    }
+    const navRect = nav.getBoundingClientRect();
+    const itemRect = target.getBoundingClientRect();
+    const left = itemRect.left - navRect.left;
+    const width = itemRect.width;
+
+    drop.style.left = `${left}px`;
+    drop.style.width = `${width}px`;
+    drop.style.opacity = '1';
+  }
+
+  // Initial positioning with slight delay
+  setTimeout(() => {
+    positionDrop(activeItem);
+  }, 60);
+
+  window.addEventListener('resize', () => {
+    positionDrop(activeItem);
+  }, { passive: true });
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      positionDrop(item);
+
+      // Trigger icon micro-animation
+      const ico = item.querySelector('.nv-ico');
+      if (ico) {
+        const fx = ico.getAttribute('data-fx');
+        if (fx) {
+          ico.style.animation = 'none';
+          void ico.offsetWidth; // trigger reflow
+          ico.style.animation = '';
+        }
+      }
+    });
+  });
+
+  nav.addEventListener('mouseleave', () => {
+    positionDrop(activeItem);
+  });
+}
+
+// ══════════════════════════════════════════
+// 4. MOBILE NAVIGATION DRAWER
+// ══════════════════════════════════════════
+function initMobileNav() {
+  const toggle = document.getElementById('menuToggle');
+  const drawer = document.getElementById('mobileNav');
+  const close = document.getElementById('mobileNavClose');
+  const overlay = document.getElementById('mobileNavOverlay');
+
+  if (!toggle || !drawer) return;
+
+  function openNav() {
+    drawer.classList.add('open');
+    if (overlay) overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    drawer.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', openNav);
+  if (close) close.addEventListener('click', closeNav);
+  if (overlay) overlay.addEventListener('click', closeNav);
+}
+
+// ══════════════════════════════════════════
+// 5. ZERO-LAG WAVE BRAND LOGO WITH CACHED GEOMETRY
+// ══════════════════════════════════════════
+function initWaveBrandSmooth() {
+  const brands = document.querySelectorAll('.wave-brand');
+  brands.forEach(brand => {
+    const chars = Array.from(brand.querySelectorAll('.wave-char'));
+    if (!chars.length) return;
+
+    let brandRect = null;
+    let charCenters = [];
+    let rafId = 0;
+    let clientX = -1000;
+    let clientY = -1000;
+
+    function cachePositions() {
+      brandRect = brand.getBoundingClientRect();
+      charCenters = chars.map(c => {
+        const r = c.getBoundingClientRect();
+        return {
+          x: r.left + r.width / 2,
+          y: r.top + r.height / 2
+        };
+      });
+    }
+
+    brand.addEventListener('mouseenter', () => {
+      cachePositions();
+    }, { passive: true });
+
+    brand.addEventListener('mousemove', (e) => {
+      clientX = e.clientX;
+      clientY = e.clientY;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateWave);
+      }
+    }, { passive: true });
+
+    function updateWave() {
+      rafId = 0;
+      if (!brandRect || !charCenters.length) return;
+
+      const px = ((clientX - brandRect.left) / brandRect.width) * 100;
+      const py = ((clientY - brandRect.top) / brandRect.height) * 100;
+
+      for (let i = 0; i < chars.length; i++) {
+        const center = charCenters[i];
+        const dist = Math.hypot(clientX - center.x, clientY - center.y);
+
+        if (dist < 60) {
+          const force = (1 - dist / 60) * -8;
+          chars[i].style.transform = `translate3d(0, ${force.toFixed(1)}px, 0) scale(1.12)`;
+        } else {
+          chars[i].style.transform = '';
+        }
+        chars[i].style.setProperty('--mouse-x', `${px.toFixed(1)}%`);
+        chars[i].style.setProperty('--mouse-y', `${py.toFixed(1)}%`);
+      }
+    }
+
+    brand.addEventListener('mouseleave', () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      chars.forEach(c => {
+        c.style.transform = '';
+      });
+      brandRect = null;
+    }, { passive: true });
+  });
+}
+
+// ══════════════════════════════════════════
+// 6. HIGH-PERFORMANCE 3D CARD TILT (RAF THROTTLED)
+// ══════════════════════════════════════════
+function init3DTiltCardsSmooth() {
+  // Supports all card types including the new Gradient Cards (.gc-card)
+  const cards = document.querySelectorAll(
+    '.service-card, .spec-card, .study-card, .assignment-card, .contact-card, .ib-card, .stage-card, .gc-card'
+  );
+
+  cards.forEach(card => {
+    card.classList.add('tilt-card-3d');
+
+    if (!card.querySelector('.tilt-glare')) {
+      const glare = document.createElement('div');
+      glare.className = 'tilt-glare';
+      card.appendChild(glare);
+    }
+
+    let rect = null;
+    let rafId = 0;
+    let localX = 0;
+    let localY = 0;
+
+    card.addEventListener('mouseenter', () => {
+      rect = card.getBoundingClientRect();
+    }, { passive: true });
+
+    card.addEventListener('mousemove', (e) => {
+      if (!rect) rect = card.getBoundingClientRect();
+      localX = e.clientX - rect.left;
+      localY = e.clientY - rect.top;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateCardTilt);
+      }
+    }, { passive: true });
+
+    function updateCardTilt() {
+      rafId = 0;
+      if (!rect) return;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Subtle, buttery-smooth luxury tilt (max 5 deg)
+      const rotateX = ((localY - centerY) / centerY) * -5;
+      const rotateY = ((localX - centerX) / centerX) * 5;
+
+      const glareX = (localX / rect.width) * 100;
+      const glareY = (localY / rect.height) * 100;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translate3d(0, -4px, 0)`;
+      card.style.setProperty('--glare-x', `${glareX.toFixed(1)}%`);
+      card.style.setProperty('--glare-y', `${glareY.toFixed(1)}%`);
+    }
+
+    card.addEventListener('mouseleave', () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      rect = null;
+      card.style.transform = '';
+      card.style.removeProperty('--glare-x');
+      card.style.removeProperty('--glare-y');
+    }, { passive: true });
+  });
+}
+
+// ══════════════════════════════════════════
+// 7. SMOOTH TILTED GRID 3D CYLINDER (RAF THROTTLED)
+// ══════════════════════════════════════════
+function initTiltedCylinderSmooth() {
+  const track = document.getElementById('tghTrack');
+  if (!track) return;
+
+  let currentAngle = 0;
+  let targetAngle = 0;
+  let isDragging = false;
+  let lastX = 0;
+  let rafId = 0;
+
+  function renderTrack() {
+    currentAngle += (targetAngle - currentAngle) * 0.25;
+    track.style.transform = `rotateY(${currentAngle.toFixed(2)}deg)`;
+
+    if (Math.abs(targetAngle - currentAngle) > 0.05 || isDragging) {
+      rafId = requestAnimationFrame(renderTrack);
+    } else {
+      rafId = 0;
+    }
+  }
+
+  function startDrag(clientX) {
+    isDragging = true;
+    lastX = clientX;
+    track.style.animationPlayState = 'paused';
+    if (!rafId) rafId = requestAnimationFrame(renderTrack);
+  }
+
+  function moveDrag(clientX) {
+    if (!isDragging) return;
+    const deltaX = clientX - lastX;
+    lastX = clientX;
+    targetAngle += deltaX * 0.45;
+  }
+
+  function endDrag() {
+    if (isDragging) {
+      isDragging = false;
+      setTimeout(() => {
+        if (!isDragging) track.style.animationPlayState = '';
+      }, 1200);
+    }
+  }
+
+  track.parentElement.addEventListener('mousedown', (e) => startDrag(e.clientX));
+  window.addEventListener('mousemove', (e) => moveDrag(e.clientX), { passive: true });
+  window.addEventListener('mouseup', endDrag);
+
+  track.parentElement.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX), { passive: true });
+  window.addEventListener('touchmove', (e) => moveDrag(e.touches[0].clientX), { passive: true });
+  window.addEventListener('touchend', endDrag);
+}
+
+// ══════════════════════════════════════════
+// 8. ACCORDION (FAQ)
 // ══════════════════════════════════════════
 function initAccordion() {
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.parentElement;
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const q = item.querySelector('.faq-question');
+    if (!q) return;
+
+    q.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-
-      // Close all
-      document.querySelectorAll('.accordion-item.open').forEach(i => {
-        i.classList.remove('open');
-      });
-
-      // Open clicked
-      if (!isOpen) item.classList.add('open');
+      items.forEach(i => i.classList.remove('open'));
+      if (!isOpen) {
+        item.classList.add('open');
+      }
     });
   });
 }
 
 // ══════════════════════════════════════════
-// FILTERS
+// 9. FILTER BARS
 // ══════════════════════════════════════════
-function initFilters(containerSelector, cardSelector) {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+function initFilterBars() {
+  const filterBars = document.querySelectorAll('.filter-bar');
+  filterBars.forEach(bar => {
+    const buttons = bar.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        const grid = document.querySelector('.services-grid, .study-grid, .assignment-grid, .faq-list');
+        if (!grid) return;
 
-      const filter = btn.getAttribute('data-filter');
-      const cards = document.querySelectorAll(cardSelector);
+        const cards = grid.children;
+        Array.from(cards).forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || !cat || cat === filter) {
+            card.style.display = '';
+            card.style.opacity = '1';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+}
 
-      cards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+// ══════════════════════════════════════════
+// 10. SEARCH INPUTS
+// ══════════════════════════════════════════
+function initSearchInputs() {
+  const inputs = document.querySelectorAll('.search-input');
+  inputs.forEach(input => {
+    input.addEventListener('input', (e) => {
+      const term = e.target.value.trim().toLowerCase();
+      const grid = document.querySelector('.study-grid, .assignment-grid, .services-grid');
+      if (!grid) return;
+
+      const cards = grid.children;
+      Array.from(cards).forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(term)) {
           card.style.display = '';
-          setTimeout(() => card.classList.add('revealed'), 10);
         } else {
           card.style.display = 'none';
         }
@@ -339,92 +508,30 @@ function initFilters(containerSelector, cardSelector) {
 }
 
 // ══════════════════════════════════════════
-// SEARCH
+// 11. SCROLL TOP
 // ══════════════════════════════════════════
-function initSearch(inputId, cardSelector, searchFields) {
-  const input = document.getElementById(inputId);
-  if (!input) return;
+function initScrollTop() {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
 
-  input.addEventListener('input', debounce(() => {
-    const query = input.value.toLowerCase().trim();
-    const cards = document.querySelectorAll(cardSelector);
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 400) {
+          btn.style.opacity = '1';
+          btn.style.visibility = 'visible';
+        } else {
+          btn.style.opacity = '0';
+          btn.style.visibility = 'hidden';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 
-    cards.forEach(card => {
-      const text = searchFields.map(f => {
-        const el = card.querySelector(f);
-        return el ? el.textContent.toLowerCase() : '';
-      }).join(' ');
-
-      card.style.display = !query || text.includes(query) ? '' : 'none';
-    });
-  }, 300));
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
-
-// ══════════════════════════════════════════
-// TOAST NOTIFICATIONS
-// ══════════════════════════════════════════
-function showToast(message, type = 'info', duration = 3000) {
-  let container = document.querySelector('.toast-container');
-  if (!container) {
-    container = document.createElement('div');
-    container.className = 'toast-container';
-    document.body.appendChild(container);
-  }
-
-  const icons = { success: 'fa-check-circle', error: 'fa-times-circle', info: 'fa-info-circle' };
-
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.innerHTML = `
-    <i class="fas ${icons[type] || icons.info} toast-icon"></i>
-    <span>${message}</span>
-  `;
-
-  container.appendChild(toast);
-
-  setTimeout(() => {
-    toast.classList.add('removing');
-    setTimeout(() => toast.remove(), 300);
-  }, duration);
-}
-
-// ══════════════════════════════════════════
-// UTILITIES
-// ══════════════════════════════════════════
-function debounce(fn, delay) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
-}
-
-function formatWhatsAppMessage(items) {
-  const t = TRANSLATIONS[currentLang];
-  const lines = items.map(item =>
-    `• ${item.name}${item.price && item.price !== 'contact' ? ` — ${item.price}` : ' — سعر يُحدَّد'}`
-  );
-
-  return encodeURIComponent(
-    `🎓 *BTEC HUB – طلب خدمة*\n\n${lines.join('\n')}\n\n---\n📌 أرجو تأكيد السعر والتفاصيل\nشكراً!`
-  );
-}
-
-function getWhatsAppLink(message) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-}
-
-// Expose globally
-window.BtecMain = {
-  toggleTheme,
-  toggleLanguage,
-  showToast,
-  getWhatsAppLink,
-  formatWhatsAppMessage,
-  WHATSAPP_NUMBER,
-  get lang() { return currentLang; },
-  get t() { return TRANSLATIONS[currentLang]; },
-  initAccordion,
-  initFilters,
-  initSearch,
-};

@@ -1,338 +1,601 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTEC HUB – المهمات السابقة</title>
+  <title>BTEC HUB – نماذج المهمات والمشاريع السابقة</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="components.css">
 </head>
 <body>
+
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
-<nav class="navbar navbar-blur" id="navbar">
+
+<!-- ── NAVBAR WITH NIMBUS LIQUID GLASS PILL ── -->
+<nav class="navbar" id="navbar">
   <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">
+    <a href="index.html" class="navbar-logo" dir="ltr">
       <div class="logo-icon">B</div>
-      <div class="logo-text"><span>BTEC</span> HUB<span class="logo-sub">Educational Platform</span></div>
+      <div class="logo-text" dir="ltr">
+        <span class="wave-brand" id="waveBrand" dir="ltr">
+          <span class="wave-char" style="--i:1">B</span>
+          <span class="wave-char" style="--i:2">T</span>
+          <span class="wave-char" style="--i:3">E</span>
+          <span class="wave-char" style="--i:4">C</span>
+          <span class="wave-space">&nbsp;</span>
+          <span class="wave-char" style="--i:5">H</span>
+          <span class="wave-char" style="--i:6">U</span>
+          <span class="wave-char" style="--i:7">B</span>
+        </span>
+        <span class="logo-sub">منصة الدعم الأكاديمي</span>
+      </div>
     </a>
-    <ul class="navbar-nav">
-      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
-      <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-      <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-      <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-      <li><a href="past-assignments.html" class="nav-link  active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-      <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
-    </ul>
+
+    <!-- Nimbus Liquid Glass Floating Pill -->
+    <div class="nimbus-wrapper">
+      <div class="nimbus-nav" id="nimbusNav" data-tone="light">
+        <div class="nimbus-glass"></div>
+        <div class="nimbus-drop" id="nimbusDrop"></div>
+        <a href="index.html" class="nimbus-item " data-fx="glow">
+          <span class="nv-ico" data-fx="glow"><i class="fas fa-home"></i></span>
+          <span class="nimbus-label">الرئيسية</span>
+        </a>
+        <a href="services.html" class="nimbus-item " data-fx="spin">
+          <span class="nv-ico" data-fx="spin"><i class="fas fa-briefcase"></i></span>
+          <span class="nimbus-label">الخدمات</span>
+        </a>
+        <a href="specializations.html" class="nimbus-item " data-fx="plane">
+          <span class="nv-ico" data-fx="plane"><i class="fas fa-graduation-cap"></i></span>
+          <span class="nimbus-label">التخصصات</span>
+        </a>
+        <a href="study.html" class="nimbus-item " data-fx="drop">
+          <span class="nv-ico" data-fx="drop"><i class="fas fa-book-open"></i></span>
+          <span class="nimbus-label">مواد الدراسة</span>
+        </a>
+        <a href="past-assignments.html" class="nimbus-item active" data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-folder-open"></i></span>
+          <span class="nimbus-label">مهمات سابقة</span>
+        </a>
+        <a href="faq.html" class="nimbus-item " data-fx="wave">
+          <span class="nv-ico" data-fx="wave"><i class="fas fa-question-circle"></i></span>
+          <span class="nimbus-label">الأسئلة</span>
+        </a>
+        <a href="contact.html" class="nimbus-item " data-fx="pop">
+          <span class="nv-ico" data-fx="pop"><i class="fas fa-envelope"></i></span>
+          <span class="nimbus-label">تواصل معنا</span>
+        </a>
+      </div>
+    </div>
+
     <div class="navbar-actions">
-      <button class="lang-toggle" id="langToggleBtn">&#127760; <span id="langText">EN</span></button>
-      <button class="theme-toggle" id="themeToggleBtn"><i id="themeIcon" class="fas fa-sun"></i></button>
-      <button class="cart-nav-btn" id="cartNavBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" style="display:none">0</span></button>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <a href="https://wa.me/962786003597" target="_blank" class="btn btn-sm btn-primary">
+        <i class="fab fa-whatsapp"></i> تواصل واتساب
+      </a>
+      <button class="cart-nav-btn" id="cartNavBtn" title="السلة">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
+
+<!-- ── MOBILE NAV DRAWER ── -->
 <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header" dir="ltr">
+    <div class="logo-text" dir="ltr">
+      <span class="wave-brand" dir="ltr">
+        <span class="wave-char" style="--i:1">B</span>
+        <span class="wave-char" style="--i:2">T</span>
+        <span class="wave-char" style="--i:3">E</span>
+        <span class="wave-char" style="--i:4">C</span>
+        <span class="wave-space">&nbsp;</span>
+        <span class="wave-char" style="--i:5">H</span>
+        <span class="wave-char" style="--i:6">U</span>
+        <span class="wave-char" style="--i:7">B</span>
+      </span>
+    </div>
+    <button class="cart-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
+  </div>
   <ul class="mobile-nav-links">
-    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
-    <li><a href="services.html" class="nav-link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-    <li><a href="specializations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
-    <li><a href="study.html" class="nav-link"><i class="fas fa-book-open"></i> الدراسة</a></li>
-    <li><a href="past-assignments.html" class="nav-link  active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
-    <li><a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> الأسئلة</a></li>
-    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a></li>
+    <li><a href="index.html" class="nav-link "><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="services.html" class="nav-link "><i class="fas fa-briefcase"></i> الخدمات</a></li>
+    <li><a href="specializations.html" class="nav-link "><i class="fas fa-graduation-cap"></i> التخصصات</a></li>
+    <li><a href="study.html" class="nav-link "><i class="fas fa-book-open"></i> مواد الدراسة</a></li>
+    <li><a href="past-assignments.html" class="nav-link active"><i class="fas fa-folder-open"></i> مهمات سابقة</a></li>
+    <li><a href="faq.html" class="nav-link "><i class="fas fa-question-circle"></i> الأسئلة</a></li>
+    <li><a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> تواصل معنا</a></li>
   </ul>
-  <div class="mobile-nav-actions">
-    <button class="lang-toggle" id="mobileLangBtn">&#127760; <span id="mobileLangText">EN</span></button>
-    <button class="theme-toggle" id="mobileThemeBtn"><i id="mobileThemeIcon" class="fas fa-sun"></i></button>
+  <div style="padding: 20px;">
+    <a href="https://wa.me/962786003597" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center;">
+      <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+    </a>
   </div>
 </div>
 <div class="cart-overlay" id="mobileNavOverlay"></div>
 
+
 <main>
-  <div class="page-hero">
-    <div class="container page-hero-content">
-      <div class="section-badge mb-lg"><i class="fas fa-folder-open"></i> المهمات السابقة</div>
-      <h1>مهمات نموذجية سابقة</h1>
-      <p>اطلع على طرق الحل والتنسيق المعتمدة لتطوير مستواك الأكاديمي</p>
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-badge"><i class="fas fa-folder-open"></i> نماذج معتمدة بتقدير الامتياز Distinction</div>
+      <h1 class="page-hero-title">نماذج المهمات والمشاريع السابقة</h1>
+      <p class="page-hero-desc">
+        استعرض نماذج وتقارير حقيقية نالت أعلى الدرجات وفق معايير Pearson الرسمية، وتعرف على الطريقة المثالية لتقسيم التقرير وتوثيق المراجع.
+      </p>
+
+      <!-- ── ACADEMIC INTEGRITY ALERT BANNER ── -->
+      <div class="alert-banner" style="max-width:880px; margin:28px auto 0;">
+        <i class="fas fa-shield-alt"></i>
+        <div>
+          <strong>تحذير النزاهة الأكاديمية الصارم:</strong> هذه النماذج معروضة للاسترشاد الأكاديمي وفهم طريقة تطبيق المعايير فقط. يُحظر تماماً نسخ أو تقديم أي نص منها لحماية حسابك الجامعي من عقوبات الانتحال العلمي (Plagiarism).
+        </div>
+      </div>
+
+      <!-- ── SEARCH BAR ── -->
+      <div class="search-wrapper" style="margin-top:32px;">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="assignmentSearch" class="search-input" placeholder="ابحث بعنوان المهمة أو رقم الوحدة (مثال: Unit 1, Marketing, Database)...">
+      </div>
+
+      <!-- ── FILTER BAR ── -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="business">إدارة الأعمال Business</button>
+        <button class="filter-btn" data-filter="it">تكنولوجيا المعلومات IT</button>
+        <button class="filter-btn" data-filter="health">الرعاية الصحية Health</button>
+        <button class="filter-btn" data-filter="engineering">الهندسة Engineering</button>
+        <button class="filter-btn" data-filter="hnd">مشاريع HND Level 4/5</button>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- ── ASSIGNMENTS GRID ── -->
   <section class="section">
     <div class="container">
+      <div class="assignments-grid" id="assignmentsGrid">
 
-      <div class="reveal" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:var(--radius-xl);padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem;">
-        <span style="font-size:1.75rem;">&#9888;&#65039;</span>
-        <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-          <strong style="color:#F59E0B">تحذير أكاديمي:</strong>
-          هذه المهمات مخصصة للاطلاع والمراجعة وفهم طرق الحل فقط.
-          استخدامها كعمل شخصي يعتبر غشاً أكاديمياً (Plagiarism) ويعرضك للحرمان.
-        </p>
-      </div>
+        <!-- 1. Business Unit 1 -->
+        <div class="assignment-card" data-category="business">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 2%</span>
+            </div>
+            <span class="service-badge">Business • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 1: Exploring Business – Assignment 1</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              تقرير تحليلي مقارن بين شركتين مختلفتين (Tesco & Oxfam) يبحث في الهياكل التنظيمية، الأهداف الاستراتيجية، وتأثير أصحاب المصلحة.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P1</span>
+              <span class="spec-tag">P2</span>
+              <span class="spec-tag">M1</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D1</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20Business%20Unit%201" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
+          </div>
+        </div>
 
-      <div class="filter-bar reveal" style="gap:.5rem;flex-wrap:wrap;">
-        <button class="filter-btn active" data-filter="all">الكل</button>
-        <button class="filter-btn" data-filter="business">Business</button>
-        <button class="filter-btn" data-filter="it">IT</button>
-        <button class="filter-btn" data-filter="health">Health</button>
-        <button class="filter-btn" data-filter="engineering">Engineering</button>
-      </div>
+        <!-- 2. Business Unit 2 Marketing -->
+        <div class="assignment-card" data-category="business">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 3%</span>
+            </div>
+            <span class="service-badge">Business • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 2: Marketing Campaign – Assignment 1</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              خطة تسويقية شاملة لمنتج جديد تتضمن أبحاث السوق الأولية والثانوية، تحديد المزيج التسويقي الممتد (7Ps)، وجدول الميزانية الزمني.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P1</span>
+              <span class="spec-tag">P2</span>
+              <span class="spec-tag">M1</span>
+              <span class="spec-tag">M2</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D1</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20Business%20Unit%202" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
+          </div>
+        </div>
 
-      <div class="grid-2" id="assignGrid">
-        <div class="assignment-card reveal" data-category="business">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Business Plan – Marketing Unit 2</h3>
-            <span class="badge badge-primary">2024</span>
+        <!-- 3. Business Unit 3 Finance -->
+        <div class="assignment-card" data-category="business">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 1%</span>
+            </div>
+            <span class="service-badge">Business • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 3: Finance – Break-even & Cashflow</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              تحليل مالي متكامل يشمل حساب نقطة التعادل، قائمة الدخل والأرباح والخسائر، وتوقعات التدفق النقدي لفترة 12 شهراً مع التقييم المالي.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P4</span>
+              <span class="spec-tag">P5</span>
+              <span class="spec-tag">M3</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D2</span>
+            </div>
           </div>
-          <div class="assignment-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Level 3</span><span class="badge badge-blue">Unit 2</span></div>
-          <p class="assignment-desc">نموذج لخطة تسويق كاملة تتضمن تحليل SWOT وPESTLE والمزيج التسويقي.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20Business%20Unit%203" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
         </div>
-        <div class="assignment-card reveal" data-category="business">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Financial Analysis Report</h3>
-            <span class="badge badge-primary">2023</span>
+
+        <!-- 4. IT Unit 2 Databases -->
+        <div class="assignment-card" data-category="it">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 2%</span>
+            </div>
+            <span class="service-badge">IT Computing • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 2: Relational Database Design & Testing</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              تصميم وبناء نظام قاعدة بيانات متكاملة لعيادة طبية يشمل مخططات العلاقات، استعلامات المعاملات، ونماذج الفحص والاختبار التجريبي.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P1-P6</span>
+              <span class="spec-tag">M1-M3</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D1-D2</span>
+            </div>
           </div>
-          <div class="assignment-tags"><span class="badge badge-primary">Business</span><span class="badge badge-blue">Level 3</span><span class="badge badge-blue">Unit 5</span></div>
-          <p class="assignment-desc">تحليل مالي لشركتين منافستين بناءً على القوائم المالية وحساب النسب المالية.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20IT%20Unit%202" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
         </div>
-        <div class="assignment-card reveal" data-category="it">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Network Design Proposal</h3>
-            <span class="badge badge-primary">2024</span>
+
+        <!-- 5. IT Unit 6 Web Development -->
+        <div class="assignment-card" data-category="it">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 3%</span>
+            </div>
+            <span class="service-badge">IT Computing • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 6: Responsive Web App & Evaluation</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              تطوير متجر إلكتروني متجاوب بالكامل مع كود نظيف وتوثيق واجهات المستخدم ومراجعة معايير W3C وملاءمة الشاشات الذكية.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P1</span>
+              <span class="spec-tag">P2</span>
+              <span class="spec-tag">M1</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D1</span>
+            </div>
           </div>
-          <div class="assignment-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Level 3</span><span class="badge badge-green">Unit 3</span></div>
-          <p class="assignment-desc">مقترح تصميم شبكة محلية LAN مع مخطط الشبكة وتبرير اختيار المكونات.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20IT%20Unit%206" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
         </div>
-        <div class="assignment-card reveal" data-category="it">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Database Implementation SQL</h3>
-            <span class="badge badge-primary">2023</span>
+
+        <!-- 6. Health Unit 1 Human Lifespan -->
+        <div class="assignment-card" data-category="health">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 2%</span>
+            </div>
+            <span class="service-badge">Health Care • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 1: Human Lifespan Development</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              دراسة حالة معمقة تتناول تأثير العوامل الوراثية والبيئية والاجتماعية على مراحل تطور الفرد وفق نظريات بياجيه وإريكسون.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P1</span>
+              <span class="spec-tag">P2</span>
+              <span class="spec-tag">M1</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D1</span>
+            </div>
           </div>
-          <div class="assignment-tags"><span class="badge badge-blue">IT</span><span class="badge badge-green">Level 3</span><span class="badge badge-green">Unit 5</span></div>
-          <p class="assignment-desc">تصميم قاعدة بيانات لمكتبة يتضمن ERD، Normalization، واستعلامات SQL.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20Health%20Unit%201" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
         </div>
-        <div class="assignment-card reveal" data-category="health">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Lifespan Development Case Study</h3>
-            <span class="badge badge-primary">2024</span>
+
+        <!-- 7. Engineering Unit 3 Product Design -->
+        <div class="assignment-card" data-category="engineering">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 1%</span>
+            </div>
+            <span class="service-badge">Engineering • Level 3</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 3: Product Design & Manufacturing</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              تصميم منتج ميكانيكي مع دراسة خواص المواد واختيار عمليات التصنيع المناسبة وإرفاق رسومات هندسية ومخططات CAD كاملة.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">P1</span>
+              <span class="spec-tag">P2</span>
+              <span class="spec-tag">M1</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">D1</span>
+            </div>
           </div>
-          <div class="assignment-tags"><span class="badge badge-green">Health</span><span class="badge badge-amber">Level 2</span><span class="badge badge-amber">Unit 1</span></div>
-          <p class="assignment-desc">دراسة حالة عن تأثير العوامل البيئية والوراثية على النمو في مرحلة الطفولة.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D9%87%D9%85%D8%A9%20%D9%85%D8%B4%D8%A7%D8%A8%D9%87%D8%A9%20%D9%84%D9%80%20Engineering%20Unit%203" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
         </div>
-        <div class="assignment-card reveal" data-category="health">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Health &amp; Safety Report</h3>
-            <span class="badge badge-primary">2023</span>
+
+        <!-- 8. HND Level 5 Computing Research -->
+        <div class="assignment-card" data-category="hnd">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <span class="grade-badge"><i class="fas fa-star" style="color:#FF7A00;"></i> Grade: Distinction</span>
+              <span class="turnitin-badge"><i class="fas fa-shield-alt"></i> Turnitin 3%</span>
+            </div>
+            <span class="service-badge">HND Computing • Level 5</span>
+            <h3 style="font-size:1.2rem; font-weight:800; margin:10px 0 8px;">Unit 13: Computing Research Project</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+              مشروع بحثي متقدم حول تطبيقات الذكاء الاصطناعي في الأمن السيبراني يتضمن مراجعة الأدبيات والمنهجية وجمع وتحليل البيانات.
+            </p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
+              <span class="spec-tag">LO1</span>
+              <span class="spec-tag">LO2</span>
+              <span class="spec-tag">LO3</span>
+              <span class="spec-tag" style="background:#FFF7ED; color:#EA580C; font-weight:800;">LO4</span>
+            </div>
           </div>
-          <div class="assignment-tags"><span class="badge badge-green">Health</span><span class="badge badge-amber">Level 3</span><span class="badge badge-amber">Unit 3</span></div>
-          <p class="assignment-desc">تقرير شامل عن معايير الصحة والسلامة في بيئات الرعاية الصحية.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
+          <div style="display:flex; gap:10px; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:16px;">
+            <a href="https://wa.me/962786003597?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AA%D8%AE%D8%B1%D8%AC%20HND%20Level%205" target="_blank" class="btn btn-sm btn-primary" style="flex:1;">
+              <i class="fab fa-whatsapp"></i> طلب مهمة مماثلة
+            </a>
+            <button class="btn btn-sm btn-outline" onclick="window.BtecMain?.showToast('الهيكل الإرشادي متاح عبر محادثة واتساب', 'info')">معاينة الهيكل</button>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
         </div>
-        <div class="assignment-card reveal" data-category="engineering">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">CAD Engineering Drawing</h3>
-            <span class="badge badge-primary">2023</span>
-          </div>
-          <div class="assignment-tags"><span class="badge badge-amber">Engineering</span><span class="badge badge-primary">Level 3</span><span class="badge badge-primary">Unit 2</span></div>
-          <p class="assignment-desc">نموذج لرسومات هندسية ثنائية وثلاثية الأبعاد باستخدام برامج CAD.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
-          </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
-        </div>
-        <div class="assignment-card reveal" data-category="engineering">
-          <div class="assignment-card-header">
-            <h3 class="assignment-title">Mechanical Principles Report</h3>
-            <span class="badge badge-primary">2024</span>
-          </div>
-          <div class="assignment-tags"><span class="badge badge-amber">Engineering</span><span class="badge badge-primary">Level 3</span><span class="badge badge-primary">Unit 6</span></div>
-          <p class="assignment-desc">تقرير تحليلي يتضمن حسابات القوى والعزوم وتطبيقاتها الهندسية.</p>
-          <div class="assignment-warning">
-            <i class="fas fa-exclamation-triangle warning-icon"></i>
-            <span>للاطلاع والمراجعة فقط – يمنع النسخ</span>
-          </div>
-          <button class="btn btn-secondary btn-sm" onclick="window.BtecMain?.showToast('جاري التحميل...','info')">
-            <i class="fas fa-eye"></i> عرض المهمة
-          </button>
-        </div>
+
       </div>
     </div>
   </section>
 </main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
-          <div class="logo-icon">B</div>
-          <div class="logo-text"><span>BTEC</span> HUB</div>
-        </a>
-        <p class="footer-desc">منصة متكاملة لخدمات الدعم الأكاديمي والموارد التعليمية لطلاب BTEC. مدعومة بالذكاء الاصطناعي.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/962786003597" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+
+<!-- ── HALFTONE WORDMARK FOOTER (CRISP WHITE & LIGHT ORANGE) ── -->
+<footer class="hwf-container">
+  <canvas id="halftoneCanvas" class="hwf-canvas"></canvas>
+  <div class="hwf-content">
+    <div class="hwf-top">
+      <div class="hwf-brand" dir="rtl">
+        <strong style="font-size:1.45rem;color:var(--primary);letter-spacing:-0.02em;" dir="ltr">BTEC HUB</strong>
+        <span style="display:block;margin-top:8px;line-height:1.75;color:var(--text-secondary);font-size:0.92rem;">
+          المنصة التعليمية الأولى المتخصصة في دعم طلاب شهادات Pearson BTEC الدولية بجميع مستوياتها وتخصصاتها الأكاديمية.
+        </span>
+        <div style="margin-top:18px;padding:10px 16px;background:var(--orange-50);border:1px solid #FFEDD5;border-radius:12px;display:inline-block;font-weight:700;color:var(--primary-dark);font-size:0.92rem;">
+          تم التطوير بواسطة: <span style="color:#151311;font-weight:900;">ورد البصول</span>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>الخدمات</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">تدقيق الواجبات</a></li>
-          <li><a href="services.html">إعداد التقارير</a></li>
-          <li><a href="services.html">الشرح والتوجيه</a></li>
-          <li><a href="services.html">مراجعة المشاريع</a></li>
+      <div class="hwf-col">
+        <h4>الخدمات الأكاديمية</h4>
+        <ul>
+          <li><a href="services.html">إعداد وبناء الواجبات وفق معايير P/M/D</a></li>
+          <li><a href="services.html">التدقيق الأكاديمي وفحص Turnitin</a></li>
+          <li><a href="services.html">جلسات التوجيه والشرح الفردي</a></li>
+          <li><a href="services.html">عروض تقديمية (PowerPoint) احترافية</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>التخصصات</h4>
-        <ul class="footer-links">
-          <li><a href="specializations.html#business">Business</a></li>
-          <li><a href="specializations.html#it">IT</a></li>
-          <li><a href="specializations.html#health">Health &amp; Social Care</a></li>
-          <li><a href="specializations.html#engineering">Engineering</a></li>
+      <div class="hwf-col">
+        <h4>التخصصات المعتمدة</h4>
+        <ul>
+          <li><a href="specializations.html#business">Business – إدارة الأعمال</a></li>
+          <li><a href="specializations.html#it">IT – تكنولوجيا المعلومات</a></li>
+          <li><a href="specializations.html#health">Health & Social Care – الرعاية الصحية</a></li>
+          <li><a href="specializations.html#engineering">Engineering – الهندسة</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>المنصة</h4>
-        <ul class="footer-links">
-          <li><a href="study.html">مواد الدراسة</a></li>
-          <li><a href="past-assignments.html">مهمات سابقة</a></li>
-          <li><a href="faq.html">الأسئلة الشائعة</a></li>
-          <li><a href="contact.html">تواصل معنا</a></li>
+      <div class="hwf-col">
+        <h4>تواصل مباشر</h4>
+        <ul>
+          <li><a href="https://wa.me/962786003597" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366;margin-left:6px;"></i> <span dir="ltr">+962 78 600 3597</span></a></li>
+          <li><a href="contact.html"><i class="fas fa-paper-plane" style="color:var(--primary);margin-left:6px;"></i> إرسال استفسار سريع</a></li>
+          <li><a href="faq.html"><i class="fas fa-question-circle" style="color:var(--primary);margin-left:6px;"></i> الأسئلة الأكثر تكراراً</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; 2026 BTEC HUB. جميع الحقوق محفوظة.
-        <br><span style="font-size:0.85em;opacity:0.85;margin-top:4px;display:inline-block;">
-          تم التطوير بواسطة <strong style="color:var(--primary-light);">ورد البصول</strong>
-        </span>
-      </p>
-      <div class="footer-bottom-links">
-        <a href="#">سياسة الخصوصية</a>
-        <a href="#">شروط الاستخدام</a>
-        <a href="#">الدعم الأكاديمي</a>
-      </div>
+    <div class="hwf-bottom">
+      <div><span dir="ltr">© 2026 BTEC HUB</span>. جميع الحقوق محفوظة.</div>
+      <button class="hwf-up-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i> للأعلى
+      </button>
     </div>
   </div>
 </footer>
 
-<!-- Cart Sidebar -->
+<!-- ── CART SIDEBAR ── -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <div class="cart-title"><i class="fas fa-shopping-cart"></i> <span>السلة</span></div>
+    <div class="cart-title"><i class="fas fa-shopping-cart" style="color:var(--primary)"></i> <span>سلة الخدمات</span></div>
     <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
   </div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer" id="cartFooter" style="display:none;"></div>
 </aside>
 
-<!-- BTEC AI Assistant -->
+<!-- ── BTEC AI ASSISTANT ── -->
 <div class="assistant-fab" id="assistantFab">
   <button class="assistant-fab-btn" title="BTEC Assistant"><i class="fas fa-robot"></i></button>
-  <div class="assistant-tooltip">BTEC Assistant</div>
+  <div class="assistant-tooltip">مساعد BTEC الذكي</div>
 </div>
 <div class="assistant-window" id="assistantWindow">
   <div class="assistant-header">
-    <div class="assistant-avatar">&#129302;</div>
+    <div class="assistant-avatar">🤖</div>
     <div class="assistant-info">
       <div class="assistant-name">BTEC Assistant</div>
-      <div class="assistant-status"><span class="status-dot"></span> متاح الآن</div>
+      <div class="assistant-status"><span class="status-dot"></span> متاح الآن لمساعدتك</div>
     </div>
     <button class="assistant-minimize" id="assistantMinimize"><i class="fas fa-minus"></i></button>
   </div>
   <div class="assistant-messages" id="assistantMessages"></div>
   <div class="quick-replies" id="quickReplies"></div>
   <div class="assistant-input-area">
-    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك هنا...">
+    <input type="text" class="assistant-input" id="assistantInput" placeholder="اكتب سؤالك عن BTEC هنا...">
     <button class="assistant-send" id="assistantSend"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
 
-<!-- WhatsApp FAB -->
+<!-- ── WHATSAPP FAB ── -->
 <div class="whatsapp-fab">
-  <div class="whatsapp-tooltip">تواصل معنا</div>
-  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="WhatsApp">
+  <a href="https://wa.me/962786003597" target="_blank" class="whatsapp-fab-btn" title="تواصل عبر واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
 
-<!-- Scroll to top -->
-<button class="scroll-top" id="scrollTopBtn" title="للأعلى"><i class="fas fa-chevron-up"></i></button>
-
+<!-- ── SCRIPTS ── -->
 <script src="main.js"></script>
 <script src="cart.js"></script>
 <script src="assistant.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('langToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('themeToggleBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
-    document.getElementById('mobileLangBtn')?.addEventListener('click', () => window.BtecMain?.toggleLanguage());
-    document.getElementById('mobileThemeBtn')?.addEventListener('click', () => window.BtecMain?.toggleTheme());
-  });
-</script>
 
 <script>
+// Interactive Halftone Canvas (Crisp White & Light Orange)
+(function() {
+  const canvas = document.getElementById('halftoneCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, dots = [], mx = -1000, my = -1000;
+
+  function init() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+    dots = [];
+    const gap = 16;
+    const cols = Math.floor(w / gap);
+    const rows = Math.floor(h / gap);
+
+    const m = document.createElement('canvas');
+    m.width = w; m.height = h;
+    const mctx = m.getContext('2d');
+    mctx.font = '900 ' + Math.min(w * 0.16, 120) + 'px Alexandria, sans-serif';
+    mctx.direction = 'ltr';
+    mctx.fillStyle = '#000';
+    mctx.textAlign = 'center';
+    mctx.textBaseline = 'middle';
+    mctx.fillText('BTEC HUB', w / 2, h * 0.65);
+    const data = mctx.getImageData(0, 0, w, h).data;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = c * gap + gap/2;
+        const y = r * gap + gap/2;
+        const alpha = data[(Math.floor(y) * w + Math.floor(x)) * 4 + 3];
+        if (alpha > 35) {
+          dots.push({
+            hx: x, hy: y, x: x, y: y,
+            vx: 0, vy: 0,
+            r: (alpha / 255) * 4.2
+          });
+        }
+      }
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < dots.length; i++) {
+      const d = dots[i];
+      const dx = d.x - mx;
+      const dy = d.y - my;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 85) {
+        const force = (1 - dist / 85) * 7;
+        d.vx += (dx / dist) * force;
+        d.vy += (dy / dist) * force;
+      }
+      d.vx = (d.vx + (d.hx - d.x) * 0.08) * 0.82;
+      d.vy = (d.vy + (d.hy - d.y) * 0.08) * 0.82;
+      d.x += d.vx;
+      d.y += d.vy;
+
+      const warm = Math.min(1, Math.hypot(d.x - d.hx, d.y - d.hy) / 16);
+      ctx.fillStyle = warm > 0.05 ? '#FFA040' : 'rgba(255, 122, 0, 0.18)';
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  canvas.parentElement.addEventListener('mousemove', (e) => {
+    const r = canvas.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
+  });
+
+  canvas.parentElement.addEventListener('mouseleave', () => {
+    mx = -1000; my = -1000;
+  });
+
+  window.addEventListener('resize', init);
+  init();
+  loop();
+})();
+</script>
+
+
+<script>
+// Filter & Search functionality
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('assignmentSearch');
+  const cards = document.querySelectorAll('.assignment-card');
+
+  function filterCards() {
+    const activeBtn = document.querySelector('.filter-btn.active');
+    const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const text = card.textContent.toLowerCase();
+      const matchCat = filter === 'all' || cat === filter;
+      const matchQuery = !query || text.includes(query);
+
+      card.style.display = (matchCat && matchQuery) ? 'flex' : 'none';
+    });
+  }
+
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const f = btn.getAttribute('data-filter');
-      document.querySelectorAll('.assignment-card').forEach(card => {
-        card.style.display = (f==='all' || card.getAttribute('data-category')===f) ? '' : 'none';
-      });
+      filterCards();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterCards);
+  }
 });
 </script>
 
